@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Motorcycle Theory</string>
+    <string name="api_base_url">http://10.0.2.2:5121/</string>
+    <string name="login_title">Dang nhap he thong</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Mat khau</string>
+    <string name="login_button">Dang nhap</string>
+    <string name="home">Thi thu</string>
+    <string name="history">Lich su</string>
+    <string name="admin">Admin</string>
+    <string name="profile">Tai khoan</string>
+</resources>

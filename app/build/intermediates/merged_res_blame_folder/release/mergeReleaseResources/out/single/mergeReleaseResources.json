@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_fragment_admin.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_admin.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_fragment_home.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_activity_main.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_fragment_profile.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_activity_login.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_fragment_history.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_history.xml"
+    }
+]

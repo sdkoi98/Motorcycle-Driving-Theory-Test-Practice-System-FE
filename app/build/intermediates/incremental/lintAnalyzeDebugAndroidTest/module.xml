@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app"
+    name=":app"
+    type="APP"
+    maven="MotorcycleTheoryFE:app:unspecified"
+    agpVersion="8.10.1"
+    buildFolder="build"
+    bootClassPath="D:\Android\Sdk\platforms\android-36\android.jar;D:\Android\Sdk\build-tools\35.0.0\core-lambda-stubs.jar"
+    javaSourceLevel="11"
+    compileTarget="android-36"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>

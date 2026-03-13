@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="brand_dark">#0B3D2E</color>
+    <color name="brand_green">#1C9B6E</color>
+    <color name="surface_light">#F4FBF8</color>
+    <color name="text_primary">#1A1C1B</color>
+    <color name="white">#FFFFFF</color>
+    <string name="admin">Admin</string>
+    <string name="api_base_url">http://10.0.2.2:5121/</string>
+    <string name="app_name">Motorcycle Theory</string>
+    <string name="email_hint">Email</string>
+    <string name="history">Lich su</string>
+    <string name="home">Thi thu</string>
+    <string name="login_button">Dang nhap</string>
+    <string name="login_title">Dang nhap he thong</string>
+    <string name="password_hint">Mat khau</string>
+    <string name="profile">Tai khoan</string>
+    <style name="Theme.MotorcycleTheory" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_green</item>
+        <item name="colorPrimaryVariant">@color/brand_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">@color/brand_dark</item>
+    </style>
+</resources>

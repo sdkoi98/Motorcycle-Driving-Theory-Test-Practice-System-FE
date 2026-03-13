@@ -1,0 +1,55 @@
+package com.example.motorcycletheory.activities;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import com.example.motorcycletheory.R;
+import com.example.motorcycletheory.databinding.ActivityMainBinding;
+import com.example.motorcycletheory.fragments.AdminFragment;
+import com.example.motorcycletheory.fragments.HistoryFragment;
+import com.example.motorcycletheory.fragments.HomeFragment;
+import com.example.motorcycletheory.fragments.ProfileFragment;
+
+public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        if (savedInstanceState == null) {
+            switchFragment(new HomeFragment());
+        }
+
+        binding.bottomNav.setOnItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.nav_home) {
+                switchFragment(new HomeFragment());
+                return true;
+            }
+            if (item.getItemId() == R.id.nav_history) {
+                switchFragment(new HistoryFragment());
+                return true;
+            }
+            if (item.getItemId() == R.id.nav_admin) {
+                switchFragment(new AdminFragment());
+                return true;
+            }
+            if (item.getItemId() == R.id.nav_profile) {
+                switchFragment(new ProfileFragment());
+                return true;
+            }
+            return false;
+        });
+    }
+
+    private void switchFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .commit();
+    }
+}
