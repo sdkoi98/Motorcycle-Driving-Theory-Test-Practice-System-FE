@@ -11,6 +11,7 @@ import com.example.motorcycletheory.fragments.AdminFragment;
 import com.example.motorcycletheory.fragments.HistoryFragment;
 import com.example.motorcycletheory.fragments.HomeFragment;
 import com.example.motorcycletheory.fragments.ProfileFragment;
+import com.example.motorcycletheory.utils.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
@@ -20,6 +21,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        SessionManager sessionManager = new SessionManager(this);
+        boolean isAdmin = "Admin".equalsIgnoreCase(sessionManager.getRole());
+        if (!isAdmin) {
+            binding.bottomNav.getMenu().removeItem(R.id.nav_admin);
+        }
 
         if (savedInstanceState == null) {
             switchFragment(new HomeFragment());

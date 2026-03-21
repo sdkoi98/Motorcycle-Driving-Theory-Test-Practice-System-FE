@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-27:12
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [androidx.databinding:viewbinding:8.10.1] C:\Users\ACER\.gradle\caches\8.13\transforms\44f945071a67c56f6590462b245e724d\transformed\viewbinding-8.10.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\8.13\transforms\375fb2db779fe8abd4da9c945100a737\transformed\material-1.10.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\ACER\.gradle\caches\8.13\transforms\3ff4ebacd01b456cb454dc27cb5e3d7c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -65,8 +65,8 @@ ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-Sy
 	android:name
 		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:5:22-76
 application
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-25:19
-INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-25:19
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-35:19
+INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-35:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\8.13\transforms\375fb2db779fe8abd4da9c945100a737\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\8.13\transforms\375fb2db779fe8abd4da9c945100a737\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\ACER\.gradle\caches\8.13\transforms\3ff4ebacd01b456cb454dc27cb5e3d7c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -98,29 +98,49 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ACER\.gradle\cache
 	android:allowBackup
 		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:14:9-54
+	android:usesCleartextTraffic
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:13:9-44
+activity#com.example.motorcycletheory.activities.ExamResultActivity
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:15:9-17:40
+	android:exported
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:17:13-37
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:16:13-58
+activity#com.example.motorcycletheory.activities.ExamTakingActivity
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:18:9-20:40
+	android:exported
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:20:13-37
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:19:13-58
+activity#com.example.motorcycletheory.activities.RegisterActivity
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:21:9-23:40
+	android:exported
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:23:13-37
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:22:13-56
 activity#com.example.motorcycletheory.activities.MainActivity
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:14:9-16:40
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:24:9-26:40
 	android:exported
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:16:13-37
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:26:13-37
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:15:13-52
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:25:13-52
 activity#com.example.motorcycletheory.activities.LoginActivity
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:17:9-24:20
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:27:9-34:20
 	android:exported
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:19:13-36
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:29:13-36
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:18:13-53
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:28:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:20:13-23:29
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:30:13-33:29
 action#android.intent.action.MAIN
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:21:17-69
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:21:25-66
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:22:17-77
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:22:27-74
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:32:27-74
 uses-sdk
 INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml

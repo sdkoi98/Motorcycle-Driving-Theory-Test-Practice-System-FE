@@ -3,5 +3,8 @@
     <color name="brand_dark">#0B3D2E</color>
     <color name="surface_light">#F4FBF8</color>
     <color name="text_primary">#1A1C1B</color>
+    <color name="text_secondary">#5F6663</color>
+    <color name="divider">#E0E3E1</color>
+    <color name="danger_red">#D32F2F</color>
     <color name="white">#FFFFFF</color>
 </resources>

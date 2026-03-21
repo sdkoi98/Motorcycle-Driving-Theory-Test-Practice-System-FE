@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvQuestionIndex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exam_question_title"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvQuestionContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/rgAnswers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A" />
+
+        <RadioButton
+            android:id="@+id/rbB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="B" />
+
+        <RadioButton
+            android:id="@+id/rbC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C" />
+
+        <RadioButton
+            android:id="@+id/rbD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="D" />
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNextQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/exam_next" />
+
+</LinearLayout>

@@ -1,12 +1,55 @@
 <resources>
     <string name="app_name">Motorcycle Theory</string>
     <string name="api_base_url">http://10.0.2.2:5121/</string>
-    <string name="login_title">Dang nhap he thong</string>
+    <string name="login_title">Đăng nhập hệ thống</string>
+    <string name="login_subtitle">Tiếp tục với email và mật khẩu</string>
     <string name="email_hint">Email</string>
-    <string name="password_hint">Mat khau</string>
-    <string name="login_button">Dang nhap</string>
-    <string name="home">Thi thu</string>
-    <string name="history">Lich su</string>
+    <string name="password_hint">Mật khẩu</string>
+    <string name="confirm_password_hint">Xác nhận mật khẩu</string>
+    <string name="login_button">Đăng nhập</string>
+    <string name="signup_button">Đăng ký tài khoản</string>
+    <string name="signup_title">Đăng ký tài khoản mới</string>
+    <string name="signup_subtitle">Tạo tài khoản để thi thử</string>
+    <string name="username_hint">Tên đăng nhập</string>
+    <string name="signup_submit">Tạo tài khoản</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="loading">Đang xử lý...</string>
+    <string name="exam_question_title">Câu hỏi</string>
+    <string name="exam_next">Câu tiếp theo</string>
+    <string name="exam_submit">Nộp bài</string>
+    <string name="exam_result_title">Kết quả bài thi</string>
+    <string name="view_exam_detail">Xem chi tiết bài thi</string>
+    <string name="home">Thi thử</string>
+    <string name="history">Lịch sử</string>
     <string name="admin">Admin</string>
-    <string name="profile">Tai khoan</string>
+    <string name="profile">Tài khoản</string>
+
+    <string name="home_title">Thi thử sát hạch</string>
+    <string name="home_generate_exam">Sinh đề ngẫu nhiên</string>
+    <string name="home_generate_error">Không tạo được đề thi</string>
+    <string name="home_session_expired">Phiên đăng nhập hết hạn. Hãy đăng nhập lại</string>
+    <string name="home_server_error">Lỗi máy chủ: %1$s</string>
+    <string name="profile_email_label">Email</string>
+    <string name="profile_role_label">Vai trò: %1$s</string>
+    <string name="profile_default_name">Người dùng</string>
+    <string name="profile_greeting">Xin chào, %1$s</string>
+
+    <string name="history_title">Lịch sử thi</string>
+    <string name="history_empty">Chưa có lịch sử thi</string>
+    <string name="history_not_logged_in">Bạn chưa đăng nhập</string>
+    <string name="history_fetch_error">Không tải được lịch sử thi</string>
+    <string name="history_session_expired">Phiên đăng nhập hết hạn. Hãy đăng nhập lại</string>
+    <string name="history_total_format">Tổng số bài thi: %1$d</string>
+    <string name="history_item_format">#%1$d - Điểm: %2$d - %3$s</string>
+
+    <string name="error_required_email">Vui lòng nhập email</string>
+    <string name="error_invalid_email">Email không hợp lệ</string>
+    <string name="error_required_password">Vui lòng nhập mật khẩu</string>
+    <string name="error_password_min">Mật khẩu tối thiểu 6 ký tự</string>
+    <string name="error_required_username">Vui lòng nhập tên đăng nhập</string>
+    <string name="error_username_min">Tên đăng nhập tối thiểu 3 ký tự</string>
+    <string name="error_required_confirm_password">Vui lòng xác nhận mật khẩu</string>
+    <string name="error_password_not_match">Mật khẩu xác nhận không khớp</string>
+    <string name="error_network">Không thể kết nối máy chủ. Vui lòng kiểm tra mạng/backend.</string>
+    <string name="error_unexpected">Đã có lỗi xảy ra. Vui lòng thử lại.</string>
 </resources>

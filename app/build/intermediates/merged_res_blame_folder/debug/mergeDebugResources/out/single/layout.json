@@ -1,26 +1,42 @@
 [
     {
-        "merged": "com.example.motorcycletheory.app-mergeDebugResources-31:/layout/fragment_home.xml",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_home.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\activity_exam_taking.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\activity_exam_taking.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-mergeDebugResources-31:/layout/fragment_admin.xml",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_admin.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-mergeDebugResources-31:/layout/activity_login.xml",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/activity_login.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\activity_register.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\activity_register.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-mergeDebugResources-31:/layout/fragment_profile.xml",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_profile.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\fragment_admin.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\fragment_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\fragment_history.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\fragment_history.xml"
     },
     {
         "merged": "com.example.motorcycletheory.app-mergeDebugResources-31:/layout/fragment_history.xml",
         "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_history.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-mergeDebugResources-31:/layout/activity_main.xml",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/activity_main.xml"
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\fragment_profile.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\activity_exam_result.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\activity_exam_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\fragment_home.xml"
     }
 ]
