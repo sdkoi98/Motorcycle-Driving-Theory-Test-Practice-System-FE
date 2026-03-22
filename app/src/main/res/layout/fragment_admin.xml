@@ -1,140 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="20dp">
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Admin Dashboard"
+                android:text="@string/admin_title"
+                android:textColor="@color/text_primary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvAdminHint"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Placeholder cho /api/admin/stats va /api/admin/users" />
+                android:padding="14dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp">
 
-            <EditText
-                android:id="@+id/etTargetId"
+                <TextView
+                    android:id="@+id/tvAdminHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/admin_summary_placeholder"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="15sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:hint="Nhap ID (userId/questionId)"
-                android:inputType="number" />
+                android:padding="14dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="3dp">
 
-            <EditText
-                android:id="@+id/etPayload"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginTop="8dp"
-                android:gravity="top|start"
-                android:hint="Nhap JSON payload cho create/update"
-                android:inputType="textMultiLine"
-                android:minLines="4" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnRefreshDashboard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Refresh dashboard" />
+                    <EditText
+                        android:id="@+id/etTargetId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/admin_input_id_hint"
+                        android:inputType="number"
+                        android:padding="12dp"
+                        android:background="@drawable/abc_edit_text_material" />
 
-            <Button
-                android:id="@+id/btnAdminAllExams"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Load all exams" />
+                    <EditText
+                        android:id="@+id/etPayload"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="top|start"
+                        android:hint="@string/admin_input_payload_hint"
+                        android:inputType="textMultiLine"
+                        android:minLines="4"
+                        android:padding="12dp"
+                        android:background="@drawable/abc_edit_text_material" />
 
-            <Button
-                android:id="@+id/btnCreateUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Create user (payload)" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRefreshDashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/admin_btn_refresh" />
 
-            <Button
-                android:id="@+id/btnGetUserById"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get user by ID" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="@string/admin_section_users"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnUpdateUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Update user by ID + payload" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCreateUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/admin_btn_create_user" />
 
-            <Button
-                android:id="@+id/btnDeleteUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Delete user by ID" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGetUserById"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admin_btn_get_user" />
 
-            <Button
-                android:id="@+id/btnLoadQuestions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Load questions page 1" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnUpdateUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admin_btn_update_user" />
 
-            <Button
-                android:id="@+id/btnGetQuestionById"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get question by ID" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDeleteUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admin_btn_delete_user" />
 
-            <Button
-                android:id="@+id/btnLoadImportantQuestions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Load important questions" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="@string/admin_section_questions"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnCreateQuestion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Create question (payload)" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLoadQuestions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/admin_btn_load_questions" />
 
-            <Button
-                android:id="@+id/btnUpdateQuestion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Update question by ID + payload" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGetQuestionById"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admin_btn_get_question" />
 
-            <Button
-                android:id="@+id/btnDeleteQuestion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Delete question by ID" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLoadImportantQuestions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admin_btn_load_important" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCreateQuestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admin_btn_create_question" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnUpdateQuestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admin_btn_update_question" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDeleteQuestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/admin_btn_delete_question" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="@string/admin_section_exams"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAdminAllExams"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/admin_btn_all_exams" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Danh sach du lieu (toi gian)" />
+                android:layout_marginTop="14dp"
+                android:text="Danh sách dữ liệu"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvAdminData"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:overScrollMode="never"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAdminData"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

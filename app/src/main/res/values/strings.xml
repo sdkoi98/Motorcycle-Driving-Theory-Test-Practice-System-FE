@@ -42,6 +42,26 @@
     <string name="history_total_format">Tổng số bài thi: %1$d</string>
     <string name="history_item_format">#%1$d - Điểm: %2$d - %3$s</string>
 
+    <string name="admin_title">Bảng điều khiển Admin</string>
+    <string name="admin_summary_placeholder">Chưa có dữ liệu. Hãy bấm Refresh để tải thống kê.</string>
+    <string name="admin_input_id_hint">Nhập ID (userId/questionId)</string>
+    <string name="admin_input_payload_hint">Nhập JSON payload cho create/update</string>
+    <string name="admin_section_users">Người dùng</string>
+    <string name="admin_section_questions">Câu hỏi</string>
+    <string name="admin_section_exams">Đề thi</string>
+    <string name="admin_btn_refresh">Làm mới thống kê</string>
+    <string name="admin_btn_all_exams">Tải tất cả đề thi</string>
+    <string name="admin_btn_create_user">Tạo user (payload)</string>
+    <string name="admin_btn_get_user">Lấy user theo ID</string>
+    <string name="admin_btn_update_user">Cập nhật user + payload</string>
+    <string name="admin_btn_delete_user">Xóa user theo ID</string>
+    <string name="admin_btn_load_questions">Tải câu hỏi trang 1</string>
+    <string name="admin_btn_get_question">Lấy câu hỏi theo ID</string>
+    <string name="admin_btn_load_important">Tải câu hỏi điểm liệt</string>
+    <string name="admin_btn_create_question">Tạo câu hỏi (payload)</string>
+    <string name="admin_btn_update_question">Cập nhật câu hỏi + payload</string>
+    <string name="admin_btn_delete_question">Xóa câu hỏi theo ID</string>
+
     <string name="error_required_email">Vui lòng nhập email</string>
     <string name="error_invalid_email">Email không hợp lệ</string>
     <string name="error_required_password">Vui lòng nhập mật khẩu</string>
