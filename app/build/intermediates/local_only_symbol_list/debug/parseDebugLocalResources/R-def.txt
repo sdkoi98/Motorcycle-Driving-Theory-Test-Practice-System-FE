@@ -1,9 +1,12 @@
 R_DEF: Internal format may change without notice
 local
+anim shake
 color brand_dark
 color brand_green
 color danger_red
 color divider
+color error_background
+color error_red
 color surface_light
 color text_primary
 color text_secondary
@@ -71,6 +74,7 @@ id tvDetail
 id tvDisplayName
 id tvEmailLabel
 id tvEmailValue
+id tvErrorMessage
 id tvHistoryHint
 id tvHistoryTitle
 id tvQuestionContent

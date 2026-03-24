@@ -45,26 +45,43 @@
                 android:id="@+id/rbA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
                 android:text="A" />
 
             <RadioButton
                 android:id="@+id/rbB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
                 android:text="B" />
 
             <RadioButton
                 android:id="@+id/rbC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
                 android:text="C" />
 
             <RadioButton
                 android:id="@+id/rbD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
                 android:text="D" />
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/tvErrorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:textColor="@color/error_red"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:drawableStartCompat="@android:drawable/ic_dialog_alert" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNextQuestion"

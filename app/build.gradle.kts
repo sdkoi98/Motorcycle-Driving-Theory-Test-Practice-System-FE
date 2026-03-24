@@ -31,6 +31,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
+    tasks.withType<JavaCompile> {
+        options.encoding = "UTF-8"
+    }
+
     buildFeatures {
         viewBinding = true
     }

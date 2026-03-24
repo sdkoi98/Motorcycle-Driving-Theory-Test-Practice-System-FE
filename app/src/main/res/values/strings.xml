@@ -83,4 +83,55 @@
     <string name="error_submit_failed">Nộp bài thất bại</string>
     <string name="error_submit_invalid">Dữ liệu nộp bài chưa hợp lệ</string>
     <string name="exam_question_index">Câu %1$d/%2$d - ID %3$d</string>
+    
+    <!-- Login Activity -->
+    <string name="login_failed_prefix">Đăng nhập thất bại: %1$s</string>
+    <string name="login_failed_credentials">Sai email hoặc mật khẩu</string>
+    
+    <!-- Register Activity -->
+    <string name="register_success">Đăng ký thành công</string>
+    <string name="register_failed_prefix">Đăng ký thất bại: %1$s</string>
+    <string name="register_failed_invalid">Đăng ký thất bại: dữ liệu không hợp lệ</string>
+    
+    <!-- Exam Result Activity -->
+    <string name="result_summary">Điểm: %1$d/%2$d\nKết quả: %3$s\nLiệt câu điểm liệt: %4$s</string>
+    <string name="result_pass">PASS</string>
+    <string name="result_fail">FAIL</string>
+    <string name="result_yes">Có</string>
+    <string name="result_no">Không</string>
+    <string name="result_no_exam_id">Không có examId</string>
+    <string name="result_fetch_failed">Không lấy được chi tiết bài thi</string>
+    <string name="result_exam_not_found">Không tìm thấy bài thi</string>
+    <string name="result_no_questions">Không có chi tiết câu hỏi</string>
+    <string name="result_question_format">%1$d) Q%2$d - Bạn chọn %3$s / Đúng %4$s</string>
+    
+    <!-- Home Fragment -->
+    <string name="home_not_logged_in">Bạn chưa đăng nhập</string>
+    <string name="home_exam_invalid">Đề thi không hợp lệ</string>
+    
+    <!-- Admin Fragment -->
+    <string name="admin_no_permission">Bạn không có quyền Admin</string>
+    <string name="admin_stats_failed">Không tải được /api/admin/stats</string>
+    <string name="admin_scores_failed">Không tải được /api/admin/user-scores</string>
+    <string name="admin_users_failed">Không tải được /api/admin/users</string>
+    <string name="admin_enter_id">Nhập ID trước</string>
+    <string name="admin_invalid_id">ID không hợp lệ</string>
+    <string name="admin_enter_payload">Nhập JSON payload trước</string>
+    <string name="admin_invalid_payload">JSON payload không hợp lệ</string>
+    <string name="admin_stats_summary">Thống kê:\n- Users: %1$d\n- Questions: %2$d\n- Important: %3$d\n- Exams: %4$d</string>
+    <string name="admin_scores_empty">Bảng điểm: Chưa có dữ liệu</string>
+    <string name="admin_scores_top">Bảng điểm (top 5):</string>
+    <string name="admin_users_empty">Users: Chưa có dữ liệu</string>
+    <string name="admin_users_top">Users (top 5):</string>
+    <string name="admin_user_fetch_failed">Không tải được user #%1$d (status=%2$d)</string>
+    <string name="admin_question_fetch_failed">Không tải được question #%1$d (status=%2$d)</string>
+    <string name="admin_questions_fetch_failed">Không tải được /api/question</string>
+    <string name="admin_important_fetch_failed">Không tải được /api/question/important</string>
+    <string name="admin_exams_fetch_failed">Không tải được /api/exam/admin/all-exams</string>
+    <string name="admin_missing_field">Thiếu trường %1$s: %2$s</string>
+    <string name="admin_empty_field">Trường rỗng: %1$s</string>
+    <string name="admin_correct_answer_invalid">correctAnswer phải là A/B/C/D</string>
+    <string name="admin_no_questions">Không có question</string>
+    <string name="admin_no_important">Không có câu điểm liệt</string>
+    <string name="admin_no_exams">Không có exam</string>
 </resources>

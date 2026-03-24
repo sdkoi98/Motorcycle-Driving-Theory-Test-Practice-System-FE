@@ -43,6 +43,7 @@ anim m3_side_sheet_exit_to_right
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim shake
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1411,8 +1412,10 @@ color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
 color divider
+color error_background
 color error_color_material_dark
 color error_color_material_light
+color error_red
 color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
@@ -3581,6 +3584,7 @@ id tvDetail
 id tvDisplayName
 id tvEmailLabel
 id tvEmailValue
+id tvErrorMessage
 id tvHistoryHint
 id tvHistoryTitle
 id tvQuestionContent

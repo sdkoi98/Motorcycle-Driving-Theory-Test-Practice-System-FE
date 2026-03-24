@@ -45,6 +45,9 @@ public final class ActivityExamTakingBinding implements ViewBinding {
   public final RadioGroup rgAnswers;
 
   @NonNull
+  public final TextView tvErrorMessage;
+
+  @NonNull
   public final TextView tvQuestionContent;
 
   @NonNull
@@ -53,8 +56,8 @@ public final class ActivityExamTakingBinding implements ViewBinding {
   private ActivityExamTakingBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton btnNextQuestion, @NonNull LinearLayout examContentContainer,
       @NonNull RadioButton rbA, @NonNull RadioButton rbB, @NonNull RadioButton rbC,
-      @NonNull RadioButton rbD, @NonNull RadioGroup rgAnswers, @NonNull TextView tvQuestionContent,
-      @NonNull TextView tvQuestionIndex) {
+      @NonNull RadioButton rbD, @NonNull RadioGroup rgAnswers, @NonNull TextView tvErrorMessage,
+      @NonNull TextView tvQuestionContent, @NonNull TextView tvQuestionIndex) {
     this.rootView = rootView;
     this.btnNextQuestion = btnNextQuestion;
     this.examContentContainer = examContentContainer;
@@ -63,6 +66,7 @@ public final class ActivityExamTakingBinding implements ViewBinding {
     this.rbC = rbC;
     this.rbD = rbD;
     this.rgAnswers = rgAnswers;
+    this.tvErrorMessage = tvErrorMessage;
     this.tvQuestionContent = tvQuestionContent;
     this.tvQuestionIndex = tvQuestionIndex;
   }
@@ -136,6 +140,12 @@ public final class ActivityExamTakingBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvErrorMessage;
+      TextView tvErrorMessage = ViewBindings.findChildViewById(rootView, id);
+      if (tvErrorMessage == null) {
+        break missingId;
+      }
+
       id = R.id.tvQuestionContent;
       TextView tvQuestionContent = ViewBindings.findChildViewById(rootView, id);
       if (tvQuestionContent == null) {
@@ -149,7 +159,8 @@ public final class ActivityExamTakingBinding implements ViewBinding {
       }
 
       return new ActivityExamTakingBinding((ConstraintLayout) rootView, btnNextQuestion,
-          examContentContainer, rbA, rbB, rbC, rbD, rgAnswers, tvQuestionContent, tvQuestionIndex);
+          examContentContainer, rbA, rbB, rbC, rbD, rgAnswers, tvErrorMessage, tvQuestionContent,
+          tvQuestionIndex);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -89,7 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
                 url,
                 response -> {
                     setLoading(false);
-                    Toast.makeText(this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.register_success), Toast.LENGTH_SHORT).show();
                     finish();
                 },
                 error -> {
@@ -177,10 +177,10 @@ public class RegisterActivity extends AppCompatActivity {
             body = new String(data, StandardCharsets.UTF_8).trim();
         }
         if (statusCode == 400) {
-            return body.isEmpty() ? "Đăng ký thất bại: dữ liệu không hợp lệ" : "Đăng ký thất bại: " + stripQuotes(body);
+            return body.isEmpty() ? getString(R.string.register_failed_invalid) : getString(R.string.register_failed_prefix, stripQuotes(body));
         }
         if (!body.isEmpty()) {
-            return "Đăng ký thất bại: " + stripQuotes(body);
+            return getString(R.string.register_failed_prefix, stripQuotes(body));
         }
         return getString(R.string.error_unexpected);
     }

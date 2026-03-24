@@ -36,10 +36,6 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\activity_exam_result.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-mergeDebugResources-31:/layout/activity_exam_result.xml",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/activity_exam_result.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-31:\\layout\\fragment_home.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-34:\\layout\\fragment_home.xml"
     }

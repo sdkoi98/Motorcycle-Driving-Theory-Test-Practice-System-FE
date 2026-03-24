@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
     private void callGenerateExam() {
         SessionManager sessionManager = new SessionManager(requireContext());
         if (!sessionManager.isLoggedIn()) {
-            Toast.makeText(requireContext(), "Ban chua dang nhap", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.home_not_logged_in), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
                     int examId = response.optInt("examId", -1);
                     JSONArray questions = response.optJSONArray("questions");
                     if (examId <= 0 || questions == null || questions.length() == 0) {
-                        Toast.makeText(requireContext(), "De thi khong hop le", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireContext(), getString(R.string.home_exam_invalid), Toast.LENGTH_SHORT).show();
                         return;
                     }
 

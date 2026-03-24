@@ -59,7 +59,7 @@ public class AdminFragment extends Fragment {
         binding.rvAdminData.setAdapter(listAdapter);
 
         if (!"Admin".equalsIgnoreCase(sessionManager.getRole())) {
-            binding.tvAdminHint.setText("Ban khong co quyen Admin");
+            binding.tvAdminHint.setText(getString(R.string.admin_no_permission));
             disableAdminControls();
             return;
         }
@@ -116,15 +116,11 @@ public class AdminFragment extends Fragment {
                     int totalQuestions = response.optInt("totalQuestions", 0);
                     int totalImportantQuestions = response.optInt("totalImportantQuestions", 0);
                     int totalExams = response.optInt("totalExams", 0);
-                    statsSummary = "Thong ke:\n"
-                            + "- Users: " + totalUsers + "\n"
-                            + "- Questions: " + totalQuestions + "\n"
-                            + "- Important: " + totalImportantQuestions + "\n"
-                            + "- Exams: " + totalExams;
+                    statsSummary = getString(R.string.admin_stats_summary, totalUsers, totalQuestions, totalImportantQuestions, totalExams);
                     renderAdminSummary();
                 },
                 error -> {
-                    statsSummary = "Khong tai duoc /api/admin/stats";
+                    statsSummary = getString(R.string.admin_stats_failed);
                     renderAdminSummary();
                     Toast.makeText(requireContext(), statsSummary, Toast.LENGTH_SHORT).show();
                 }
@@ -149,7 +145,7 @@ public class AdminFragment extends Fragment {
                     renderAdminSummary();
                 },
                 error -> {
-                    scoreSummary = "Khong tai duoc /api/admin/user-scores";
+                    scoreSummary = getString(R.string.admin_scores_failed);
                     renderAdminSummary();
                 }
         ) {
@@ -164,10 +160,10 @@ public class AdminFragment extends Fragment {
 
     private String formatTopScores(JSONArray response) {
         if (response.length() == 0) {
-            return "Bang diem: Chua co du lieu";
+            return getString(R.string.admin_scores_empty);
         }
 
-        StringBuilder builder = new StringBuilder("Bang diem (top 5):\n");
+        StringBuilder builder = new StringBuilder(getString(R.string.admin_scores_top)).append("\n");
         int count = Math.min(response.length(), 5);
         for (int i = 0; i < count; i++) {
             JSONObject item = response.optJSONObject(i);
@@ -192,7 +188,7 @@ public class AdminFragment extends Fragment {
                     renderAdminSummary();
                 },
                 error -> {
-                    usersSummary = "Khong tai duoc /api/admin/users";
+                    usersSummary = getString(R.string.admin_users_failed);
                     renderAdminSummary();
                 }
         ) {
@@ -206,10 +202,10 @@ public class AdminFragment extends Fragment {
 
     private String formatUsers(JSONArray response) {
         if (response.length() == 0) {
-            return "Users: Chua co du lieu";
+            return getString(R.string.admin_users_empty);
         }
 
-        StringBuilder builder = new StringBuilder("Users (top 5):\n");
+        StringBuilder builder = new StringBuilder(getString(R.string.admin_users_top)).append("\n");
         int count = Math.min(response.length(), 5);
         for (int i = 0; i < count; i++) {
             JSONObject item = response.optJSONObject(i);
@@ -237,13 +233,13 @@ public class AdminFragment extends Fragment {
     private Integer getTargetId() {
         String raw = String.valueOf(binding.etTargetId.getText()).trim();
         if (raw.isEmpty()) {
-            Toast.makeText(requireContext(), "Nhap ID truoc", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.admin_enter_id), Toast.LENGTH_SHORT).show();
             return null;
         }
         try {
             return Integer.parseInt(raw);
         } catch (NumberFormatException ex) {
-            Toast.makeText(requireContext(), "ID khong hop le", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.admin_invalid_id), Toast.LENGTH_SHORT).show();
             return null;
         }
     }
@@ -252,13 +248,13 @@ public class AdminFragment extends Fragment {
     private JSONObject getPayload() {
         String raw = String.valueOf(binding.etPayload.getText()).trim();
         if (TextUtils.isEmpty(raw)) {
-            Toast.makeText(requireContext(), "Nhap JSON payload truoc", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.admin_enter_payload), Toast.LENGTH_SHORT).show();
             return null;
         }
         try {
             return new JSONObject(raw);
         } catch (JSONException e) {
-            Toast.makeText(requireContext(), "JSON payload khong hop le", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.admin_invalid_payload), Toast.LENGTH_SHORT).show();
             return null;
         }
     }
@@ -292,7 +288,7 @@ public class AdminFragment extends Fragment {
                 },
                 error -> {
                     int status = error.networkResponse == null ? -1 : error.networkResponse.statusCode;
-                    extraSummary = "Khong tai duoc user #" + id + " (status=" + status + ")";
+                    extraSummary = getString(R.string.admin_user_fetch_failed, id, status);
                     renderAdminSummary();
                 }
         ) {
@@ -390,7 +386,7 @@ public class AdminFragment extends Fragment {
                     renderAdminSummary();
                 },
                 error -> {
-                    extraSummary = "Khong tai duoc /api/question";
+                    extraSummary = getString(R.string.admin_questions_fetch_failed);
                     renderAdminSummary();
                 }
         );
@@ -413,7 +409,7 @@ public class AdminFragment extends Fragment {
                 },
                 error -> {
                     int status = error.networkResponse == null ? -1 : error.networkResponse.statusCode;
-                    extraSummary = "Khong tai duoc question #" + id + " (status=" + status + ")";
+                    extraSummary = getString(R.string.admin_question_fetch_failed, id, status);
                     renderAdminSummary();
                 }
         ) {
@@ -450,7 +446,7 @@ public class AdminFragment extends Fragment {
                     renderAdminSummary();
                 },
                 error -> {
-                    extraSummary = "Khong tai duoc /api/question/important";
+                    extraSummary = getString(R.string.admin_important_fetch_failed);
                     renderAdminSummary();
                 }
         ) {
@@ -489,7 +485,7 @@ public class AdminFragment extends Fragment {
                     renderAdminSummary();
                 },
                 error -> {
-                    extraSummary = "Khong tai duoc /api/exam/admin/all-exams";
+                    extraSummary = getString(R.string.admin_exams_fetch_failed);
                     renderAdminSummary();
                 }
         ) {
@@ -547,7 +543,7 @@ public class AdminFragment extends Fragment {
         for (String f : fields) {
             String value = payload.optString(f, "").trim();
             if (value.isEmpty()) {
-                Toast.makeText(requireContext(), "Thieu truong user: " + f, Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), getString(R.string.admin_missing_field, "user", f), Toast.LENGTH_SHORT).show();
                 return false;
             }
         }
@@ -560,20 +556,20 @@ public class AdminFragment extends Fragment {
         };
         for (String f : fields) {
             if (!payload.has(f)) {
-                Toast.makeText(requireContext(), "Thieu truong question: " + f, Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), getString(R.string.admin_missing_field, "question", f), Toast.LENGTH_SHORT).show();
                 return false;
             }
             if (!"categoryId".equals(f)) {
                 String value = payload.optString(f, "").trim();
                 if (value.isEmpty()) {
-                    Toast.makeText(requireContext(), "Truong rong: " + f, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), getString(R.string.admin_empty_field, f), Toast.LENGTH_SHORT).show();
                     return false;
                 }
             }
         }
         String correct = payload.optString("correctAnswer", "").trim();
         if (!("A".equals(correct) || "B".equals(correct) || "C".equals(correct) || "D".equals(correct))) {
-            Toast.makeText(requireContext(), "correctAnswer phai la A/B/C/D", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), getString(R.string.admin_correct_answer_invalid), Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -591,7 +587,7 @@ public class AdminFragment extends Fragment {
     private void showQuestionPageList(@Nullable JSONArray items) {
         List<String> data = new ArrayList<>();
         if (items == null || items.length() == 0) {
-            data.add("Khong co question");
+            data.add(getString(R.string.admin_no_questions));
             listAdapter.submitList(data);
             return;
         }
@@ -611,7 +607,7 @@ public class AdminFragment extends Fragment {
     private void showImportantQuestionList(JSONArray items) {
         List<String> data = new ArrayList<>();
         if (items.length() == 0) {
-            data.add("Khong co cau diem liet");
+            data.add(getString(R.string.admin_no_important));
             listAdapter.submitList(data);
             return;
         }
@@ -630,7 +626,7 @@ public class AdminFragment extends Fragment {
     private void showExamList(JSONArray exams) {
         List<String> data = new ArrayList<>();
         if (exams.length() == 0) {
-            data.add("Khong co exam");
+            data.add(getString(R.string.admin_no_exams));
             listAdapter.submitList(data);
             return;
         }

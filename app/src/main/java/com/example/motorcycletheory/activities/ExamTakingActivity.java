@@ -2,6 +2,8 @@ package com.example.motorcycletheory.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -29,6 +31,7 @@ public class ExamTakingActivity extends AppCompatActivity {
 
     private TextView tvQuestionIndex;
     private TextView tvQuestionContent;
+    private TextView tvErrorMessage;
     private RadioGroup rgAnswers;
     private RadioButton rbA;
     private RadioButton rbB;
@@ -48,6 +51,7 @@ public class ExamTakingActivity extends AppCompatActivity {
 
         tvQuestionIndex = findViewById(R.id.tvQuestionIndex);
         tvQuestionContent = findViewById(R.id.tvQuestionContent);
+        tvErrorMessage = findViewById(R.id.tvErrorMessage);
         rgAnswers = findViewById(R.id.rgAnswers);
         rbA = findViewById(R.id.rbA);
         rbB = findViewById(R.id.rbB);
@@ -73,6 +77,14 @@ public class ExamTakingActivity extends AppCompatActivity {
         }
 
         btnNextQuestion.setOnClickListener(v -> onNextClicked());
+        
+        // Clear error message when user selects an answer
+        rgAnswers.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId != -1) {
+                hideError();
+            }
+        });
+        
         renderQuestion();
     }
 
@@ -85,6 +97,9 @@ public class ExamTakingActivity extends AppCompatActivity {
         if (question == null) {
             return;
         }
+
+        // Clear error message when showing new question
+        hideError();
 
         int questionId = question.optInt("questionId", -1);
         tvQuestionIndex.setText(getString(R.string.exam_question_index, currentIndex + 1, questions.length(), questionId));
@@ -119,7 +134,7 @@ public class ExamTakingActivity extends AppCompatActivity {
         int questionId = question.optInt("questionId", -1);
         String selected = getSelectedOption();
         if (selected.isEmpty()) {
-            Toast.makeText(this, getString(R.string.error_answer_required), Toast.LENGTH_SHORT).show();
+            showError(getString(R.string.error_answer_required));
             return;
         }
 
@@ -214,5 +229,20 @@ public class ExamTakingActivity extends AppCompatActivity {
         };
 
         apiClient.getRequestQueue().add(request);
+    }
+
+    private void showError(String message) {
+        tvErrorMessage.setText(message);
+        tvErrorMessage.setVisibility(android.view.View.VISIBLE);
+        
+        // Shake animation for better UX
+        Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+        tvErrorMessage.startAnimation(shake);
+        rgAnswers.startAnimation(shake);
+    }
+
+    private void hideError() {
+        tvErrorMessage.setVisibility(android.view.View.GONE);
+        tvErrorMessage.setText("");
     }
 }

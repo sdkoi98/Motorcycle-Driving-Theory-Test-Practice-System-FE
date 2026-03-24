@@ -132,12 +132,12 @@ public class LoginActivity extends AppCompatActivity {
         }
         if (statusCode == 401) {
             if (!body.isEmpty()) {
-                return "Đăng nhập thất bại: " + stripQuotes(body);
+                return getString(R.string.login_failed_prefix, stripQuotes(body));
             }
-            return "Sai email hoặc mật khẩu";
+            return getString(R.string.login_failed_credentials);
         }
         if (!body.isEmpty()) {
-            return "Đăng nhập thất bại: " + stripQuotes(body);
+            return getString(R.string.login_failed_prefix, stripQuotes(body));
         }
         return getString(R.string.error_unexpected);
     }
