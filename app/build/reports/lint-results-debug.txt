@@ -1,3 +1,22 @@
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\HomeFragment.java:83: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                            if (trimmed.toLowerCase().contains("nullreferenceexception")) {
+                                        ~~~~~~~~~~~
+
+   Explanation for issues of type "DefaultLocale":
+   Calling String#toLowerCase() or #toUpperCase() without specifying an
+   explicit locale is a common source of bugs. The reason for that is that
+   those methods will use the current locale on the user's device, and even
+   though the code appears to work correctly when you are developing the app,
+   it will fail in some locales. For example, in the Turkish locale, the
+   uppercase replacement for i is not I.
+
+   If you want the methods to just perform ASCII replacement, for example to
+   convert an enum name, call String#toUpperCase(Locale.ROOT) instead. If you
+   really want to use the current locale, call
+   String#toUpperCase(Locale.getDefault()) instead.
+
+   https://developer.android.com/reference/java/util/Locale.html#default_locale
+
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\gradle\libs.versions.toml:2: Warning: A newer version of com.android.application than 8.10.1 is available: 9.1.0 [AndroidGradlePluginVersion]
 agp = "8.10.1"
       ~~~~~~~~
@@ -9,13 +28,13 @@ agp = "8.10.1"
    with an older version. However, you may simply not be aware that a more
    recent version is available, and that is what this lint check helps find.
 
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:59: Warning: A newer version of androidx.fragment:fragment than 1.7.1 is available: 1.8.9 [GradleDependency]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:63: Warning: A newer version of androidx.fragment:fragment than 1.7.1 is available: 1.8.9 [GradleDependency]
     implementation("androidx.fragment:fragment:1.7.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:60: Warning: A newer version of androidx.recyclerview:recyclerview than 1.3.2 is available: 1.4.0 [GradleDependency]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:64: Warning: A newer version of androidx.recyclerview:recyclerview than 1.3.2 is available: 1.4.0 [GradleDependency]
     implementation("androidx.recyclerview:recyclerview:1.3.2")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:62: Warning: A newer version of com.google.code.gson:gson than 2.10.1 is available: 2.11.0 [GradleDependency]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:66: Warning: A newer version of com.google.code.gson:gson than 2.10.1 is available: 2.11.0 [GradleDependency]
     implementation("com.google.code.gson:gson:2.10.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\gradle\libs.versions.toml:4: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0 [GradleDependency]
@@ -64,6 +83,16 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
    https://developer.android.com/about/versions/12/backup-restore#xml-changes
    https://goo.gle/DataExtractionRules
 
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\utils\SimpleTextAdapter.java:20: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NotifyDataSetChanged":
+   The RecyclerView adapter's onNotifyDataSetChanged method does not specify
+   what about the data set has changed, forcing any observers to assume that
+   all existing items and structure may no longer be valid. `LayoutManager`s
+   will be forced to fully rebind and relayout all visible views.
+
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\themes.xml:6: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
         <item name="android:statusBarColor" tools:targetApi="l">@color/brand_dark</item>
                                             ~~~~~~~~~~~~~~~~~~~
@@ -102,16 +131,100 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
    performance if you pre-mix the background with your drawable and use that
    resulting image or color as a custom theme background instead.
 
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:59: Warning: Use version catalog instead [UseTomlInstead]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\colors.xml:7: Warning: The resource R.color.divider appears to be unused [UnusedResources]
+    <color name="divider">#E0E3E1</color>
+           ~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\colors.xml:10: Warning: The resource R.color.error_background appears to be unused [UnusedResources]
+    <color name="error_background">#FFEBEE</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:16: Warning: The resource R.string.loading appears to be unused [UnusedResources]
+    <string name="loading">Đang xử lý...</string>
+            ~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:36: Warning: The resource R.string.profile_greeting appears to be unused [UnusedResources]
+    <string name="profile_greeting">Xin chào, %1$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:16: Warning: Replace "..." with ellipsis character (…, &#8230;) ? [TypographyEllipsis]
+    <string name="loading">Đang xử lý...</string>
+                           ~~~~~~~~~~~~~
+
+   Explanation for issues of type "TypographyEllipsis":
+   You can replace the string "..." with a dedicated ellipsis character,
+   ellipsis character (u2026, &#8230;). This can help make the text more
+   readable.
+
+   https://en.wikipedia.org/wiki/Ellipsis
+
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:61: Warning: Missing autofillHints attribute [Autofill]
+                    <EditText
+                     ~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:70: Warning: Missing autofillHints attribute [Autofill]
+                    <EditText
+                     ~~~~~~~~
+
+   Explanation for issues of type "Autofill":
+   Specify an autofillHints attribute when targeting SDK version 26 or higher
+   or explicitly specify that the view is not important for autofill. Your app
+   can help an autofill service classify the data correctly by providing the
+   meaning of each view that could be autofillable, such as views representing
+   usernames, passwords, credit card fields, email addresses, etc.
+
+   The hints can have any value, but it is recommended to use predefined
+   values like 'username' for a username or 'creditCardNumber' for a credit
+   card number. For a list of all predefined autofill hint constants, see the
+   AUTOFILL_HINT_ constants in the View reference at
+   https://developer.android.com/reference/android/view/View.html.
+
+   You can mark a view unimportant for autofill by specifying an
+   importantForAutofill attribute on that view or a parent view. See
+   https://developer.android.com/reference/android/view/View.html#setImportant
+   ForAutofill(int).
+
+   https://developer.android.com/guide/topics/text/autofill.html
+
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:63: Warning: Use version catalog instead [UseTomlInstead]
     implementation("androidx.fragment:fragment:1.7.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:60: Warning: Use version catalog instead [UseTomlInstead]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:64: Warning: Use version catalog instead [UseTomlInstead]
     implementation("androidx.recyclerview:recyclerview:1.3.2")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:61: Warning: Use version catalog instead [UseTomlInstead]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:65: Warning: Use version catalog instead [UseTomlInstead]
     implementation("com.android.volley:volley:1.2.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:62: Warning: Use version catalog instead [UseTomlInstead]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:66: Warning: Use version catalog instead [UseTomlInstead]
     implementation("com.google.code.gson:gson:2.10.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -121,12 +234,18 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
    declarations outside of the TOML file and suggests moving them (and in the
    IDE, provides a quickfix to performing the operation automatically).
 
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\ProfileFragment.java:33: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-        binding.tvUserInfo.setText("Tai khoan: " + sessionManager.getEmail());
-                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\ProfileFragment.java:33: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-        binding.tvUserInfo.setText("Tai khoan: " + sessionManager.getEmail());
-                                   ~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:108: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        rbA.setText("A. " + question.optString("answerA", ""));
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:109: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        rbB.setText("B. " + question.optString("answerB", ""));
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:110: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        rbC.setText("C. " + question.optString("answerC", ""));
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:111: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        rbD.setText("D. " + question.optString("answerD", ""));
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "SetTextI18n":
    When calling TextView#setText
@@ -141,30 +260,24 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
 
    https://developer.android.com/guide/topics/resources/localization.html
 
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:11: Warning: Hardcoded string "Admin Dashboard", should use @string resource [HardcodedText]
-        android:text="Admin Dashboard"
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:19: Warning: Hardcoded string "Placeholder cho /api/admin/stats va /api/admin/users", should use @string resource [HardcodedText]
-        android:text="Placeholder cho /api/admin/stats va /api/admin/users" />
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_history.xml:11: Warning: Hardcoded string "Lich su thi", should use @string resource [HardcodedText]
-        android:text="Lich su thi"
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_history.xml:20: Warning: Hardcoded string "Placeholder cho GET /api/exam/history", should use @string resource [HardcodedText]
-        android:text="Placeholder cho GET /api/exam/history" />
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_home.xml:12: Warning: Hardcoded string "Thi thu sat hach", should use @string resource [HardcodedText]
-        android:text="Thi thu sat hach"
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_home.xml:21: Warning: Hardcoded string "Sinh de ngau nhien", should use @string resource [HardcodedText]
-        android:text="Sinh de ngau nhien" />
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_profile.xml:12: Warning: Hardcoded string "Thong tin tai khoan", should use @string resource [HardcodedText]
-        android:text="Thong tin tai khoan"
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_profile.xml:21: Warning: Hardcoded string "Dang xuat", should use @string resource [HardcodedText]
-        android:text="Dang xuat" />
-        ~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\activity_exam_taking.xml:49: Warning: Hardcoded string "A", should use @string resource [HardcodedText]
+                android:text="A" />
+                ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\activity_exam_taking.xml:56: Warning: Hardcoded string "B", should use @string resource [HardcodedText]
+                android:text="B" />
+                ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\activity_exam_taking.xml:63: Warning: Hardcoded string "C", should use @string resource [HardcodedText]
+                android:text="C" />
+                ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\activity_exam_taking.xml:70: Warning: Hardcoded string "D", should use @string resource [HardcodedText]
+                android:text="D" />
+                ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:191: Warning: Hardcoded string "Danh sách dữ liệu", should use @string resource [HardcodedText]
+                android:text="Danh sách dữ liệu"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_profile.xml:33: Warning: Hardcoded string "A", should use @string resource [HardcodedText]
+                android:text="A"
+                ~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "HardcodedText":
    Hardcoding text attributes directly in layout files is bad for several
@@ -180,4 +293,4 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
    There are quickfixes to automatically extract this hardcoded string into a
    resource lookup.
 
-0 errors, 27 warnings
+0 errors, 36 warnings

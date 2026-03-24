@@ -4,25 +4,103 @@ package com.example.motorcycletheory.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.EditText;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.motorcycletheory.R;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentAdminBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private FragmentAdminBinding(@NonNull LinearLayout rootView) {
+  @NonNull
+  public final MaterialButton btnAdminAllExams;
+
+  @NonNull
+  public final MaterialButton btnCreateQuestion;
+
+  @NonNull
+  public final MaterialButton btnCreateUser;
+
+  @NonNull
+  public final MaterialButton btnDeleteQuestion;
+
+  @NonNull
+  public final MaterialButton btnDeleteUser;
+
+  @NonNull
+  public final MaterialButton btnGetQuestionById;
+
+  @NonNull
+  public final MaterialButton btnGetUserById;
+
+  @NonNull
+  public final MaterialButton btnLoadImportantQuestions;
+
+  @NonNull
+  public final MaterialButton btnLoadQuestions;
+
+  @NonNull
+  public final MaterialButton btnRefreshDashboard;
+
+  @NonNull
+  public final MaterialButton btnUpdateQuestion;
+
+  @NonNull
+  public final MaterialButton btnUpdateUser;
+
+  @NonNull
+  public final EditText etPayload;
+
+  @NonNull
+  public final EditText etTargetId;
+
+  @NonNull
+  public final RecyclerView rvAdminData;
+
+  @NonNull
+  public final TextView tvAdminHint;
+
+  private FragmentAdminBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btnAdminAllExams, @NonNull MaterialButton btnCreateQuestion,
+      @NonNull MaterialButton btnCreateUser, @NonNull MaterialButton btnDeleteQuestion,
+      @NonNull MaterialButton btnDeleteUser, @NonNull MaterialButton btnGetQuestionById,
+      @NonNull MaterialButton btnGetUserById, @NonNull MaterialButton btnLoadImportantQuestions,
+      @NonNull MaterialButton btnLoadQuestions, @NonNull MaterialButton btnRefreshDashboard,
+      @NonNull MaterialButton btnUpdateQuestion, @NonNull MaterialButton btnUpdateUser,
+      @NonNull EditText etPayload, @NonNull EditText etTargetId, @NonNull RecyclerView rvAdminData,
+      @NonNull TextView tvAdminHint) {
     this.rootView = rootView;
+    this.btnAdminAllExams = btnAdminAllExams;
+    this.btnCreateQuestion = btnCreateQuestion;
+    this.btnCreateUser = btnCreateUser;
+    this.btnDeleteQuestion = btnDeleteQuestion;
+    this.btnDeleteUser = btnDeleteUser;
+    this.btnGetQuestionById = btnGetQuestionById;
+    this.btnGetUserById = btnGetUserById;
+    this.btnLoadImportantQuestions = btnLoadImportantQuestions;
+    this.btnLoadQuestions = btnLoadQuestions;
+    this.btnRefreshDashboard = btnRefreshDashboard;
+    this.btnUpdateQuestion = btnUpdateQuestion;
+    this.btnUpdateUser = btnUpdateUser;
+    this.etPayload = etPayload;
+    this.etTargetId = etTargetId;
+    this.rvAdminData = rvAdminData;
+    this.tvAdminHint = tvAdminHint;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +121,112 @@ public final class FragmentAdminBinding implements ViewBinding {
 
   @NonNull
   public static FragmentAdminBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.btnAdminAllExams;
+      MaterialButton btnAdminAllExams = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdminAllExams == null) {
+        break missingId;
+      }
 
-    return new FragmentAdminBinding((LinearLayout) rootView);
+      id = R.id.btnCreateQuestion;
+      MaterialButton btnCreateQuestion = ViewBindings.findChildViewById(rootView, id);
+      if (btnCreateQuestion == null) {
+        break missingId;
+      }
+
+      id = R.id.btnCreateUser;
+      MaterialButton btnCreateUser = ViewBindings.findChildViewById(rootView, id);
+      if (btnCreateUser == null) {
+        break missingId;
+      }
+
+      id = R.id.btnDeleteQuestion;
+      MaterialButton btnDeleteQuestion = ViewBindings.findChildViewById(rootView, id);
+      if (btnDeleteQuestion == null) {
+        break missingId;
+      }
+
+      id = R.id.btnDeleteUser;
+      MaterialButton btnDeleteUser = ViewBindings.findChildViewById(rootView, id);
+      if (btnDeleteUser == null) {
+        break missingId;
+      }
+
+      id = R.id.btnGetQuestionById;
+      MaterialButton btnGetQuestionById = ViewBindings.findChildViewById(rootView, id);
+      if (btnGetQuestionById == null) {
+        break missingId;
+      }
+
+      id = R.id.btnGetUserById;
+      MaterialButton btnGetUserById = ViewBindings.findChildViewById(rootView, id);
+      if (btnGetUserById == null) {
+        break missingId;
+      }
+
+      id = R.id.btnLoadImportantQuestions;
+      MaterialButton btnLoadImportantQuestions = ViewBindings.findChildViewById(rootView, id);
+      if (btnLoadImportantQuestions == null) {
+        break missingId;
+      }
+
+      id = R.id.btnLoadQuestions;
+      MaterialButton btnLoadQuestions = ViewBindings.findChildViewById(rootView, id);
+      if (btnLoadQuestions == null) {
+        break missingId;
+      }
+
+      id = R.id.btnRefreshDashboard;
+      MaterialButton btnRefreshDashboard = ViewBindings.findChildViewById(rootView, id);
+      if (btnRefreshDashboard == null) {
+        break missingId;
+      }
+
+      id = R.id.btnUpdateQuestion;
+      MaterialButton btnUpdateQuestion = ViewBindings.findChildViewById(rootView, id);
+      if (btnUpdateQuestion == null) {
+        break missingId;
+      }
+
+      id = R.id.btnUpdateUser;
+      MaterialButton btnUpdateUser = ViewBindings.findChildViewById(rootView, id);
+      if (btnUpdateUser == null) {
+        break missingId;
+      }
+
+      id = R.id.etPayload;
+      EditText etPayload = ViewBindings.findChildViewById(rootView, id);
+      if (etPayload == null) {
+        break missingId;
+      }
+
+      id = R.id.etTargetId;
+      EditText etTargetId = ViewBindings.findChildViewById(rootView, id);
+      if (etTargetId == null) {
+        break missingId;
+      }
+
+      id = R.id.rvAdminData;
+      RecyclerView rvAdminData = ViewBindings.findChildViewById(rootView, id);
+      if (rvAdminData == null) {
+        break missingId;
+      }
+
+      id = R.id.tvAdminHint;
+      TextView tvAdminHint = ViewBindings.findChildViewById(rootView, id);
+      if (tvAdminHint == null) {
+        break missingId;
+      }
+
+      return new FragmentAdminBinding((ConstraintLayout) rootView, btnAdminAllExams,
+          btnCreateQuestion, btnCreateUser, btnDeleteQuestion, btnDeleteUser, btnGetQuestionById,
+          btnGetUserById, btnLoadImportantQuestions, btnLoadQuestions, btnRefreshDashboard,
+          btnUpdateQuestion, btnUpdateUser, etPayload, etTargetId, rvAdminData, tvAdminHint);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

@@ -4,6 +4,8 @@ package com.example.motorcycletheory.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,10 +28,19 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final MaterialButton btnLogin;
 
   @NonNull
+  public final MaterialButton btnSignup;
+
+  @NonNull
   public final TextInputEditText etEmail;
 
   @NonNull
   public final TextInputEditText etPassword;
+
+  @NonNull
+  public final LinearLayout loginContainer;
+
+  @NonNull
+  public final ProgressBar pbLogin;
 
   @NonNull
   public final TextInputLayout tilEmail;
@@ -41,13 +52,17 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextView tvTitle;
 
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull MaterialButton btnLogin,
-      @NonNull TextInputEditText etEmail, @NonNull TextInputEditText etPassword,
-      @NonNull TextInputLayout tilEmail, @NonNull TextInputLayout tilPassword,
-      @NonNull TextView tvTitle) {
+      @NonNull MaterialButton btnSignup, @NonNull TextInputEditText etEmail,
+      @NonNull TextInputEditText etPassword, @NonNull LinearLayout loginContainer,
+      @NonNull ProgressBar pbLogin, @NonNull TextInputLayout tilEmail,
+      @NonNull TextInputLayout tilPassword, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
+    this.btnSignup = btnSignup;
     this.etEmail = etEmail;
     this.etPassword = etPassword;
+    this.loginContainer = loginContainer;
+    this.pbLogin = pbLogin;
     this.tilEmail = tilEmail;
     this.tilPassword = tilPassword;
     this.tvTitle = tvTitle;
@@ -86,6 +101,12 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnSignup;
+      MaterialButton btnSignup = ViewBindings.findChildViewById(rootView, id);
+      if (btnSignup == null) {
+        break missingId;
+      }
+
       id = R.id.etEmail;
       TextInputEditText etEmail = ViewBindings.findChildViewById(rootView, id);
       if (etEmail == null) {
@@ -95,6 +116,18 @@ public final class ActivityLoginBinding implements ViewBinding {
       id = R.id.etPassword;
       TextInputEditText etPassword = ViewBindings.findChildViewById(rootView, id);
       if (etPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.loginContainer;
+      LinearLayout loginContainer = ViewBindings.findChildViewById(rootView, id);
+      if (loginContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.pbLogin;
+      ProgressBar pbLogin = ViewBindings.findChildViewById(rootView, id);
+      if (pbLogin == null) {
         break missingId;
       }
 
@@ -116,8 +149,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ConstraintLayout) rootView, btnLogin, etEmail, etPassword,
-          tilEmail, tilPassword, tvTitle);
+      return new ActivityLoginBinding((ConstraintLayout) rootView, btnLogin, btnSignup, etEmail,
+          etPassword, loginContainer, pbLogin, tilEmail, tilPassword, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

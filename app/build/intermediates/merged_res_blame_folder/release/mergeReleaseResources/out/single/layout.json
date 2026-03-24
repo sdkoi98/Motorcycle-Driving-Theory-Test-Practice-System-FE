@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.example.motorcycletheory.app-mergeReleaseResources-31:/layout/activity_exam_taking.xml",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/activity_exam_taking.xml"
+    },
+    {
         "merged": "com.example.motorcycletheory.app-mergeReleaseResources-31:/layout/fragment_home.xml",
         "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_home.xml"
     },
@@ -20,7 +24,15 @@
         "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_profile.xml"
     },
     {
+        "merged": "com.example.motorcycletheory.app-mergeReleaseResources-31:/layout/activity_register.xml",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/activity_register.xml"
+    },
+    {
         "merged": "com.example.motorcycletheory.app-mergeReleaseResources-31:/layout/fragment_history.xml",
         "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_history.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-mergeReleaseResources-31:/layout/activity_exam_result.xml",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/activity_exam_result.xml"
     }
 ]

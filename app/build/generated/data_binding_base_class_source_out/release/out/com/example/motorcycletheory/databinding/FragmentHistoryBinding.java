@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.motorcycletheory.R;
@@ -17,19 +18,29 @@ import java.lang.String;
 
 public final class FragmentHistoryBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
+
+  @NonNull
+  public final LinearLayout historyContainer;
 
   @NonNull
   public final TextView tvHistoryHint;
 
-  private FragmentHistoryBinding(@NonNull LinearLayout rootView, @NonNull TextView tvHistoryHint) {
+  @NonNull
+  public final TextView tvHistoryTitle;
+
+  private FragmentHistoryBinding(@NonNull ConstraintLayout rootView,
+      @NonNull LinearLayout historyContainer, @NonNull TextView tvHistoryHint,
+      @NonNull TextView tvHistoryTitle) {
     this.rootView = rootView;
+    this.historyContainer = historyContainer;
     this.tvHistoryHint = tvHistoryHint;
+    this.tvHistoryTitle = tvHistoryTitle;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -54,13 +65,26 @@ public final class FragmentHistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.historyContainer;
+      LinearLayout historyContainer = ViewBindings.findChildViewById(rootView, id);
+      if (historyContainer == null) {
+        break missingId;
+      }
+
       id = R.id.tvHistoryHint;
       TextView tvHistoryHint = ViewBindings.findChildViewById(rootView, id);
       if (tvHistoryHint == null) {
         break missingId;
       }
 
-      return new FragmentHistoryBinding((LinearLayout) rootView, tvHistoryHint);
+      id = R.id.tvHistoryTitle;
+      TextView tvHistoryTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvHistoryTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentHistoryBinding((ConstraintLayout) rootView, historyContainer,
+          tvHistoryHint, tvHistoryTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,11 +1,23 @@
 [
     {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_activity_register.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/activity_register.xml"
+    },
+    {
         "merged": "com.example.motorcycletheory.app-release-32:/layout_fragment_admin.xml.flat",
         "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_admin.xml"
     },
     {
         "merged": "com.example.motorcycletheory.app-release-32:/layout_fragment_home.xml.flat",
         "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/anim_shake.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/anim/shake.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_activity_exam_result.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/activity_exam_result.xml"
     },
     {
         "merged": "com.example.motorcycletheory.app-release-32:/layout_activity_main.xml.flat",
@@ -26,5 +38,9 @@
     {
         "merged": "com.example.motorcycletheory.app-release-32:/layout_fragment_history.xml.flat",
         "source": "com.example.motorcycletheory.app-main-33:/layout/fragment_history.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-release-32:/layout_activity_exam_taking.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-33:/layout/activity_exam_taking.xml"
     }
 ]

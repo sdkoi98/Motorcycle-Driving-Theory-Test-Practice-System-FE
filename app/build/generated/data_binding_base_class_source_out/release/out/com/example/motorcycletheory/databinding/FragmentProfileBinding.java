@@ -4,38 +4,71 @@ package com.example.motorcycletheory.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.motorcycletheory.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentProfileBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button btnLogout;
+  public final MaterialButton btnLogout;
 
   @NonNull
-  public final TextView tvUserInfo;
+  public final MaterialCardView cardAvatar;
 
-  private FragmentProfileBinding(@NonNull LinearLayout rootView, @NonNull Button btnLogout,
-      @NonNull TextView tvUserInfo) {
+  @NonNull
+  public final MaterialCardView cardInfo;
+
+  @NonNull
+  public final LinearLayout profileContainer;
+
+  @NonNull
+  public final TextView tvAvatarInitial;
+
+  @NonNull
+  public final TextView tvDisplayName;
+
+  @NonNull
+  public final TextView tvEmailLabel;
+
+  @NonNull
+  public final TextView tvEmailValue;
+
+  @NonNull
+  public final TextView tvRole;
+
+  private FragmentProfileBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btnLogout, @NonNull MaterialCardView cardAvatar,
+      @NonNull MaterialCardView cardInfo, @NonNull LinearLayout profileContainer,
+      @NonNull TextView tvAvatarInitial, @NonNull TextView tvDisplayName,
+      @NonNull TextView tvEmailLabel, @NonNull TextView tvEmailValue, @NonNull TextView tvRole) {
     this.rootView = rootView;
     this.btnLogout = btnLogout;
-    this.tvUserInfo = tvUserInfo;
+    this.cardAvatar = cardAvatar;
+    this.cardInfo = cardInfo;
+    this.profileContainer = profileContainer;
+    this.tvAvatarInitial = tvAvatarInitial;
+    this.tvDisplayName = tvDisplayName;
+    this.tvEmailLabel = tvEmailLabel;
+    this.tvEmailValue = tvEmailValue;
+    this.tvRole = tvRole;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -61,18 +94,62 @@ public final class FragmentProfileBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnLogout;
-      Button btnLogout = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnLogout = ViewBindings.findChildViewById(rootView, id);
       if (btnLogout == null) {
         break missingId;
       }
 
-      id = R.id.tvUserInfo;
-      TextView tvUserInfo = ViewBindings.findChildViewById(rootView, id);
-      if (tvUserInfo == null) {
+      id = R.id.cardAvatar;
+      MaterialCardView cardAvatar = ViewBindings.findChildViewById(rootView, id);
+      if (cardAvatar == null) {
         break missingId;
       }
 
-      return new FragmentProfileBinding((LinearLayout) rootView, btnLogout, tvUserInfo);
+      id = R.id.cardInfo;
+      MaterialCardView cardInfo = ViewBindings.findChildViewById(rootView, id);
+      if (cardInfo == null) {
+        break missingId;
+      }
+
+      id = R.id.profileContainer;
+      LinearLayout profileContainer = ViewBindings.findChildViewById(rootView, id);
+      if (profileContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.tvAvatarInitial;
+      TextView tvAvatarInitial = ViewBindings.findChildViewById(rootView, id);
+      if (tvAvatarInitial == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDisplayName;
+      TextView tvDisplayName = ViewBindings.findChildViewById(rootView, id);
+      if (tvDisplayName == null) {
+        break missingId;
+      }
+
+      id = R.id.tvEmailLabel;
+      TextView tvEmailLabel = ViewBindings.findChildViewById(rootView, id);
+      if (tvEmailLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.tvEmailValue;
+      TextView tvEmailValue = ViewBindings.findChildViewById(rootView, id);
+      if (tvEmailValue == null) {
+        break missingId;
+      }
+
+      id = R.id.tvRole;
+      TextView tvRole = ViewBindings.findChildViewById(rootView, id);
+      if (tvRole == null) {
+        break missingId;
+      }
+
+      return new FragmentProfileBinding((ConstraintLayout) rootView, btnLogout, cardAvatar,
+          cardInfo, profileContainer, tvAvatarInitial, tvDisplayName, tvEmailLabel, tvEmailValue,
+          tvRole);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

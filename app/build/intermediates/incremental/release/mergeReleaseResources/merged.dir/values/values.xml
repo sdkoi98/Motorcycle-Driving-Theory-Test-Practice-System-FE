@@ -652,6 +652,7 @@
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
+    <color name="danger_red">#D32F2F</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_dark_default_color_background">#121212</color>
     <color name="design_dark_default_color_error">#CF6679</color>
@@ -691,8 +692,11 @@
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
+    <color name="divider">#E0E3E1</color>
+    <color name="error_background">#FFEBEE</color>
     <color name="error_color_material_dark">#ff7043</color>
     <color name="error_color_material_light">#ff5722</color>
+    <color name="error_red">#D32F2F</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
@@ -956,6 +960,7 @@
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <color name="text_primary">#1A1C1B</color>
+    <color name="text_secondary">#5F6663</color>
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
     <color name="white">#FFFFFF</color>
@@ -1968,10 +1973,54 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns2:g example="Mail" id="application_name">%s</ns2:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="admin">Admin</string>
+    <string name="admin_btn_all_exams">Tải tất cả đề thi</string>
+    <string name="admin_btn_create_question">Tạo câu hỏi (payload)</string>
+    <string name="admin_btn_create_user">Tạo user (payload)</string>
+    <string name="admin_btn_delete_question">Xóa câu hỏi theo ID</string>
+    <string name="admin_btn_delete_user">Xóa user theo ID</string>
+    <string name="admin_btn_get_question">Lấy câu hỏi theo ID</string>
+    <string name="admin_btn_get_user">Lấy user theo ID</string>
+    <string name="admin_btn_load_important">Tải câu hỏi điểm liệt</string>
+    <string name="admin_btn_load_questions">Tải câu hỏi trang 1</string>
+    <string name="admin_btn_refresh">Làm mới thống kê</string>
+    <string name="admin_btn_update_question">Cập nhật câu hỏi + payload</string>
+    <string name="admin_btn_update_user">Cập nhật user + payload</string>
+    <string name="admin_correct_answer_invalid">correctAnswer phải là A/B/C/D</string>
+    <string name="admin_empty_field">Trường rỗng: %1$s</string>
+    <string name="admin_enter_id">Nhập ID trước</string>
+    <string name="admin_enter_payload">Nhập JSON payload trước</string>
+    <string name="admin_exams_fetch_failed">Không tải được /api/exam/admin/all-exams</string>
+    <string name="admin_important_fetch_failed">Không tải được /api/question/important</string>
+    <string name="admin_input_id_hint">Nhập ID (userId/questionId)</string>
+    <string name="admin_input_payload_hint">Nhập JSON payload cho create/update</string>
+    <string name="admin_invalid_id">ID không hợp lệ</string>
+    <string name="admin_invalid_payload">JSON payload không hợp lệ</string>
+    <string name="admin_missing_field">Thiếu trường %1$s: %2$s</string>
+    <string name="admin_no_exams">Không có exam</string>
+    <string name="admin_no_important">Không có câu điểm liệt</string>
+    <string name="admin_no_permission">Bạn không có quyền Admin</string>
+    <string name="admin_no_questions">Không có question</string>
+    <string name="admin_question_fetch_failed">Không tải được question #%1$d (status=%2$d)</string>
+    <string name="admin_questions_fetch_failed">Không tải được /api/question</string>
+    <string name="admin_scores_empty">Bảng điểm: Chưa có dữ liệu</string>
+    <string name="admin_scores_failed">Không tải được /api/admin/user-scores</string>
+    <string name="admin_scores_top">Bảng điểm (top 5):</string>
+    <string name="admin_section_exams">Đề thi</string>
+    <string name="admin_section_questions">Câu hỏi</string>
+    <string name="admin_section_users">Người dùng</string>
+    <string name="admin_stats_failed">Không tải được /api/admin/stats</string>
+    <string name="admin_stats_summary">Thống kê:\n- Users: %1$d\n- Questions: %2$d\n- Important: %3$d\n- Exams: %4$d</string>
+    <string name="admin_summary_placeholder">Chưa có dữ liệu. Hãy bấm Refresh để tải thống kê.</string>
+    <string name="admin_title">Bảng điều khiển Admin</string>
+    <string name="admin_user_fetch_failed">Không tải được user #%1$d (status=%2$d)</string>
+    <string name="admin_users_empty">Users: Chưa có dữ liệu</string>
+    <string name="admin_users_failed">Không tải được /api/admin/users</string>
+    <string name="admin_users_top">Users (top 5):</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="api_base_url">http://10.0.2.2:5121/</string>
     <string name="app_name">Motorcycle Theory</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="back_to_home">Về trang chủ</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string description="A description of an accessibility action to collapse the bottom sheet [CHAR LIMIT=NONE]" name="bottomsheet_action_collapse">Collapse the bottom sheet</string>
     <string description="A description of an accessibility action to expand the bottom sheet [CHAR LIMIT=NONE]" name="bottomsheet_action_expand">Expand the bottom sheet</string>
@@ -1982,21 +2031,63 @@
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="confirm_password_hint">Xác nhận mật khẩu</string>
     <string name="email_hint">Email</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
   </string>
+    <string name="error_answer_required">Vui lòng chọn đáp án</string>
+    <string name="error_answer_save">Không lưu được đáp án</string>
+    <string name="error_exam_data_invalid">Dữ liệu đề thi không hợp lệ</string>
     <string name="error_icon_content_description">Error</string>
+    <string name="error_invalid_email">Email không hợp lệ</string>
+    <string name="error_network">Không thể kết nối máy chủ. Vui lòng kiểm tra mạng/backend.</string>
+    <string name="error_password_min">Mật khẩu tối thiểu 6 ký tự</string>
+    <string name="error_password_not_match">Mật khẩu xác nhận không khớp</string>
+    <string name="error_question_read">Không đọc được câu hỏi</string>
+    <string name="error_required_confirm_password">Vui lòng xác nhận mật khẩu</string>
+    <string name="error_required_email">Vui lòng nhập email</string>
+    <string name="error_required_password">Vui lòng nhập mật khẩu</string>
+    <string name="error_required_username">Vui lòng nhập tên đăng nhập</string>
+    <string name="error_submit_failed">Nộp bài thất bại</string>
+    <string name="error_submit_invalid">Dữ liệu nộp bài chưa hợp lệ</string>
+    <string name="error_submit_request">Lỗi tạo request nộp bài</string>
+    <string name="error_unexpected">Đã có lỗi xảy ra. Vui lòng thử lại.</string>
+    <string name="error_username_min">Tên đăng nhập tối thiểu 3 ký tự</string>
+    <string name="exam_next">Câu tiếp theo</string>
+    <string name="exam_question_index">Câu %1$d/%2$d - ID %3$d</string>
+    <string name="exam_question_title">Câu hỏi</string>
+    <string name="exam_result_title">Kết quả bài thi</string>
+    <string name="exam_submit">Nộp bài</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
-    <string name="history">Lich su</string>
-    <string name="home">Thi thu</string>
+    <string name="history">Lịch sử</string>
+    <string name="history_empty">Chưa có lịch sử thi</string>
+    <string name="history_fetch_error">Không tải được lịch sử thi</string>
+    <string name="history_item_format">#%1$d - Điểm: %2$d - %3$s</string>
+    <string name="history_not_logged_in">Bạn chưa đăng nhập</string>
+    <string name="history_session_expired">Phiên đăng nhập hết hạn. Hãy đăng nhập lại</string>
+    <string name="history_title">Lịch sử thi</string>
+    <string name="history_total_format">Tổng số bài thi: %1$d</string>
+    <string name="home">Thi thử</string>
+    <string name="home_exam_invalid">Đề thi không hợp lệ</string>
+    <string name="home_generate_error">Không tạo được đề thi</string>
+    <string name="home_generate_exam">Sinh đề ngẫu nhiên</string>
+    <string name="home_not_logged_in">Bạn chưa đăng nhập</string>
+    <string name="home_server_error">Lỗi máy chủ: %1$s</string>
+    <string name="home_session_expired">Phiên đăng nhập hết hạn. Hãy đăng nhập lại</string>
+    <string name="home_title">Thi thử sát hạch</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="item_view_role_description">Tab</string>
-    <string name="login_button">Dang nhap</string>
-    <string name="login_title">Dang nhap he thong</string>
+    <string name="loading">Đang xử lý...</string>
+    <string name="login_button">Đăng nhập</string>
+    <string name="login_failed_credentials">Sai email hoặc mật khẩu</string>
+    <string name="login_failed_prefix">Đăng nhập thất bại: %1$s</string>
+    <string name="login_subtitle">Tiếp tục với email và mật khẩu</string>
+    <string name="login_title">Đăng nhập hệ thống</string>
+    <string name="logout">Đăng xuất</string>
     <string name="m3_exceed_max_badge_text_suffix" translatable="false"><ns2:g example="Some te" id="part of a long text">%1$s</ns2:g><ns2:g example="…" id="suffix">%2$s</ns2:g></string>
     <string name="m3_ref_typeface_brand_medium" translatable="false">sans-serif-medium</string>
     <string name="m3_ref_typeface_brand_regular" translatable="false">sans-serif</string>
@@ -2103,13 +2194,30 @@
     <string name="mtrl_switch_track_path" translatable="false">M0,16 A16,16 0 0,1 16,0 H36 A16,16 0 0,1 36,32 H16 A16,16 0 0,1 0,16</string>
     <string description="Button text to indicate that the widget will ignore the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_cancel">Cancel</string>
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
-    <string name="password_hint">Mat khau</string>
+    <string name="password_hint">Mật khẩu</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
-    <string name="profile">Tai khoan</string>
+    <string name="profile">Tài khoản</string>
+    <string name="profile_default_name">Người dùng</string>
+    <string name="profile_email_label">Email</string>
+    <string name="profile_greeting">Xin chào, %1$s</string>
+    <string name="profile_role_label">Vai trò: %1$s</string>
+    <string name="register_failed_invalid">Đăng ký thất bại: dữ liệu không hợp lệ</string>
+    <string name="register_failed_prefix">Đăng ký thất bại: %1$s</string>
+    <string name="register_success">Đăng ký thành công</string>
+    <string name="result_exam_not_found">Không tìm thấy bài thi</string>
+    <string name="result_fail">FAIL</string>
+    <string name="result_fetch_failed">Không lấy được chi tiết bài thi</string>
+    <string name="result_no">Không</string>
+    <string name="result_no_exam_id">Không có examId</string>
+    <string name="result_no_questions">Không có chi tiết câu hỏi</string>
+    <string name="result_pass">PASS</string>
+    <string name="result_question_format">%1$d) Q%2$d - Bạn chọn %3$s / Đúng %4$s</string>
+    <string name="result_summary">Điểm: %1$d/%2$d\nKết quả: %3$s\nLiệt câu điểm liệt: %4$s</string>
+    <string name="result_yes">Có</string>
     <string name="search_menu_title">Search</string>
     <string name="searchbar_scrolling_view_behavior" translatable="false">
     com.google.android.material.search.SearchBar$ScrollingViewBehavior
@@ -2118,7 +2226,13 @@
     <string description="Content description for the navigation button to return to the previous screen [CHAR_LIMIT=NONE]" name="searchview_navigation_content_description">Back</string>
     <string description="Title of the side sheet&apos;s accessibility pane that is spoken by TalkBack when the side sheet appears on screen. [CHAR_LIMIT=NONE]" name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string name="side_sheet_behavior" translatable="false">com.google.android.material.sidesheet.SideSheetBehavior</string>
+    <string name="signup_button">Đăng ký tài khoản</string>
+    <string name="signup_submit">Tạo tài khoản</string>
+    <string name="signup_subtitle">Tạo tài khoản để thi thử</string>
+    <string name="signup_title">Đăng ký tài khoản mới</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="username_hint">Tên đăng nhập</string>
+    <string name="view_exam_detail">Xem chi tiết bài thi</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -6520,6 +6634,9 @@
         <item name="colorPrimaryVariant">@color/brand_dark</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="android:statusBarColor" ns1:targetApi="l">@color/brand_dark</item>
+        
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
     </style>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>

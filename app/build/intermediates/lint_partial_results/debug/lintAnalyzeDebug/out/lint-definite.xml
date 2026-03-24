@@ -2,6 +2,20 @@
 <incidents format="6" by="lint 8.10.1" type="incidents">
 
     <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/HomeFragment.java"
+            line="83"
+            column="41"
+            startOffset="3557"
+            endLine="83"
+            endColumn="52"
+            endOffset="3568"/>
+    </incident>
+
+    <incident
         id="AndroidGradlePluginVersion"
         severity="warning"
         message="A newer version of com.android.application than 8.10.1 is available: 9.1.0">
@@ -33,12 +47,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="59"
+            line="63"
             column="20"
-            startOffset="1382"
-            endLine="59"
+            startOffset="1458"
+            endLine="63"
             endColumn="54"
-            endOffset="1416"/>
+            endOffset="1492"/>
     </incident>
 
     <incident
@@ -53,12 +67,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="60"
+            line="64"
             column="20"
-            startOffset="1437"
-            endLine="60"
+            startOffset="1513"
+            endLine="64"
             endColumn="62"
-            endOffset="1479"/>
+            endOffset="1555"/>
     </incident>
 
     <incident
@@ -73,12 +87,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="62"
+            line="66"
             column="20"
-            startOffset="1554"
-            endLine="62"
+            startOffset="1630"
+            endLine="66"
             endColumn="54"
-            endOffset="1588"/>
+            endOffset="1664"/>
     </incident>
 
     <incident
@@ -202,6 +216,20 @@
     </incident>
 
     <incident
+        id="NotifyDataSetChanged"
+        severity="warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/utils/SimpleTextAdapter.java"
+            line="20"
+            column="9"
+            startOffset="576"
+            endLine="20"
+            endColumn="31"
+            endOffset="598"/>
+    </incident>
+
+    <incident
         id="Overdraw"
         severity="warning"
         message="Possible overdraw: Root element paints background `@color/surface_light` with a theme that also paints a background (inferred theme is `@style/Theme.MotorcycleTheory`)">
@@ -213,6 +241,81 @@
             endLine="6"
             endColumn="46"
             endOffset="331"/>
+    </incident>
+
+    <incident
+        id="TypographyEllipsis"
+        severity="warning"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?">
+        <fix-replace
+            description="Replace with …"
+            oldString="..."
+            replacement="…"
+            priority="0"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="16"
+            column="28"
+            startOffset="854"
+            endLine="16"
+            endColumn="41"
+            endOffset="867"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
+            line="61"
+            column="22"
+            startOffset="2506"
+            endLine="61"
+            endColumn="30"
+            endOffset="2514"/>
+    </incident>
+
+    <incident
+        id="Autofill"
+        severity="warning"
+        message="Missing `autofillHints` attribute">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set autofillHints"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="autofillHints"
+                value=""
+                point="0"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAutofill=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAutofill"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
+            line="70"
+            column="22"
+            startOffset="2957"
+            endLine="70"
+            endColumn="30"
+            endOffset="2965"/>
     </incident>
 
     <incident
@@ -251,18 +354,18 @@
                 priority="0">
                 <range
                     file="${:app*projectDir}/build.gradle.kts"
-                    startOffset="1382"
-                    endOffset="1416"/>
+                    startOffset="1458"
+                    endOffset="1492"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="59"
+            line="63"
             column="20"
-            startOffset="1382"
-            endLine="59"
+            startOffset="1458"
+            endLine="63"
             endColumn="54"
-            endOffset="1416"/>
+            endOffset="1492"/>
     </incident>
 
     <incident
@@ -301,18 +404,18 @@
                 priority="0">
                 <range
                     file="${:app*projectDir}/build.gradle.kts"
-                    startOffset="1437"
-                    endOffset="1479"/>
+                    startOffset="1513"
+                    endOffset="1555"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="60"
+            line="64"
             column="20"
-            startOffset="1437"
-            endLine="60"
+            startOffset="1513"
+            endLine="64"
             endColumn="62"
-            endOffset="1479"/>
+            endOffset="1555"/>
     </incident>
 
     <incident
@@ -351,18 +454,18 @@
                 priority="0">
                 <range
                     file="${:app*projectDir}/build.gradle.kts"
-                    startOffset="1500"
-                    endOffset="1533"/>
+                    startOffset="1576"
+                    endOffset="1609"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="61"
+            line="65"
             column="20"
-            startOffset="1500"
-            endLine="61"
+            startOffset="1576"
+            endLine="65"
             endColumn="53"
-            endOffset="1533"/>
+            endOffset="1609"/>
     </incident>
 
     <incident
@@ -401,18 +504,18 @@
                 priority="0">
                 <range
                     file="${:app*projectDir}/build.gradle.kts"
-                    startOffset="1554"
-                    endOffset="1588"/>
+                    startOffset="1630"
+                    endOffset="1664"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="62"
+            line="66"
             column="20"
-            startOffset="1554"
-            endLine="62"
+            startOffset="1630"
+            endLine="66"
             endColumn="54"
-            endOffset="1588"/>
+            endOffset="1664"/>
     </incident>
 
     <incident
@@ -420,139 +523,139 @@
         severity="warning"
         message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/ProfileFragment.java"
-            line="33"
-            column="36"
-            startOffset="1180"
-            endLine="33"
-            endColumn="77"
-            endOffset="1221"/>
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
+            line="108"
+            column="21"
+            startOffset="3666"
+            endLine="108"
+            endColumn="62"
+            endOffset="3707"/>
     </incident>
 
     <incident
         id="SetTextI18n"
         severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/ProfileFragment.java"
-            line="33"
-            column="36"
-            startOffset="1180"
-            endLine="33"
-            endColumn="49"
-            endOffset="1193"/>
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
+            line="109"
+            column="21"
+            startOffset="3730"
+            endLine="109"
+            endColumn="62"
+            endOffset="3771"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
+            line="110"
+            column="21"
+            startOffset="3794"
+            endLine="110"
+            endColumn="62"
+            endOffset="3835"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
+            line="111"
+            column="21"
+            startOffset="3858"
+            endLine="111"
+            endColumn="62"
+            endOffset="3899"/>
     </incident>
 
     <incident
         id="HardcodedText"
         severity="warning"
-        message="Hardcoded string &quot;Admin Dashboard&quot;, should use `@string` resource">
+        message="Hardcoded string &quot;A&quot;, should use `@string` resource">
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
-            line="11"
-            column="9"
-            startOffset="368"
-            endLine="11"
-            endColumn="39"
-            endOffset="398"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Placeholder cho /api/admin/stats va /api/admin/users&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
-            line="19"
-            column="9"
-            startOffset="619"
-            endLine="19"
-            endColumn="76"
-            endOffset="686"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Lich su thi&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_history.xml"
-            line="11"
-            column="9"
-            startOffset="368"
-            endLine="11"
-            endColumn="35"
-            endOffset="394"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Placeholder cho GET /api/exam/history&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_history.xml"
-            line="20"
-            column="9"
-            startOffset="655"
-            endLine="20"
-            endColumn="61"
-            endOffset="707"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Thi thu sat hach&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
-            line="12"
-            column="9"
-            startOffset="397"
-            endLine="12"
-            endColumn="40"
-            endOffset="428"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Sinh de ngau nhien&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_home.xml"
-            line="21"
-            column="9"
-            startOffset="689"
-            endLine="21"
-            endColumn="42"
-            endOffset="722"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Thong tin tai khoan&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_profile.xml"
-            line="12"
-            column="9"
-            startOffset="405"
-            endLine="12"
-            endColumn="43"
-            endOffset="439"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Dang xuat&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_profile.xml"
-            line="21"
-            column="9"
-            startOffset="694"
-            endLine="21"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_exam_taking.xml"
+            line="49"
+            column="17"
+            startOffset="1923"
+            endLine="49"
             endColumn="33"
-            endOffset="718"/>
+            endOffset="1939"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;B&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_exam_taking.xml"
+            line="56"
+            column="17"
+            startOffset="2174"
+            endLine="56"
+            endColumn="33"
+            endOffset="2190"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;C&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_exam_taking.xml"
+            line="63"
+            column="17"
+            startOffset="2425"
+            endLine="63"
+            endColumn="33"
+            endOffset="2441"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;D&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_exam_taking.xml"
+            line="70"
+            column="17"
+            startOffset="2676"
+            endLine="70"
+            endColumn="33"
+            endOffset="2692"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Danh sách dữ liệu&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
+            line="191"
+            column="17"
+            startOffset="9278"
+            endLine="191"
+            endColumn="49"
+            endOffset="9310"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;A&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_profile.xml"
+            line="33"
+            column="17"
+            startOffset="1348"
+            endLine="33"
+            endColumn="33"
+            endOffset="1364"/>
     </incident>
 
 </incidents>

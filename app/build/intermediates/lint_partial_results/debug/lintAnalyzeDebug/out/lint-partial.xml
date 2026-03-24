@@ -8,9 +8,41 @@
             </map>
     </map>
     <map id="UnusedResources">
+        <location id="R.color.divider"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="7"
+            column="12"
+            startOffset="258"
+            endLine="7"
+            endColumn="26"
+            endOffset="272"/>
+        <location id="R.color.error_background"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="10"
+            column="12"
+            startOffset="389"
+            endLine="10"
+            endColumn="35"
+            endOffset="412"/>
+        <location id="R.string.loading"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="16"
+            column="13"
+            startOffset="839"
+            endLine="16"
+            endColumn="27"
+            endOffset="853"/>
+        <location id="R.string.profile_greeting"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="36"
+            column="13"
+            startOffset="1922"
+            endLine="36"
+            endColumn="36"
+            endOffset="1945"/>
         <entry
             name="model"
-            string="color[surface_light(U),text_primary(U),brand_green(U),brand_dark(U),white(U)],id[tvTitle(U),tilEmail(U),etEmail(U),tilPassword(U),etPassword(U),btnLogin(U),fragmentContainer(U),bottomNav(U),tvHistoryHint(D),btnGenerateExam(U),tvUserInfo(U),btnLogout(U),nav_home(U),nav_history(U),nav_admin(U),nav_profile(U)],layout[activity_login(U),activity_main(U),fragment_admin(U),fragment_history(U),fragment_home(U),fragment_profile(U)],menu[bottom_nav_menu(U)],string[app_name(U),login_title(U),email_hint(U),password_hint(U),login_button(U),home(U),history(U),admin(U),profile(U),api_base_url(U)],style[Theme_MotorcycleTheory(U),Theme_MaterialComponents_DayNight_NoActionBar(R)];15^0^1d^1^5^1e^6^1f^20^8,16^c^1b,1b^21^22^23^24,26^27^2^3^4;;;"/>
+            string="anim[shake(U)],color[text_primary(U),error_red(U),surface_light(U),text_secondary(U),brand_green(U),white(U),danger_red(U),brand_dark(U),divider(D),error_background(D)],drawable[abc_ic_ab_back_material(R),abc_edit_text_material(R)],id[resultContentContainer(D),tvResultTitle(D),tvResultSummary(U),btnViewDetail(U),tvDetail(U),btnBackToHome(U),examContentContainer(D),tvQuestionIndex(U),tvQuestionContent(U),rgAnswers(U),rbA(U),rbB(U),rbC(U),rbD(U),tvErrorMessage(U),btnNextQuestion(U),loginContainer(D),tvTitle(D),tilEmail(U),etEmail(U),tilPassword(U),etPassword(U),btnLogin(U),btnSignup(U),pbLogin(U),fragmentContainer(U),bottomNav(U),toolbarRegister(U),registerContainer(D),tvRegisterTitle(D),tilUsername(U),etUsername(U),tilRegisterEmail(U),etRegisterEmail(U),tilRegisterPassword(U),etRegisterPassword(U),tilConfirmPassword(U),etConfirmPassword(U),btnCreateAccount(U),pbRegister(U),tvAdminHint(U),etTargetId(U),etPayload(U),btnRefreshDashboard(U),btnCreateUser(U),btnGetUserById(U),btnUpdateUser(U),btnDeleteUser(U),btnLoadQuestions(U),btnGetQuestionById(U),btnLoadImportantQuestions(U),btnCreateQuestion(U),btnUpdateQuestion(U),btnDeleteQuestion(U),btnAdminAllExams(U),rvAdminData(U),historyContainer(D),tvHistoryTitle(D),tvHistoryHint(U),btnGenerateExam(U),profileContainer(D),cardAvatar(D),tvAvatarInitial(U),tvDisplayName(U),tvRole(U),cardInfo(D),tvEmailLabel(D),tvEmailValue(U),btnLogout(U),nav_home(U),nav_history(U),nav_admin(U),nav_profile(U)],layout[activity_exam_result(U),activity_exam_taking(U),activity_login(U),activity_main(U),activity_register(U),fragment_admin(U),fragment_history(U),fragment_home(U),fragment_profile(U)],menu[bottom_nav_menu(U)],string[app_name(U),exam_result_title(U),view_exam_detail(U),back_to_home(U),exam_question_title(U),exam_next(U),login_title(U),login_subtitle(U),email_hint(U),password_hint(U),login_button(U),signup_button(U),signup_title(U),signup_subtitle(U),username_hint(U),confirm_password_hint(U),signup_submit(U),admin_title(U),admin_summary_placeholder(U),admin_input_id_hint(U),admin_input_payload_hint(U),admin_btn_refresh(U),admin_section_users(U),admin_btn_create_user(U),admin_btn_get_user(U),admin_btn_update_user(U),admin_btn_delete_user(U),admin_section_questions(U),admin_btn_load_questions(U),admin_btn_get_question(U),admin_btn_load_important(U),admin_btn_create_question(U),admin_btn_update_question(U),admin_btn_delete_question(U),admin_section_exams(U),admin_btn_all_exams(U),history_title(U),history_empty(U),home_title(U),home_generate_exam(U),profile_default_name(U),profile_email_label(U),logout(U),home(U),history(U),admin(U),profile(U),api_base_url(U),loading(D),exam_submit(U),home_generate_error(U),home_session_expired(U),home_server_error(U),profile_role_label(U),profile_greeting(D),history_not_logged_in(U),history_fetch_error(U),history_session_expired(U),history_total_format(U),history_item_format(U),error_required_email(U),error_invalid_email(U),error_required_password(U),error_password_min(U),error_required_username(U),error_username_min(U),error_required_confirm_password(U),error_password_not_match(U),error_network(U),error_unexpected(U),error_exam_data_invalid(U),error_question_read(U),error_answer_required(U),error_answer_save(U),error_submit_request(U),error_submit_failed(U),error_submit_invalid(U),exam_question_index(U),login_failed_prefix(U),login_failed_credentials(U),register_success(U),register_failed_prefix(U),register_failed_invalid(U),result_summary(U),result_pass(U),result_fail(U),result_yes(U),result_no(U),result_no_exam_id(U),result_fetch_failed(U),result_exam_not_found(U),result_no_questions(U),result_question_format(U),home_not_logged_in(U),home_exam_invalid(U),admin_no_permission(U),admin_stats_failed(U),admin_scores_failed(U),admin_users_failed(U),admin_enter_id(U),admin_invalid_id(U),admin_enter_payload(U),admin_invalid_payload(U),admin_stats_summary(U),admin_scores_empty(U),admin_scores_top(U),admin_users_empty(U),admin_users_top(U),admin_user_fetch_failed(U),admin_question_fetch_failed(U),admin_questions_fetch_failed(U),admin_important_fetch_failed(U),admin_exams_fetch_failed(U),admin_missing_field(U),admin_empty_field(U),admin_correct_answer_invalid(U),admin_no_questions(U),admin_no_important(U),admin_no_exams(U)],style[Theme_MotorcycleTheory(U),Widget_MaterialComponents_Button_OutlinedButton(R),ThemeOverlay_MaterialComponents_ActionBar(R),Theme_MaterialComponents_DayNight_NoActionBar(R)];56^61^1^62^63,57^64^1^2^65,58^3^66^1^67^4^68^69^6a^6b^d8,59^27^5f,5a^d9^b^6c^1^28^6d^4^6e^68^69^6f^70,5b^71^1^72^4^c^73^74^75^76^77^78^79^7a^7b^7c^7d^7e^7f^80^81^82^83,5c^84^1^85^4,5d^86^1^87,5e^5^6^88^1^4^89^8a^7,5f^8b^8c^8d^8e,d7^da^5^8^6;;;"/>
     </map>
 
 </incidents>
