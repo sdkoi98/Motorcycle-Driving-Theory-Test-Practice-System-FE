@@ -4,28 +4,112 @@
         "source": "com.example.motorcycletheory.app-main-34:/layout/activity_login.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-debug-32:/layout_fragment_home.xml.flat",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_home.xml"
+        "merged": "com.example.motorcycletheory.app-debug-32:/drawable_circle_avatar.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/drawable/circle_avatar.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-debug-32:/layout_activity_register.xml.flat",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/activity_register.xml"
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_item_history.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/item_history.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-debug-32:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.example.motorcycletheory.app-main-34:/menu/bottom_nav_menu.xml"
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_admin_tab_exams.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/admin_tab_exams.xml"
     },
     {
         "merged": "com.example.motorcycletheory.app-debug-32:/layout_activity_main.xml.flat",
         "source": "com.example.motorcycletheory.app-main-34:/layout/activity_main.xml"
     },
     {
+        "merged": "com.example.motorcycletheory.app-debug-32:/drawable_border_view_content.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/drawable/border_view_content.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_activity_exam_taking.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/activity_exam_taking.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_admin_tab_questions.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/admin_tab_questions.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/drawable_badge_important.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/drawable/badge_important.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/drawable_badge_fail.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/drawable/badge_fail.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_activity_register.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/drawable_badge_role.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/drawable/badge_role.xml"
+    },
+    {
         "merged": "com.example.motorcycletheory.app-debug-32:/layout_fragment_profile.xml.flat",
         "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_profile.xml"
     },
     {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_dialog_user.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/dialog_user.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_fragment_admin.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_admin.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_item_admin_question.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/item_admin_question.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_dialog_confirm_delete.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/dialog_confirm_delete.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_fragment_home.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/drawable_badge_category.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/drawable/badge_category.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_admin_tab_users.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/admin_tab_users.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_dialog_question.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/dialog_question.xml"
+    },
+    {
         "merged": "com.example.motorcycletheory.app-debug-32:/anim_shake.xml.flat",
         "source": "com.example.motorcycletheory.app-main-34:/anim/shake.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/drawable_badge_pass.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/drawable/badge_pass.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_dialog_view_question.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/dialog_view_question.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_item_admin_exam.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/item_admin_exam.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/layout_item_admin_user.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/layout/item_admin_user.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-32:/drawable_badge_answer.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-34:/drawable/badge_answer.xml"
     },
     {
         "merged": "com.example.motorcycletheory.app-debug-32:/layout_activity_exam_result.xml.flat",
@@ -34,13 +118,5 @@
     {
         "merged": "com.example.motorcycletheory.app-debug-32:/layout_fragment_history.xml.flat",
         "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_history.xml"
-    },
-    {
-        "merged": "com.example.motorcycletheory.app-debug-32:/layout_fragment_admin.xml.flat",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/fragment_admin.xml"
-    },
-    {
-        "merged": "com.example.motorcycletheory.app-debug-32:/layout_activity_exam_taking.xml.flat",
-        "source": "com.example.motorcycletheory.app-main-34:/layout/activity_exam_taking.xml"
     }
 ]

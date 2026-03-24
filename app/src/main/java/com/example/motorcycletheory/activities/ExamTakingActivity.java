@@ -102,7 +102,8 @@ public class ExamTakingActivity extends AppCompatActivity {
         hideError();
 
         int questionId = question.optInt("questionId", -1);
-        tvQuestionIndex.setText(getString(R.string.exam_question_index, currentIndex + 1, questions.length(), questionId));
+        
+        tvQuestionIndex.setText(getString(R.string.exam_question_index, currentIndex + 1, questions.length()));
         tvQuestionContent.setText(question.optString("content", ""));
 
         rbA.setText("A. " + question.optString("answerA", ""));

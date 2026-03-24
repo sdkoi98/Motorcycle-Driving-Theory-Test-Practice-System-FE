@@ -9,21 +9,27 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.volley.Request;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.motorcycletheory.R;
+import com.example.motorcycletheory.adapters.HistoryAdapter;
 import com.example.motorcycletheory.databinding.FragmentHistoryBinding;
+import com.example.motorcycletheory.models.ExamHistory;
 import com.example.motorcycletheory.network.ApiClient;
 import com.example.motorcycletheory.utils.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class HistoryFragment extends Fragment {
     private FragmentHistoryBinding binding;
+    private HistoryAdapter adapter;
 
     @Nullable
     @Override
@@ -36,13 +42,19 @@ public class HistoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        
+        // Setup RecyclerView
+        adapter = new HistoryAdapter();
+        binding.rvHistory.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvHistory.setAdapter(adapter);
+        
         loadHistory();
     }
 
     private void loadHistory() {
         SessionManager sessionManager = new SessionManager(requireContext());
         if (!sessionManager.isLoggedIn()) {
-            binding.tvHistoryHint.setText(getString(R.string.history_not_logged_in));
+            showEmptyState(getString(R.string.history_not_logged_in));
             return;
         }
 
@@ -53,13 +65,19 @@ public class HistoryFragment extends Fragment {
                 Request.Method.GET,
                 url,
                 null,
-                response -> binding.tvHistoryHint.setText(formatHistory(response)),
+                response -> {
+                    if (response.length() == 0) {
+                        showEmptyState(getString(R.string.history_empty));
+                    } else {
+                        showHistoryList(response);
+                    }
+                },
                 error -> {
                     String msg = getString(R.string.history_fetch_error);
                     if (error.networkResponse != null && error.networkResponse.statusCode == 401) {
                         msg = getString(R.string.history_session_expired);
                     }
-                    binding.tvHistoryHint.setText(msg);
+                    showEmptyState(msg);
                     Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show();
                 }
         ) {
@@ -72,13 +90,17 @@ public class HistoryFragment extends Fragment {
         apiClient.getRequestQueue().add(request);
     }
 
-    private String formatHistory(JSONArray data) {
-        if (data.length() == 0) {
-            return getString(R.string.history_empty);
-        }
+    private void showEmptyState(String message) {
+        binding.tvHistoryHint.setText(message);
+        binding.tvHistoryHint.setVisibility(View.VISIBLE);
+        binding.rvHistory.setVisibility(View.GONE);
+    }
 
-        StringBuilder builder = new StringBuilder();
-        builder.append(getString(R.string.history_total_format, data.length())).append("\n\n");
+    private void showHistoryList(JSONArray data) {
+        binding.tvHistoryHint.setVisibility(View.GONE);
+        binding.rvHistory.setVisibility(View.VISIBLE);
+        
+        List<ExamHistory> historyList = new ArrayList<>();
         for (int i = 0; i < data.length(); i++) {
             JSONObject item = data.optJSONObject(i);
             if (item == null) {
@@ -86,11 +108,15 @@ public class HistoryFragment extends Fragment {
             }
             int examId = item.optInt("examId", -1);
             int score = item.optInt("score", 0);
+            int totalQuestions = item.optInt("totalQuestions", 25);
             boolean isPassed = item.optBoolean("isPassed", false);
-            String status = isPassed ? "Đậu" : "Trượt";
-            builder.append(getString(R.string.history_item_format, examId, score, status)).append("\n");
+            String date = item.optString("completedAt", "");
+            int duration = 15; // Mặc định 15 phút, có thể lấy từ API nếu có
+            
+            historyList.add(new ExamHistory(examId, score, totalQuestions, isPassed, date, duration));
         }
-        return builder.toString();
+        
+        adapter.submitList(historyList);
     }
 
     @Override
