@@ -2974,6 +2974,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_arrow_back_black_24
+drawable ic_back
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -3184,6 +3185,7 @@ id cache_measures
 id callMeasure
 id cancel_button
 id cardAvatar
+id cardDetail
 id cardInfo
 id carryVelocity
 id cbIsImportant
@@ -3453,6 +3455,7 @@ id parent_matrix
 id password_toggle
 id path
 id pathRelative
+id pbHistoryLoading
 id pbLogin
 id pbRegister
 id peekHeight
@@ -3475,7 +3478,6 @@ id rbD
 id rectangles
 id registerContainer
 id report_drawn
-id resultContentContainer
 id reverseSawtooth
 id rgAnswers
 id right
@@ -3625,7 +3627,7 @@ id tvExamNumber
 id tvExamScoreAdmin
 id tvExamStatusAdmin
 id tvExamUserId
-id tvHistoryHint
+id tvHistoryEmpty
 id tvHistoryTitle
 id tvImportantBadge
 id tvQuestionContent
@@ -3633,7 +3635,6 @@ id tvQuestionId
 id tvQuestionIndex
 id tvRegisterTitle
 id tvResultSummary
-id tvResultTitle
 id tvRole
 id tvScore
 id tvStatus
@@ -4955,6 +4956,7 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText
 style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
+style ToolbarTitle
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

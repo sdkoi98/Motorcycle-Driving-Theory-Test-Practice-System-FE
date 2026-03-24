@@ -4,6 +4,7 @@ package com.example.motorcycletheory.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,20 +22,24 @@ public final class FragmentHistoryBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ProgressBar pbHistoryLoading;
+
+  @NonNull
   public final RecyclerView rvHistory;
 
   @NonNull
-  public final TextView tvHistoryHint;
+  public final TextView tvHistoryEmpty;
 
   @NonNull
   public final TextView tvHistoryTitle;
 
   private FragmentHistoryBinding(@NonNull ConstraintLayout rootView,
-      @NonNull RecyclerView rvHistory, @NonNull TextView tvHistoryHint,
-      @NonNull TextView tvHistoryTitle) {
+      @NonNull ProgressBar pbHistoryLoading, @NonNull RecyclerView rvHistory,
+      @NonNull TextView tvHistoryEmpty, @NonNull TextView tvHistoryTitle) {
     this.rootView = rootView;
+    this.pbHistoryLoading = pbHistoryLoading;
     this.rvHistory = rvHistory;
-    this.tvHistoryHint = tvHistoryHint;
+    this.tvHistoryEmpty = tvHistoryEmpty;
     this.tvHistoryTitle = tvHistoryTitle;
   }
 
@@ -65,15 +70,21 @@ public final class FragmentHistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.pbHistoryLoading;
+      ProgressBar pbHistoryLoading = ViewBindings.findChildViewById(rootView, id);
+      if (pbHistoryLoading == null) {
+        break missingId;
+      }
+
       id = R.id.rvHistory;
       RecyclerView rvHistory = ViewBindings.findChildViewById(rootView, id);
       if (rvHistory == null) {
         break missingId;
       }
 
-      id = R.id.tvHistoryHint;
-      TextView tvHistoryHint = ViewBindings.findChildViewById(rootView, id);
-      if (tvHistoryHint == null) {
+      id = R.id.tvHistoryEmpty;
+      TextView tvHistoryEmpty = ViewBindings.findChildViewById(rootView, id);
+      if (tvHistoryEmpty == null) {
         break missingId;
       }
 
@@ -83,8 +94,8 @@ public final class FragmentHistoryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHistoryBinding((ConstraintLayout) rootView, rvHistory, tvHistoryHint,
-          tvHistoryTitle);
+      return new FragmentHistoryBinding((ConstraintLayout) rootView, pbHistoryLoading, rvHistory,
+          tvHistoryEmpty, tvHistoryTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

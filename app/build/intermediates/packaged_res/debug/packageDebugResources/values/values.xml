@@ -187,4 +187,7 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="fontFamily">sans-serif</item>
     </style>
+    <style name="ToolbarTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

@@ -4,22 +4,27 @@ package com.example.motorcycletheory.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.motorcycletheory.R;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityExamResultBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CoordinatorLayout rootView;
+
+  @NonNull
+  public final AppBarLayout appBarLayout;
 
   @NonNull
   public final MaterialButton btnBackToHome;
@@ -28,7 +33,10 @@ public final class ActivityExamResultBinding implements ViewBinding {
   public final MaterialButton btnViewDetail;
 
   @NonNull
-  public final LinearLayout resultContentContainer;
+  public final MaterialCardView cardDetail;
+
+  @NonNull
+  public final MaterialToolbar toolbar;
 
   @NonNull
   public final TextView tvDetail;
@@ -36,25 +44,24 @@ public final class ActivityExamResultBinding implements ViewBinding {
   @NonNull
   public final TextView tvResultSummary;
 
-  @NonNull
-  public final TextView tvResultTitle;
-
-  private ActivityExamResultBinding(@NonNull ConstraintLayout rootView,
-      @NonNull MaterialButton btnBackToHome, @NonNull MaterialButton btnViewDetail,
-      @NonNull LinearLayout resultContentContainer, @NonNull TextView tvDetail,
-      @NonNull TextView tvResultSummary, @NonNull TextView tvResultTitle) {
+  private ActivityExamResultBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull AppBarLayout appBarLayout, @NonNull MaterialButton btnBackToHome,
+      @NonNull MaterialButton btnViewDetail, @NonNull MaterialCardView cardDetail,
+      @NonNull MaterialToolbar toolbar, @NonNull TextView tvDetail,
+      @NonNull TextView tvResultSummary) {
     this.rootView = rootView;
+    this.appBarLayout = appBarLayout;
     this.btnBackToHome = btnBackToHome;
     this.btnViewDetail = btnViewDetail;
-    this.resultContentContainer = resultContentContainer;
+    this.cardDetail = cardDetail;
+    this.toolbar = toolbar;
     this.tvDetail = tvDetail;
     this.tvResultSummary = tvResultSummary;
-    this.tvResultTitle = tvResultTitle;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -79,6 +86,12 @@ public final class ActivityExamResultBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.appBarLayout;
+      AppBarLayout appBarLayout = ViewBindings.findChildViewById(rootView, id);
+      if (appBarLayout == null) {
+        break missingId;
+      }
+
       id = R.id.btnBackToHome;
       MaterialButton btnBackToHome = ViewBindings.findChildViewById(rootView, id);
       if (btnBackToHome == null) {
@@ -91,9 +104,15 @@ public final class ActivityExamResultBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.resultContentContainer;
-      LinearLayout resultContentContainer = ViewBindings.findChildViewById(rootView, id);
-      if (resultContentContainer == null) {
+      id = R.id.cardDetail;
+      MaterialCardView cardDetail = ViewBindings.findChildViewById(rootView, id);
+      if (cardDetail == null) {
+        break missingId;
+      }
+
+      id = R.id.toolbar;
+      MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
+      if (toolbar == null) {
         break missingId;
       }
 
@@ -109,14 +128,8 @@ public final class ActivityExamResultBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvResultTitle;
-      TextView tvResultTitle = ViewBindings.findChildViewById(rootView, id);
-      if (tvResultTitle == null) {
-        break missingId;
-      }
-
-      return new ActivityExamResultBinding((ConstraintLayout) rootView, btnBackToHome,
-          btnViewDetail, resultContentContainer, tvDetail, tvResultSummary, tvResultTitle);
+      return new ActivityExamResultBinding((CoordinatorLayout) rootView, appBarLayout,
+          btnBackToHome, btnViewDetail, cardDetail, toolbar, tvDetail, tvResultSummary);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

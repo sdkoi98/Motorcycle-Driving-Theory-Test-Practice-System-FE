@@ -80,7 +80,7 @@ public class AdminQuestionAdapter extends RecyclerView.Adapter<AdminQuestionAdap
             tvQuestionId.setText("Câu #" + question.getQuestionId());
             tvQuestionContent.setText(question.getContent());
             tvCorrectAnswer.setText("Đáp án: " + question.getCorrectAnswer());
-            tvCategory.setText("Category: " + question.getCategoryId());
+            tvCategory.setText("Danh mục: " + question.getCategoryId());
 
             if (question.isImportant()) {
                 tvImportantBadge.setVisibility(View.VISIBLE);

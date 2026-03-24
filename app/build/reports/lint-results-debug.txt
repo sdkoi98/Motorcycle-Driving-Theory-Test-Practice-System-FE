@@ -1,3 +1,6 @@
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\models\AdminUser.java:50: Warning: Implicitly using the default locale is a common source of bugs: Use toUpperCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+            return username.substring(0, 1).toUpperCase();
+                                            ~~~~~~~~~~~
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\HomeFragment.java:83: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
                             if (trimmed.toLowerCase().contains("nullreferenceexception")) {
                                         ~~~~~~~~~~~
@@ -63,6 +66,20 @@ constraintlayout = "2.1.4"
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_user.xml:84: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+                android:tint="@color/brand_green" />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_user.xml:94: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+                android:tint="@color/error_red" />
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseAppTint":
+   ImageView or ImageButton uses android:tint instead of app:tint
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.appcompat
+   Feedback: https://issuetracker.google.com/issues/new?component=460343
+
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:8: Warning: The attribute android:allowBackup is deprecated from Android 12 and the default allows backup [DataExtractionRules]
         android:allowBackup="true"
                              ~~~~
@@ -83,6 +100,18 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
    https://developer.android.com/about/versions/12/backup-restore#xml-changes
    https://goo.gle/DataExtractionRules
 
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminExamAdapter.java:34: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminQuestionAdapter.java:35: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminUserAdapter.java:34: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\HistoryAdapter.java:25: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\utils\SimpleTextAdapter.java:20: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
         notifyDataSetChanged();
         ~~~~~~~~~~~~~~~~~~~~~~
@@ -108,6 +137,9 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
 
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\activity_login.xml:6: Warning: Possible overdraw: Root element paints background @color/surface_light with a theme that also paints a background (inferred theme is @style/Theme.MotorcycleTheory) [Overdraw]
     android:background="@color/surface_light"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_history.xml:6: Warning: Possible overdraw: Root element paints background @color/surface_light with a theme that also paints a background (inferred theme is @style/Theme.MotorcycleTheory) [Overdraw]
+    android:background="@color/surface_light">
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "Overdraw":
@@ -143,6 +175,126 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:36: Warning: The resource R.string.profile_greeting appears to be unused [UnusedResources]
     <string name="profile_greeting">Xin chào, %1$s</string>
             ~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:43: Warning: The resource R.string.history_total_format appears to be unused [UnusedResources]
+    <string name="history_total_format">Tổng số bài thi: %1$d</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:44: Warning: The resource R.string.history_item_format appears to be unused [UnusedResources]
+    <string name="history_item_format">#%1$d - Điểm: %2$d - %3$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:47: Warning: The resource R.string.admin_summary_placeholder appears to be unused [UnusedResources]
+    <string name="admin_summary_placeholder">Chưa có dữ liệu. Hãy bấm Refresh để tải thống kê.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:48: Warning: The resource R.string.admin_input_id_hint appears to be unused [UnusedResources]
+    <string name="admin_input_id_hint">Nhập ID (userId/questionId)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:49: Warning: The resource R.string.admin_input_payload_hint appears to be unused [UnusedResources]
+    <string name="admin_input_payload_hint">Nhập JSON payload cho create/update</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:50: Warning: The resource R.string.admin_section_users appears to be unused [UnusedResources]
+    <string name="admin_section_users">Người dùng</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:51: Warning: The resource R.string.admin_section_questions appears to be unused [UnusedResources]
+    <string name="admin_section_questions">Câu hỏi</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:52: Warning: The resource R.string.admin_section_exams appears to be unused [UnusedResources]
+    <string name="admin_section_exams">Đề thi</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:53: Warning: The resource R.string.admin_btn_refresh appears to be unused [UnusedResources]
+    <string name="admin_btn_refresh">Làm mới thống kê</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:54: Warning: The resource R.string.admin_btn_all_exams appears to be unused [UnusedResources]
+    <string name="admin_btn_all_exams">Tải tất cả đề thi</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:55: Warning: The resource R.string.admin_btn_create_user appears to be unused [UnusedResources]
+    <string name="admin_btn_create_user">Tạo user (payload)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:56: Warning: The resource R.string.admin_btn_get_user appears to be unused [UnusedResources]
+    <string name="admin_btn_get_user">Lấy user theo ID</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:57: Warning: The resource R.string.admin_btn_update_user appears to be unused [UnusedResources]
+    <string name="admin_btn_update_user">Cập nhật user + payload</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:58: Warning: The resource R.string.admin_btn_delete_user appears to be unused [UnusedResources]
+    <string name="admin_btn_delete_user">Xóa user theo ID</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:59: Warning: The resource R.string.admin_btn_load_questions appears to be unused [UnusedResources]
+    <string name="admin_btn_load_questions">Tải câu hỏi trang 1</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:60: Warning: The resource R.string.admin_btn_get_question appears to be unused [UnusedResources]
+    <string name="admin_btn_get_question">Lấy câu hỏi theo ID</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:61: Warning: The resource R.string.admin_btn_load_important appears to be unused [UnusedResources]
+    <string name="admin_btn_load_important">Tải câu hỏi điểm liệt</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:62: Warning: The resource R.string.admin_btn_create_question appears to be unused [UnusedResources]
+    <string name="admin_btn_create_question">Tạo câu hỏi (payload)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:63: Warning: The resource R.string.admin_btn_update_question appears to be unused [UnusedResources]
+    <string name="admin_btn_update_question">Cập nhật câu hỏi + payload</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:64: Warning: The resource R.string.admin_btn_delete_question appears to be unused [UnusedResources]
+    <string name="admin_btn_delete_question">Xóa câu hỏi theo ID</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:86: Warning: The resource R.string.history_item_format_new appears to be unused [UnusedResources]
+    <string name="history_item_format_new">Bài thi %1$d • Điểm: %2$d/%3$d • %4$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:116: Warning: The resource R.string.admin_scores_failed appears to be unused [UnusedResources]
+    <string name="admin_scores_failed">Không tải được /api/admin/user-scores</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:118: Warning: The resource R.string.admin_enter_id appears to be unused [UnusedResources]
+    <string name="admin_enter_id">Nhập ID trước</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:119: Warning: The resource R.string.admin_invalid_id appears to be unused [UnusedResources]
+    <string name="admin_invalid_id">ID không hợp lệ</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:120: Warning: The resource R.string.admin_enter_payload appears to be unused [UnusedResources]
+    <string name="admin_enter_payload">Nhập JSON payload trước</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:121: Warning: The resource R.string.admin_invalid_payload appears to be unused [UnusedResources]
+    <string name="admin_invalid_payload">JSON payload không hợp lệ</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:122: Warning: The resource R.string.admin_stats_summary appears to be unused [UnusedResources]
+    <string name="admin_stats_summary">Thống kê:\n- Users: %1$d\n- Questions: %2$d\n- Important: %3$d\n- Exams: %4$d</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:123: Warning: The resource R.string.admin_scores_empty appears to be unused [UnusedResources]
+    <string name="admin_scores_empty">Bảng điểm: Chưa có dữ liệu</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:124: Warning: The resource R.string.admin_scores_top appears to be unused [UnusedResources]
+    <string name="admin_scores_top">Bảng điểm (top 5):</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:125: Warning: The resource R.string.admin_users_empty appears to be unused [UnusedResources]
+    <string name="admin_users_empty">Users: Chưa có dữ liệu</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:126: Warning: The resource R.string.admin_users_top appears to be unused [UnusedResources]
+    <string name="admin_users_top">Users (top 5):</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:127: Warning: The resource R.string.admin_user_fetch_failed appears to be unused [UnusedResources]
+    <string name="admin_user_fetch_failed">Không tải được user #%1$d (status=%2$d)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:128: Warning: The resource R.string.admin_question_fetch_failed appears to be unused [UnusedResources]
+    <string name="admin_question_fetch_failed">Không tải được question #%1$d (status=%2$d)</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:130: Warning: The resource R.string.admin_important_fetch_failed appears to be unused [UnusedResources]
+    <string name="admin_important_fetch_failed">Không tải được /api/question/important</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:132: Warning: The resource R.string.admin_missing_field appears to be unused [UnusedResources]
+    <string name="admin_missing_field">Thiếu trường %1$s: %2$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:133: Warning: The resource R.string.admin_empty_field appears to be unused [UnusedResources]
+    <string name="admin_empty_field">Trường rỗng: %1$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:134: Warning: The resource R.string.admin_correct_answer_invalid appears to be unused [UnusedResources]
+    <string name="admin_correct_answer_invalid">correctAnswer phải là A/B/C/D</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:136: Warning: The resource R.string.admin_no_important appears to be unused [UnusedResources]
+    <string name="admin_no_important">Không có câu điểm liệt</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:186: Warning: The resource R.string.history_date_format appears to be unused [UnusedResources]
+    <string name="history_date_format">Ngày: %1$s</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\values\strings.xml:187: Warning: The resource R.string.history_score_format appears to be unused [UnusedResources]
+    <string name="history_score_format">Điểm: %1$d/%2$d</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "UnusedResources":
    Unused resources make applications larger and slow down builds.
@@ -188,33 +340,6 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
 
    https://en.wikipedia.org/wiki/Ellipsis
 
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:61: Warning: Missing autofillHints attribute [Autofill]
-                    <EditText
-                     ~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:70: Warning: Missing autofillHints attribute [Autofill]
-                    <EditText
-                     ~~~~~~~~
-
-   Explanation for issues of type "Autofill":
-   Specify an autofillHints attribute when targeting SDK version 26 or higher
-   or explicitly specify that the view is not important for autofill. Your app
-   can help an autofill service classify the data correctly by providing the
-   meaning of each view that could be autofillable, such as views representing
-   usernames, passwords, credit card fields, email addresses, etc.
-
-   The hints can have any value, but it is recommended to use predefined
-   values like 'username' for a username or 'creditCardNumber' for a credit
-   card number. For a list of all predefined autofill hint constants, see the
-   AUTOFILL_HINT_ constants in the View reference at
-   https://developer.android.com/reference/android/view/View.html.
-
-   You can mark a view unimportant for autofill by specifying an
-   importantForAutofill attribute on that view or a parent view. See
-   https://developer.android.com/reference/android/view/View.html#setImportant
-   ForAutofill(int).
-
-   https://developer.android.com/guide/topics/text/autofill.html
-
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\build.gradle.kts:63: Warning: Use version catalog instead [UseTomlInstead]
     implementation("androidx.fragment:fragment:1.7.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -234,18 +359,111 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
    declarations outside of the TOML file and suggests moving them (and in the
    IDE, provides a quickfix to performing the operation automatically).
 
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:108: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminExamAdapter.java:77: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvExamIdAdmin.setText("Bài thi #" + exam.getExamId());
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminExamAdapter.java:77: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            tvExamIdAdmin.setText("Bài thi #" + exam.getExamId());
+                                  ~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminExamAdapter.java:78: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvExamUserId.setText("User #" + exam.getUserId());
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminExamAdapter.java:78: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            tvExamUserId.setText("User #" + exam.getUserId());
+                                 ~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminExamAdapter.java:79: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvExamScoreAdmin.setText(exam.getScore() + "/" + exam.getTotalQuestions());
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminExamAdapter.java:80: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvExamDateAdmin.setText("Ngày: " + exam.getExamDate());
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminExamAdapter.java:80: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            tvExamDateAdmin.setText("Ngày: " + exam.getExamDate());
+                                    ~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminExamsTabFragment.java:119: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa bài thi #" + exam.getExamId() + " không?");
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminExamsTabFragment.java:119: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa bài thi #" + exam.getExamId() + " không?");
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminExamsTabFragment.java:119: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa bài thi #" + exam.getExamId() + " không?");
+                                                                                                         ~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminQuestionAdapter.java:80: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvQuestionId.setText("Câu #" + question.getQuestionId());
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminQuestionAdapter.java:82: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvCorrectAnswer.setText("Đáp án: " + question.getCorrectAnswer());
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminQuestionAdapter.java:83: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvCategory.setText("Category: " + question.getCategoryId());
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\AdminQuestionAdapter.java:83: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            tvCategory.setText("Category: " + question.getCategoryId());
+                               ~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminQuestionsTabFragment.java:245: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        dialogBinding.tvViewAnswerA.setText("A. " + question.getAnswerA());
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminQuestionsTabFragment.java:246: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        dialogBinding.tvViewAnswerB.setText("B. " + question.getAnswerB());
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminQuestionsTabFragment.java:247: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        dialogBinding.tvViewAnswerC.setText("C. " + question.getAnswerC());
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminQuestionsTabFragment.java:248: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        dialogBinding.tvViewAnswerD.setText("D. " + question.getAnswerD());
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminQuestionsTabFragment.java:270: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa câu hỏi #" + question.getQuestionId() + " không?");
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminQuestionsTabFragment.java:270: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa câu hỏi #" + question.getQuestionId() + " không?");
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminQuestionsTabFragment.java:270: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa câu hỏi #" + question.getQuestionId() + " không?");
+                                                                                                                 ~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminUsersTabFragment.java:230: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa người dùng \"" + user.getUsername() + "\" không?");
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminUsersTabFragment.java:230: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa người dùng \"" + user.getUsername() + "\" không?");
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\fragments\AdminUsersTabFragment.java:230: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        dialogBinding.tvDeleteMessage.setText("Bạn có chắc chắn muốn xóa người dùng \"" + user.getUsername() + "\" không?");
+                                                                                                               ~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:109: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         rbA.setText("A. " + question.optString("answerA", ""));
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:109: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:110: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         rbB.setText("B. " + question.optString("answerB", ""));
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:110: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:111: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         rbC.setText("C. " + question.optString("answerC", ""));
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:111: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\activities\ExamTakingActivity.java:112: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
         rbD.setText("D. " + question.optString("answerD", ""));
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\HistoryAdapter.java:66: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvExamNumber.setText("Bài thi #" + position);
+                                 ~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\HistoryAdapter.java:66: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            tvExamNumber.setText("Bài thi #" + position);
+                                 ~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\HistoryAdapter.java:67: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvScore.setText(item.getScore() + "/" + item.getTotalQuestions());
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\HistoryAdapter.java:74: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                tvStatus.setText("TRƯỢT");
+                                 ~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\HistoryAdapter.java:78: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvTotalQuestions.setText(item.getTotalQuestions() + " câu hỏi");
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\HistoryAdapter.java:88: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            tvDuration.setText("⏱ " + item.getDuration() + " phút");
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\java\com\example\motorcycletheory\adapters\HistoryAdapter.java:88: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            tvDuration.setText("⏱ " + item.getDuration() + " phút");
+                                                           ~~~~~~~
 
    Explanation for issues of type "SetTextI18n":
    When calling TextView#setText
@@ -272,12 +490,102 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\activity_exam_taking.xml:70: Warning: Hardcoded string "D", should use @string resource [HardcodedText]
                 android:text="D" />
                 ~~~~~~~~~~~~~~~~
-D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:191: Warning: Hardcoded string "Danh sách dữ liệu", should use @string resource [HardcodedText]
-                android:text="Danh sách dữ liệu"
-                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\dialog_view_question.xml:41: Warning: Hardcoded string "1", should use @string resource [HardcodedText]
+                android:text="1"
+                ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\dialog_view_question.xml:64: Warning: Hardcoded string "Nội dung câu hỏi", should use @string resource [HardcodedText]
+            android:text="Nội dung câu hỏi"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\dialog_view_question.xml:82: Warning: Hardcoded string "A. Đáp án A", should use @string resource [HardcodedText]
+            android:text="A. Đáp án A"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\dialog_view_question.xml:91: Warning: Hardcoded string "B. Đáp án B", should use @string resource [HardcodedText]
+            android:text="B. Đáp án B"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\dialog_view_question.xml:100: Warning: Hardcoded string "C. Đáp án C", should use @string resource [HardcodedText]
+            android:text="C. Đáp án C"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\dialog_view_question.xml:109: Warning: Hardcoded string "D. Đáp án D", should use @string resource [HardcodedText]
+            android:text="D. Đáp án D"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\dialog_view_question.xml:135: Warning: Hardcoded string "A", should use @string resource [HardcodedText]
+                android:text="A"
+                ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\dialog_view_question.xml:161: Warning: Hardcoded string "1", should use @string resource [HardcodedText]
+                android:text="1"
+                ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:71: Warning: Hardcoded string "0", should use @string resource [HardcodedText]
+                            android:text="0"
+                            ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:108: Warning: Hardcoded string "0", should use @string resource [HardcodedText]
+                            android:text="0"
+                            ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:145: Warning: Hardcoded string "0", should use @string resource [HardcodedText]
+                            android:text="0"
+                            ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_admin.xml:182: Warning: Hardcoded string "0", should use @string resource [HardcodedText]
+                            android:text="0"
+                            ~~~~~~~~~~~~~~~~
 D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\fragment_profile.xml:33: Warning: Hardcoded string "A", should use @string resource [HardcodedText]
                 android:text="A"
                 ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_exam.xml:28: Warning: Hardcoded string "Bài thi #1", should use @string resource [HardcodedText]
+                android:text="Bài thi #1"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_exam.xml:66: Warning: Hardcoded string "User #1", should use @string resource [HardcodedText]
+                android:text="User #1"
+                ~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_exam.xml:92: Warning: Hardcoded string "0/0", should use @string resource [HardcodedText]
+                android:text="0/0"
+                ~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_exam.xml:105: Warning: Hardcoded string "Ngày: 01/01/2026", should use @string resource [HardcodedText]
+            android:text="Ngày: 01/01/2026"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_question.xml:28: Warning: Hardcoded string "Câu #1", should use @string resource [HardcodedText]
+                android:text="Câu #1"
+                ~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_question.xml:54: Warning: Hardcoded string "Nội dung câu hỏi...", should use @string resource [HardcodedText]
+            android:text="Nội dung câu hỏi..."
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_question.xml:74: Warning: Hardcoded string "Đáp án: A", should use @string resource [HardcodedText]
+                android:text="Đáp án: A"
+                ~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_question.xml:87: Warning: Hardcoded string "Category: 1", should use @string resource [HardcodedText]
+                android:text="Category: 1"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_user.xml:24: Warning: Hardcoded string "U", should use @string resource [HardcodedText]
+            android:text="U"
+            ~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_user.xml:41: Warning: Hardcoded string "Username", should use @string resource [HardcodedText]
+                android:text="Username"
+                ~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_user.xml:51: Warning: Hardcoded string "email@example.com", should use @string resource [HardcodedText]
+                android:text="email@example.com"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_admin_user.xml:63: Warning: Hardcoded string "User", should use @string resource [HardcodedText]
+                android:text="User"
+                ~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_history.xml:29: Warning: Hardcoded string "Bài thi #1", should use @string resource [HardcodedText]
+                android:text="Bài thi #1"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_history.xml:38: Warning: Hardcoded string "24/03/2026", should use @string resource [HardcodedText]
+                android:text="24/03/2026"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_history.xml:54: Warning: Hardcoded string "Điểm: ", should use @string resource [HardcodedText]
+                android:text="Điểm: "
+                ~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_history.xml:62: Warning: Hardcoded string "23/25", should use @string resource [HardcodedText]
+                android:text="23/25"
+                ~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_history.xml:80: Warning: Hardcoded string "ĐẬU", should use @string resource [HardcodedText]
+                android:text="ĐẬU"
+                ~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_history.xml:98: Warning: Hardcoded string "25 câu hỏi", should use @string resource [HardcodedText]
+                android:text="25 câu hỏi"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\res\layout\item_history.xml:106: Warning: Hardcoded string "⏱ 15 phút", should use @string resource [HardcodedText]
+                android:text="⏱ 15 phút"
+                ~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "HardcodedText":
    Hardcoding text attributes directly in layout files is bad for several
@@ -293,4 +601,4 @@ D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app
    There are quickfixes to automatically extract this hardcoded string into a
    resource lookup.
 
-0 errors, 36 warnings
+2 errors, 141 warnings

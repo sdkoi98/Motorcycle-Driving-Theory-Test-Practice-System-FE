@@ -91,13 +91,13 @@ public class HistoryFragment extends Fragment {
     }
 
     private void showEmptyState(String message) {
-        binding.tvHistoryHint.setText(message);
-        binding.tvHistoryHint.setVisibility(View.VISIBLE);
+        binding.tvHistoryEmpty.setText(message);
+        binding.tvHistoryEmpty.setVisibility(View.VISIBLE);
         binding.rvHistory.setVisibility(View.GONE);
     }
 
     private void showHistoryList(JSONArray data) {
-        binding.tvHistoryHint.setVisibility(View.GONE);
+        binding.tvHistoryEmpty.setVisibility(View.GONE);
         binding.rvHistory.setVisibility(View.VISIBLE);
         
         List<ExamHistory> historyList = new ArrayList<>();

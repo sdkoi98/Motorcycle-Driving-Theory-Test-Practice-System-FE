@@ -23,6 +23,7 @@ drawable badge_pass
 drawable badge_role
 drawable border_view_content
 drawable circle_avatar
+drawable ic_back
 id appBarLayout
 id bottomNav
 id btnBackToHome
@@ -45,6 +46,7 @@ id btnViewDetail
 id btnViewExam
 id btnViewQuestion
 id cardAvatar
+id cardDetail
 id cardInfo
 id cbIsImportant
 id etAnswerA
@@ -70,6 +72,7 @@ id nav_admin
 id nav_history
 id nav_home
 id nav_profile
+id pbHistoryLoading
 id pbLogin
 id pbRegister
 id profileContainer
@@ -79,7 +82,6 @@ id rbB
 id rbC
 id rbD
 id registerContainer
-id resultContentContainer
 id rgAnswers
 id rvExams
 id rvHistory
@@ -115,7 +117,7 @@ id tvExamNumber
 id tvExamScoreAdmin
 id tvExamStatusAdmin
 id tvExamUserId
-id tvHistoryHint
+id tvHistoryEmpty
 id tvHistoryTitle
 id tvImportantBadge
 id tvQuestionContent
@@ -123,7 +125,6 @@ id tvQuestionId
 id tvQuestionIndex
 id tvRegisterTitle
 id tvResultSummary
-id tvResultTitle
 id tvRole
 id tvScore
 id tvStatus
@@ -332,3 +333,4 @@ string signup_title
 string username_hint
 string view_exam_detail
 style Theme.MotorcycleTheory
+style ToolbarTitle

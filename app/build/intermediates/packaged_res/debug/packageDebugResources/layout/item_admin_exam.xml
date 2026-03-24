@@ -119,7 +119,9 @@
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:minWidth="80dp"
                 android:text="@string/admin_btn_view"
+                android:textSize="13sp"
                 android:textColor="@color/brand_green" />
 
             <com.google.android.material.button.MaterialButton
@@ -127,7 +129,9 @@
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:minWidth="80dp"
                 android:text="@string/admin_btn_delete"
+                android:textSize="13sp"
                 android:textColor="@color/error_red" />
 
         </LinearLayout>

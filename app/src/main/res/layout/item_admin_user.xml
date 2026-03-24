@@ -81,7 +81,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/admin_btn_edit"
                 android:src="@android:drawable/ic_menu_edit"
-                android:tint="@color/brand_green" />
+                app:tint="@color/brand_green" />
 
             <ImageButton
                 android:id="@+id/btnDeleteUser"
@@ -91,7 +91,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/admin_btn_delete"
                 android:src="@android:drawable/ic_menu_delete"
-                android:tint="@color/error_red" />
+                app:tint="@color/error_red" />
 
         </LinearLayout>
 

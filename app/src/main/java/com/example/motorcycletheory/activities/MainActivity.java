@@ -24,12 +24,24 @@ public class MainActivity extends AppCompatActivity {
 
         SessionManager sessionManager = new SessionManager(this);
         boolean isAdmin = "Admin".equalsIgnoreCase(sessionManager.getRole());
-        if (!isAdmin) {
+        
+        if (isAdmin) {
+            // Admin: Ẩn tab "Thi thử" và "Lịch sử", chỉ giữ "Admin" và "Tài khoản"
+            binding.bottomNav.getMenu().removeItem(R.id.nav_home);
+            binding.bottomNav.getMenu().removeItem(R.id.nav_history);
+            
+            // Mặc định hiển thị AdminFragment cho Admin
+            if (savedInstanceState == null) {
+                switchFragment(new AdminFragment());
+            }
+        } else {
+            // User thường: Ẩn tab "Admin"
             binding.bottomNav.getMenu().removeItem(R.id.nav_admin);
-        }
-
-        if (savedInstanceState == null) {
-            switchFragment(new HomeFragment());
+            
+            // Mặc định hiển thị HomeFragment cho User
+            if (savedInstanceState == null) {
+                switchFragment(new HomeFragment());
+            }
         }
 
         binding.bottomNav.setOnItemSelectedListener(item -> {

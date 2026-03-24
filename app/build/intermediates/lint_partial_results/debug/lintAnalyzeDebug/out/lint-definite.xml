@@ -4,6 +4,20 @@
     <incident
         id="DefaultLocale"
         severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toUpperCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/models/AdminUser.java"
+            line="50"
+            column="45"
+            startOffset="1073"
+            endLine="50"
+            endColumn="56"
+            endOffset="1084"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
         message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/HomeFragment.java"
@@ -216,6 +230,114 @@
     </incident>
 
     <incident
+        id="UseAppTint"
+        severity="error"
+        message="Must use `app:tint` instead of `android:tint`">
+        <fix-composite
+            description="Set tint=&quot;@color/brand_green&quot; and Delete tint">
+            <fix-attribute
+                description="Set tint=&quot;@color/brand_green&quot;"
+                namespace="http://schemas.android.com/apk/res-auto"
+                attribute="tint"
+                value="@color/brand_green"/>
+            <fix-attribute
+                description="Delete tint"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="tint"/>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_user.xml"
+            line="84"
+            column="17"
+            startOffset="3300"
+            endLine="84"
+            endColumn="50"
+            endOffset="3333"/>
+    </incident>
+
+    <incident
+        id="UseAppTint"
+        severity="error"
+        message="Must use `app:tint` instead of `android:tint`">
+        <fix-composite
+            description="Set tint=&quot;@color/error_red&quot; and Delete tint">
+            <fix-attribute
+                description="Set tint=&quot;@color/error_red&quot;"
+                namespace="http://schemas.android.com/apk/res-auto"
+                attribute="tint"
+                value="@color/error_red"/>
+            <fix-attribute
+                description="Delete tint"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="tint"/>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_user.xml"
+            line="94"
+            column="17"
+            startOffset="3784"
+            endLine="94"
+            endColumn="48"
+            endOffset="3815"/>
+    </incident>
+
+    <incident
+        id="NotifyDataSetChanged"
+        severity="warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminExamAdapter.java"
+            line="34"
+            column="9"
+            startOffset="1037"
+            endLine="34"
+            endColumn="31"
+            endOffset="1059"/>
+    </incident>
+
+    <incident
+        id="NotifyDataSetChanged"
+        severity="warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminQuestionAdapter.java"
+            line="35"
+            column="9"
+            startOffset="1170"
+            endLine="35"
+            endColumn="31"
+            endOffset="1192"/>
+    </incident>
+
+    <incident
+        id="NotifyDataSetChanged"
+        severity="warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminUserAdapter.java"
+            line="34"
+            column="9"
+            startOffset="1014"
+            endLine="34"
+            endColumn="31"
+            endOffset="1036"/>
+    </incident>
+
+    <incident
+        id="NotifyDataSetChanged"
+        severity="warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/HistoryAdapter.java"
+            line="25"
+            column="9"
+            startOffset="741"
+            endLine="25"
+            endColumn="31"
+            endOffset="763"/>
+    </incident>
+
+    <incident
         id="NotifyDataSetChanged"
         severity="warning"
         message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
@@ -244,6 +366,20 @@
     </incident>
 
     <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/surface_light` with a theme that also paints a background (inferred theme is `@style/Theme.MotorcycleTheory`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_history.xml"
+            line="6"
+            column="5"
+            startOffset="290"
+            endLine="6"
+            endColumn="46"
+            endOffset="331"/>
+    </incident>
+
+    <incident
         id="TypographyEllipsis"
         severity="warning"
         message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?">
@@ -260,62 +396,6 @@
             endLine="16"
             endColumn="41"
             endOffset="867"/>
-    </incident>
-
-    <incident
-        id="Autofill"
-        severity="warning"
-        message="Missing `autofillHints` attribute">
-        <fix-alternatives>
-            <fix-attribute
-                description="Set autofillHints"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="autofillHints"
-                value=""
-                point="0"
-                mark="0"/>
-            <fix-attribute
-                description="Set importantForAutofill=&quot;no&quot;"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="importantForAutofill"
-                value="no"/>
-        </fix-alternatives>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
-            line="61"
-            column="22"
-            startOffset="2506"
-            endLine="61"
-            endColumn="30"
-            endOffset="2514"/>
-    </incident>
-
-    <incident
-        id="Autofill"
-        severity="warning"
-        message="Missing `autofillHints` attribute">
-        <fix-alternatives>
-            <fix-attribute
-                description="Set autofillHints"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="autofillHints"
-                value=""
-                point="0"
-                mark="0"/>
-            <fix-attribute
-                description="Set importantForAutofill=&quot;no&quot;"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="importantForAutofill"
-                value="no"/>
-        </fix-alternatives>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
-            line="70"
-            column="22"
-            startOffset="2957"
-            endLine="70"
-            endColumn="30"
-            endOffset="2965"/>
     </incident>
 
     <incident
@@ -523,13 +603,335 @@
         severity="warning"
         message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
-            line="108"
-            column="21"
-            startOffset="3666"
-            endLine="108"
-            endColumn="62"
-            endOffset="3707"/>
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminExamAdapter.java"
+            line="77"
+            column="35"
+            startOffset="2726"
+            endLine="77"
+            endColumn="65"
+            endOffset="2756"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminExamAdapter.java"
+            line="77"
+            column="35"
+            startOffset="2726"
+            endLine="77"
+            endColumn="46"
+            endOffset="2737"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminExamAdapter.java"
+            line="78"
+            column="34"
+            startOffset="2792"
+            endLine="78"
+            endColumn="61"
+            endOffset="2819"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminExamAdapter.java"
+            line="78"
+            column="34"
+            startOffset="2792"
+            endLine="78"
+            endColumn="42"
+            endOffset="2800"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminExamAdapter.java"
+            line="79"
+            column="38"
+            startOffset="2859"
+            endLine="79"
+            endColumn="86"
+            endOffset="2907"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminExamAdapter.java"
+            line="80"
+            column="37"
+            startOffset="2946"
+            endLine="80"
+            endColumn="66"
+            endOffset="2975"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminExamAdapter.java"
+            line="80"
+            column="37"
+            startOffset="2946"
+            endLine="80"
+            endColumn="45"
+            endOffset="2954"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminExamsTabFragment.java"
+            line="119"
+            column="47"
+            startOffset="4466"
+            endLine="119"
+            endColumn="115"
+            endOffset="4534"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminExamsTabFragment.java"
+            line="119"
+            column="47"
+            startOffset="4466"
+            endLine="119"
+            endColumn="84"
+            endOffset="4503"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminExamsTabFragment.java"
+            line="119"
+            column="106"
+            startOffset="4525"
+            endLine="119"
+            endColumn="115"
+            endOffset="4534"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminQuestionAdapter.java"
+            line="80"
+            column="34"
+            startOffset="3038"
+            endLine="80"
+            endColumn="68"
+            endOffset="3072"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminQuestionAdapter.java"
+            line="82"
+            column="37"
+            startOffset="3173"
+            endLine="82"
+            endColumn="77"
+            endOffset="3213"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminQuestionAdapter.java"
+            line="83"
+            column="32"
+            startOffset="3247"
+            endLine="83"
+            endColumn="71"
+            endOffset="3286"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/AdminQuestionAdapter.java"
+            line="83"
+            column="32"
+            startOffset="3247"
+            endLine="83"
+            endColumn="44"
+            endOffset="3259"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminQuestionsTabFragment.java"
+            line="245"
+            column="45"
+            startOffset="10595"
+            endLine="245"
+            endColumn="74"
+            endOffset="10624"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminQuestionsTabFragment.java"
+            line="246"
+            column="45"
+            startOffset="10671"
+            endLine="246"
+            endColumn="74"
+            endOffset="10700"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminQuestionsTabFragment.java"
+            line="247"
+            column="45"
+            startOffset="10747"
+            endLine="247"
+            endColumn="74"
+            endOffset="10776"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminQuestionsTabFragment.java"
+            line="248"
+            column="45"
+            startOffset="10823"
+            endLine="248"
+            endColumn="74"
+            endOffset="10852"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminQuestionsTabFragment.java"
+            line="270"
+            column="47"
+            startOffset="11727"
+            endLine="270"
+            endColumn="123"
+            endOffset="11803"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminQuestionsTabFragment.java"
+            line="270"
+            column="47"
+            startOffset="11727"
+            endLine="270"
+            endColumn="84"
+            endOffset="11764"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminQuestionsTabFragment.java"
+            line="270"
+            column="114"
+            startOffset="11794"
+            endLine="270"
+            endColumn="123"
+            endOffset="11803"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminUsersTabFragment.java"
+            line="230"
+            column="47"
+            startOffset="8879"
+            endLine="230"
+            endColumn="123"
+            endOffset="8955"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminUsersTabFragment.java"
+            line="230"
+            column="47"
+            startOffset="8879"
+            endLine="230"
+            endColumn="88"
+            endOffset="8920"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/fragments/AdminUsersTabFragment.java"
+            line="230"
+            column="112"
+            startOffset="8944"
+            endLine="230"
+            endColumn="123"
+            endOffset="8955"/>
     </incident>
 
     <incident
@@ -540,10 +942,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
             line="109"
             column="21"
-            startOffset="3730"
+            startOffset="3663"
             endLine="109"
             endColumn="62"
-            endOffset="3771"/>
+            endOffset="3704"/>
     </incident>
 
     <incident
@@ -554,10 +956,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
             line="110"
             column="21"
-            startOffset="3794"
+            startOffset="3727"
             endLine="110"
             endColumn="62"
-            endOffset="3835"/>
+            endOffset="3768"/>
     </incident>
 
     <incident
@@ -568,10 +970,122 @@
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
             line="111"
             column="21"
-            startOffset="3858"
+            startOffset="3791"
             endLine="111"
             endColumn="62"
-            endOffset="3899"/>
+            endOffset="3832"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/activities/ExamTakingActivity.java"
+            line="112"
+            column="21"
+            startOffset="3855"
+            endLine="112"
+            endColumn="62"
+            endOffset="3896"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/HistoryAdapter.java"
+            line="66"
+            column="34"
+            startOffset="2272"
+            endLine="66"
+            endColumn="56"
+            endOffset="2294"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/HistoryAdapter.java"
+            line="66"
+            column="34"
+            startOffset="2272"
+            endLine="66"
+            endColumn="45"
+            endOffset="2283"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/HistoryAdapter.java"
+            line="67"
+            column="29"
+            startOffset="2325"
+            endLine="67"
+            endColumn="77"
+            endOffset="2373"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/HistoryAdapter.java"
+            line="74"
+            column="34"
+            startOffset="2632"
+            endLine="74"
+            endColumn="41"
+            endOffset="2639"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/HistoryAdapter.java"
+            line="78"
+            column="38"
+            startOffset="2777"
+            endLine="78"
+            endColumn="75"
+            endOffset="2814"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/HistoryAdapter.java"
+            line="88"
+            column="32"
+            startOffset="3179"
+            endLine="88"
+            endColumn="67"
+            endOffset="3214"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/motorcycletheory/adapters/HistoryAdapter.java"
+            line="88"
+            column="60"
+            startOffset="3207"
+            endLine="88"
+            endColumn="67"
+            endOffset="3214"/>
     </incident>
 
     <incident
@@ -633,15 +1147,169 @@
     <incident
         id="HardcodedText"
         severity="warning"
-        message="Hardcoded string &quot;Danh sách dữ liệu&quot;, should use `@string` resource">
+        message="Hardcoded string &quot;1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/dialog_view_question.xml"
+            line="41"
+            column="17"
+            startOffset="1580"
+            endLine="41"
+            endColumn="33"
+            endOffset="1596"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Nội dung câu hỏi&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/dialog_view_question.xml"
+            line="64"
+            column="13"
+            startOffset="2449"
+            endLine="64"
+            endColumn="44"
+            endOffset="2480"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;A. Đáp án A&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/dialog_view_question.xml"
+            line="82"
+            column="13"
+            startOffset="3138"
+            endLine="82"
+            endColumn="39"
+            endOffset="3164"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;B. Đáp án B&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/dialog_view_question.xml"
+            line="91"
+            column="13"
+            startOffset="3480"
+            endLine="91"
+            endColumn="39"
+            endOffset="3506"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;C. Đáp án C&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/dialog_view_question.xml"
+            line="100"
+            column="13"
+            startOffset="3822"
+            endLine="100"
+            endColumn="39"
+            endOffset="3848"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;D. Đáp án D&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/dialog_view_question.xml"
+            line="109"
+            column="13"
+            startOffset="4164"
+            endLine="109"
+            endColumn="39"
+            endOffset="4190"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;A&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/dialog_view_question.xml"
+            line="135"
+            column="17"
+            startOffset="5247"
+            endLine="135"
+            endColumn="33"
+            endOffset="5263"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/dialog_view_question.xml"
+            line="161"
+            column="17"
+            startOffset="6242"
+            endLine="161"
+            endColumn="33"
+            endOffset="6258"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;0&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
-            line="191"
-            column="17"
-            startOffset="9278"
-            endLine="191"
-            endColumn="49"
-            endOffset="9310"/>
+            line="71"
+            column="29"
+            startOffset="3006"
+            endLine="71"
+            endColumn="45"
+            endOffset="3022"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;0&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
+            line="108"
+            column="29"
+            startOffset="4805"
+            endLine="108"
+            endColumn="45"
+            endOffset="4821"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;0&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
+            line="145"
+            column="29"
+            startOffset="6619"
+            endLine="145"
+            endColumn="45"
+            endOffset="6635"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;0&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/fragment_admin.xml"
+            line="182"
+            column="29"
+            startOffset="8415"
+            endLine="182"
+            endColumn="45"
+            endOffset="8431"/>
     </incident>
 
     <incident
@@ -656,6 +1324,272 @@
             endLine="33"
             endColumn="33"
             endOffset="1364"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Bài thi #1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_exam.xml"
+            line="28"
+            column="17"
+            startOffset="1055"
+            endLine="28"
+            endColumn="42"
+            endOffset="1080"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;User #1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_exam.xml"
+            line="66"
+            column="17"
+            startOffset="2578"
+            endLine="66"
+            endColumn="39"
+            endOffset="2600"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;0/0&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_exam.xml"
+            line="92"
+            column="17"
+            startOffset="3558"
+            endLine="92"
+            endColumn="35"
+            endOffset="3576"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Ngày: 01/01/2026&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_exam.xml"
+            line="105"
+            column="13"
+            startOffset="3994"
+            endLine="105"
+            endColumn="44"
+            endOffset="4025"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Câu #1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_question.xml"
+            line="28"
+            column="17"
+            startOffset="1077"
+            endLine="28"
+            endColumn="38"
+            endOffset="1098"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Nội dung câu hỏi...&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_question.xml"
+            line="54"
+            column="13"
+            startOffset="2117"
+            endLine="54"
+            endColumn="47"
+            endOffset="2151"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Đáp án: A&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_question.xml"
+            line="74"
+            column="17"
+            startOffset="2927"
+            endLine="74"
+            endColumn="41"
+            endOffset="2951"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Category: 1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_question.xml"
+            line="87"
+            column="17"
+            startOffset="3500"
+            endLine="87"
+            endColumn="43"
+            endOffset="3526"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;U&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_user.xml"
+            line="24"
+            column="13"
+            startOffset="913"
+            endLine="24"
+            endColumn="29"
+            endOffset="929"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Username&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_user.xml"
+            line="41"
+            column="17"
+            startOffset="1531"
+            endLine="41"
+            endColumn="40"
+            endOffset="1554"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;email@example.com&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_user.xml"
+            line="51"
+            column="17"
+            startOffset="1942"
+            endLine="51"
+            endColumn="49"
+            endOffset="1974"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;User&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_admin_user.xml"
+            line="63"
+            column="17"
+            startOffset="2476"
+            endLine="63"
+            endColumn="36"
+            endOffset="2495"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Bài thi #1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_history.xml"
+            line="29"
+            column="17"
+            startOffset="1104"
+            endLine="29"
+            endColumn="42"
+            endOffset="1129"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;24/03/2026&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_history.xml"
+            line="38"
+            column="17"
+            startOffset="1468"
+            endLine="38"
+            endColumn="42"
+            endOffset="1493"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Điểm: &quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_history.xml"
+            line="54"
+            column="17"
+            startOffset="2067"
+            endLine="54"
+            endColumn="38"
+            endOffset="2088"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;23/25&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_history.xml"
+            line="62"
+            column="17"
+            startOffset="2384"
+            endLine="62"
+            endColumn="37"
+            endOffset="2404"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;ĐẬU&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_history.xml"
+            line="80"
+            column="17"
+            startOffset="3093"
+            endLine="80"
+            endColumn="35"
+            endOffset="3111"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;25 câu hỏi&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_history.xml"
+            line="98"
+            column="17"
+            startOffset="3764"
+            endLine="98"
+            endColumn="42"
+            endOffset="3789"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;⏱ 15 phút&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_history.xml"
+            line="106"
+            column="17"
+            startOffset="4088"
+            endLine="106"
+            endColumn="41"
+            endOffset="4112"/>
     </incident>
 
 </incidents>
