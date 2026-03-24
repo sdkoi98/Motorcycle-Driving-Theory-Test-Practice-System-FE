@@ -37,6 +37,8 @@ public class ExamResultActivity extends AppCompatActivity {
         tvDetail = findViewById(R.id.tvDetail);
         Button btnViewDetail = findViewById(R.id.btnViewDetail);
 
+        Button btnBackToHome = findViewById(R.id.btnBackToHome);
+
         int score = getIntent().getIntExtra(EXTRA_SCORE, 0);
         int total = getIntent().getIntExtra(EXTRA_TOTAL_QUESTIONS, 0);
         boolean passed = getIntent().getBooleanExtra(EXTRA_PASSED, false);
@@ -48,6 +50,10 @@ public class ExamResultActivity extends AppCompatActivity {
         tvResultSummary.setText(summary);
 
         btnViewDetail.setOnClickListener(v -> loadExamDetail());
+
+        btnBackToHome.setOnClickListener(v -> {
+            finish();
+        });
     }
 
     private void loadExamDetail() {

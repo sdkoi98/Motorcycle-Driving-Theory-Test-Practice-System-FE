@@ -19,6 +19,7 @@
     <string name="exam_submit">Nộp bài</string>
     <string name="exam_result_title">Kết quả bài thi</string>
     <string name="view_exam_detail">Xem chi tiết bài thi</string>
+    <string name="back_to_home">Về trang chủ</string>
     <string name="home">Thi thử</string>
     <string name="history">Lịch sử</string>
     <string name="admin">Admin</string>
@@ -72,4 +73,14 @@
     <string name="error_password_not_match">Mật khẩu xác nhận không khớp</string>
     <string name="error_network">Không thể kết nối máy chủ. Vui lòng kiểm tra mạng/backend.</string>
     <string name="error_unexpected">Đã có lỗi xảy ra. Vui lòng thử lại.</string>
+    
+    <!-- Exam Taking Activity -->
+    <string name="error_exam_data_invalid">Dữ liệu đề thi không hợp lệ</string>
+    <string name="error_question_read">Không đọc được câu hỏi</string>
+    <string name="error_answer_required">Vui lòng chọn đáp án</string>
+    <string name="error_answer_save">Không lưu được đáp án</string>
+    <string name="error_submit_request">Lỗi tạo request nộp bài</string>
+    <string name="error_submit_failed">Nộp bài thất bại</string>
+    <string name="error_submit_invalid">Dữ liệu nộp bài chưa hợp lệ</string>
+    <string name="exam_question_index">Câu %1$d/%2$d - ID %3$d</string>
 </resources>

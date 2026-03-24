@@ -59,7 +59,7 @@ public class ExamTakingActivity extends AppCompatActivity {
         String questionsJson = getIntent().getStringExtra(EXTRA_QUESTIONS_JSON);
 
         if (examId <= 0 || questionsJson == null || questionsJson.isEmpty()) {
-            Toast.makeText(this, "Du lieu de thi khong hop le", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_exam_data_invalid), Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
@@ -67,7 +67,7 @@ public class ExamTakingActivity extends AppCompatActivity {
         try {
             questions = new JSONArray(questionsJson);
         } catch (JSONException e) {
-            Toast.makeText(this, "Khong doc duoc cau hoi", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_question_read), Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
@@ -87,7 +87,7 @@ public class ExamTakingActivity extends AppCompatActivity {
         }
 
         int questionId = question.optInt("questionId", -1);
-        tvQuestionIndex.setText("Cau " + (currentIndex + 1) + "/" + questions.length() + " - ID " + questionId);
+        tvQuestionIndex.setText(getString(R.string.exam_question_index, currentIndex + 1, questions.length(), questionId));
         tvQuestionContent.setText(question.optString("content", ""));
 
         rbA.setText("A. " + question.optString("answerA", ""));
@@ -119,14 +119,14 @@ public class ExamTakingActivity extends AppCompatActivity {
         int questionId = question.optInt("questionId", -1);
         String selected = getSelectedOption();
         if (selected.isEmpty()) {
-            Toast.makeText(this, "Vui long chon dap an", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_answer_required), Toast.LENGTH_SHORT).show();
             return;
         }
 
         try {
             selectedAnswers.put(String.valueOf(questionId), selected);
         } catch (JSONException e) {
-            Toast.makeText(this, "Khong luu duoc dap an", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_answer_save), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -165,7 +165,7 @@ public class ExamTakingActivity extends AppCompatActivity {
             payload.put("answers", selectedAnswers);
         } catch (JSONException e) {
             btnNextQuestion.setEnabled(true);
-            Toast.makeText(this, "Loi tao request nop bai", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_submit_request), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -190,13 +190,23 @@ public class ExamTakingActivity extends AppCompatActivity {
                 },
                 error -> {
                     btnNextQuestion.setEnabled(true);
-                    String msg = "Nop bai that bai";
+                    String msg = getString(R.string.error_submit_failed);
                     if (error.networkResponse != null && error.networkResponse.statusCode == 400) {
-                        msg = "Du lieu nop bai chua hop le";
+                        msg = getString(R.string.error_submit_invalid);
                     }
                     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
                 }
         ) {
+            @Override
+            protected com.android.volley.Response<org.json.JSONObject> parseNetworkResponse(com.android.volley.NetworkResponse response) {
+                try {
+                    String jsonString = new String(response.data, java.nio.charset.StandardCharsets.UTF_8);
+                    return com.android.volley.Response.success(new org.json.JSONObject(jsonString), com.android.volley.toolbox.HttpHeaderParser.parseCacheHeaders(response));
+                } catch (Exception e) {
+                    return com.android.volley.Response.error(new com.android.volley.VolleyError(e));
+                }
+            }
+
             @Override
             public Map<String, String> getHeaders() {
                 return ApiClient.authHeaders(sessionManager);

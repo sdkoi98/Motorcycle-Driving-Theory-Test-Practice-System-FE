@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.motorcycletheory.R;
@@ -20,10 +21,13 @@ import java.lang.String;
 
 public final class ActivityExamTakingBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final MaterialButton btnNextQuestion;
+
+  @NonNull
+  public final LinearLayout examContentContainer;
 
   @NonNull
   public final RadioButton rbA;
@@ -46,12 +50,14 @@ public final class ActivityExamTakingBinding implements ViewBinding {
   @NonNull
   public final TextView tvQuestionIndex;
 
-  private ActivityExamTakingBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialButton btnNextQuestion, @NonNull RadioButton rbA, @NonNull RadioButton rbB,
-      @NonNull RadioButton rbC, @NonNull RadioButton rbD, @NonNull RadioGroup rgAnswers,
-      @NonNull TextView tvQuestionContent, @NonNull TextView tvQuestionIndex) {
+  private ActivityExamTakingBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btnNextQuestion, @NonNull LinearLayout examContentContainer,
+      @NonNull RadioButton rbA, @NonNull RadioButton rbB, @NonNull RadioButton rbC,
+      @NonNull RadioButton rbD, @NonNull RadioGroup rgAnswers, @NonNull TextView tvQuestionContent,
+      @NonNull TextView tvQuestionIndex) {
     this.rootView = rootView;
     this.btnNextQuestion = btnNextQuestion;
+    this.examContentContainer = examContentContainer;
     this.rbA = rbA;
     this.rbB = rbB;
     this.rbC = rbC;
@@ -63,7 +69,7 @@ public final class ActivityExamTakingBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -91,6 +97,12 @@ public final class ActivityExamTakingBinding implements ViewBinding {
       id = R.id.btnNextQuestion;
       MaterialButton btnNextQuestion = ViewBindings.findChildViewById(rootView, id);
       if (btnNextQuestion == null) {
+        break missingId;
+      }
+
+      id = R.id.examContentContainer;
+      LinearLayout examContentContainer = ViewBindings.findChildViewById(rootView, id);
+      if (examContentContainer == null) {
         break missingId;
       }
 
@@ -136,8 +148,8 @@ public final class ActivityExamTakingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityExamTakingBinding((LinearLayout) rootView, btnNextQuestion, rbA, rbB, rbC,
-          rbD, rgAnswers, tvQuestionContent, tvQuestionIndex);
+      return new ActivityExamTakingBinding((ConstraintLayout) rootView, btnNextQuestion,
+          examContentContainer, rbA, rbB, rbC, rbD, rgAnswers, tvQuestionContent, tvQuestionIndex);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

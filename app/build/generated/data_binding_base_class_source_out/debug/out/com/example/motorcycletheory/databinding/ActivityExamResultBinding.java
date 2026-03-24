@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.motorcycletheory.R;
@@ -18,10 +19,16 @@ import java.lang.String;
 
 public final class ActivityExamResultBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
+
+  @NonNull
+  public final MaterialButton btnBackToHome;
 
   @NonNull
   public final MaterialButton btnViewDetail;
+
+  @NonNull
+  public final LinearLayout resultContentContainer;
 
   @NonNull
   public final TextView tvDetail;
@@ -32,11 +39,14 @@ public final class ActivityExamResultBinding implements ViewBinding {
   @NonNull
   public final TextView tvResultTitle;
 
-  private ActivityExamResultBinding(@NonNull LinearLayout rootView,
-      @NonNull MaterialButton btnViewDetail, @NonNull TextView tvDetail,
+  private ActivityExamResultBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton btnBackToHome, @NonNull MaterialButton btnViewDetail,
+      @NonNull LinearLayout resultContentContainer, @NonNull TextView tvDetail,
       @NonNull TextView tvResultSummary, @NonNull TextView tvResultTitle) {
     this.rootView = rootView;
+    this.btnBackToHome = btnBackToHome;
     this.btnViewDetail = btnViewDetail;
+    this.resultContentContainer = resultContentContainer;
     this.tvDetail = tvDetail;
     this.tvResultSummary = tvResultSummary;
     this.tvResultTitle = tvResultTitle;
@@ -44,7 +54,7 @@ public final class ActivityExamResultBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -69,9 +79,21 @@ public final class ActivityExamResultBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnBackToHome;
+      MaterialButton btnBackToHome = ViewBindings.findChildViewById(rootView, id);
+      if (btnBackToHome == null) {
+        break missingId;
+      }
+
       id = R.id.btnViewDetail;
       MaterialButton btnViewDetail = ViewBindings.findChildViewById(rootView, id);
       if (btnViewDetail == null) {
+        break missingId;
+      }
+
+      id = R.id.resultContentContainer;
+      LinearLayout resultContentContainer = ViewBindings.findChildViewById(rootView, id);
+      if (resultContentContainer == null) {
         break missingId;
       }
 
@@ -93,8 +115,8 @@ public final class ActivityExamResultBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityExamResultBinding((LinearLayout) rootView, btnViewDetail, tvDetail,
-          tvResultSummary, tvResultTitle);
+      return new ActivityExamResultBinding((ConstraintLayout) rootView, btnBackToHome,
+          btnViewDetail, resultContentContainer, tvDetail, tvResultSummary, tvResultTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

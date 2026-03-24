@@ -51,6 +51,7 @@ public class HomeFragment extends Fragment {
         ApiClient apiClient = ApiClient.getInstance(requireContext());
         String url = apiClient.endpoint("/api/exam/generate");
 
+
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
                 url,
@@ -89,6 +90,16 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show();
                 }
         ) {
+            @Override
+            protected com.android.volley.Response<org.json.JSONObject> parseNetworkResponse(com.android.volley.NetworkResponse response) {
+                try {
+                    String jsonString = new String(response.data, java.nio.charset.StandardCharsets.UTF_8);
+                    return com.android.volley.Response.success(new org.json.JSONObject(jsonString), com.android.volley.toolbox.HttpHeaderParser.parseCacheHeaders(response));
+                } catch (Exception e) {
+                    return com.android.volley.Response.error(new com.android.volley.VolleyError(e));
+                }
+            }
+
             @Override
             public Map<String, String> getHeaders() {
                 return ApiClient.authHeaders(sessionManager);
