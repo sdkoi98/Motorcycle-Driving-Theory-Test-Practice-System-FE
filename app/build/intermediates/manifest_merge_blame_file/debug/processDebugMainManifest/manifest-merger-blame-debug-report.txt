@@ -14,146 +14,232 @@
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 12-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:5:5-79
 12-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:5:22-76
-13
-14    <permission
-14-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-15        android:name="com.example.motorcycletheory.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-15-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-16        android:protectionLevel="signature" />
-16-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:6:5-79
+13-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:6:22-76
+14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+14-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-81
+14-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:22-78
+15    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+15-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:8:5-77
+15-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:8:22-74
+16    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+16-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:9:5-79
+16-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:9:22-76
 17
-18    <uses-permission android:name="com.example.motorcycletheory.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-18-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-18-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-19
-20    <application
-20-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-35:19
-21        android:allowBackup="true"
-21-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:8:9-35
-22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-23        android:debuggable="true"
-24        android:extractNativeLibs="false"
-25        android:icon="@android:drawable/sym_def_app_icon"
-25-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:9:9-58
-26        android:label="@string/app_name"
-26-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:10:9-41
-27        android:roundIcon="@android:drawable/sym_def_app_icon"
-27-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:11:9-63
-28        android:supportsRtl="true"
-28-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:12:9-35
-29        android:testOnly="true"
-30        android:theme="@style/Theme.MotorcycleTheory"
-30-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:14:9-54
-31        android:usesCleartextTraffic="true" >
-31-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:13:9-44
-32        <activity
-32-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:15:9-17:40
-33            android:name="com.example.motorcycletheory.activities.ExamResultActivity"
-33-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:16:13-58
-34            android:exported="false" />
-34-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:17:13-37
-35        <activity
-35-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:18:9-20:40
-36            android:name="com.example.motorcycletheory.activities.ExamTakingActivity"
-36-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:19:13-58
-37            android:exported="false" />
-37-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:20:13-37
-38        <activity
-38-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:21:9-23:40
-39            android:name="com.example.motorcycletheory.activities.RegisterActivity"
-39-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:22:13-56
-40            android:exported="false" />
-40-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:23:13-37
-41        <activity
-41-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:24:9-26:40
-42            android:name="com.example.motorcycletheory.activities.MainActivity"
-42-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:25:13-52
-43            android:exported="false" />
-43-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:26:13-37
-44        <activity
-44-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:27:9-34:20
-45            android:name="com.example.motorcycletheory.activities.LoginActivity"
-45-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:28:13-53
-46            android:exported="true" >
-46-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:29:13-36
-47            <intent-filter>
-47-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:30:13-33:29
-48                <action android:name="android.intent.action.MAIN" />
-48-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:31:17-69
-48-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:31:25-66
-49
-50                <category android:name="android.intent.category.LAUNCHER" />
-50-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:32:17-77
-50-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:32:27-74
-51            </intent-filter>
-52        </activity>
-53
-54        <provider
-54-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-55            android:name="androidx.startup.InitializationProvider"
-55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-56            android:authorities="com.example.motorcycletheory.androidx-startup"
-56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-57            android:exported="false" >
-57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-58            <meta-data
-58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-59                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-60                android:value="androidx.startup" />
-60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-61            <meta-data
-61-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\9a524b795948ad9da70f2e641b698490\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
-62                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-62-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\9a524b795948ad9da70f2e641b698490\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
-63                android:value="androidx.startup" />
-63-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\9a524b795948ad9da70f2e641b698490\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
-64            <meta-data
-64-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-65                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-65-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-66                android:value="androidx.startup" />
-66-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-67        </provider>
-68
-69        <receiver
-69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-70            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-71            android:directBootAware="false"
-71-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-72            android:enabled="true"
-72-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-73            android:exported="true"
-73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-74            android:permission="android.permission.DUMP" >
-74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-75            <intent-filter>
-75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-76                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-77            </intent-filter>
-78            <intent-filter>
-78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-79                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+18    <uses-feature
+18-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:26:5-28:35
+19        android:glEsVersion="0x00020000"
+19-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:27:9-41
+20        android:required="true" />
+20-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:28:9-32
+21
+22    <queries>
+22-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:30:5-34:15
+23
+24        <!-- Needs to be explicitly declared on Android R+ -->
+25        <package android:name="com.google.android.apps.maps" />
+25-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:33:9-64
+25-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:33:18-61
+26    </queries>
+27
+28    <permission
+28-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+29        android:name="com.example.motorcycletheory.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+29-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+30        android:protectionLevel="signature" />
+30-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+31
+32    <uses-permission android:name="com.example.motorcycletheory.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+32-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+32-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+33
+34    <application
+34-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:11:5-59:19
+35        android:allowBackup="true"
+35-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:12:9-35
+36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+36-->[androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+37        android:debuggable="true"
+38        android:extractNativeLibs="false"
+39        android:icon="@android:drawable/sym_def_app_icon"
+39-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:13:9-58
+40        android:label="@string/app_name"
+40-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:14:9-41
+41        android:roundIcon="@android:drawable/sym_def_app_icon"
+41-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:15:9-63
+42        android:supportsRtl="true"
+42-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:16:9-35
+43        android:testOnly="true"
+44        android:theme="@style/Theme.MotorcycleTheory"
+44-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:18:9-54
+45        android:usesCleartextTraffic="true" >
+45-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:17:9-44
+46
+47        <!-- Google Maps API Key - Replace with your own key from https://console.cloud.google.com -->
+48        <meta-data
+48-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:21:9-23:61
+49            android:name="com.google.android.geo.API_KEY"
+49-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:22:13-58
+50            android:value="YOUR_GOOGLE_MAPS_API_KEY_HERE" />
+50-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:23:13-58
+51
+52        <activity
+52-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:25:9-27:40
+53            android:name="com.example.motorcycletheory.activities.DrivingSchoolMapActivity"
+53-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:26:13-64
+54            android:exported="false" />
+54-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:27:13-37
+55        <activity
+55-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:28:9-30:40
+56            android:name="com.example.motorcycletheory.activities.ExamConfirmActivity"
+56-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:29:13-59
+57            android:exported="false" />
+57-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:30:13-37
+58        <activity
+58-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:31:9-33:40
+59            android:name="com.example.motorcycletheory.activities.QuestionDetailActivity"
+59-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:32:13-62
+60            android:exported="false" />
+60-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:33:13-37
+61        <activity
+61-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:34:9-36:40
+62            android:name="com.example.motorcycletheory.activities.ExamResultActivity"
+62-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:35:13-58
+63            android:exported="false" />
+63-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:36:13-37
+64        <activity
+64-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:37:9-39:40
+65            android:name="com.example.motorcycletheory.activities.ExamTakingActivity"
+65-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:38:13-58
+66            android:exported="false" />
+66-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:39:13-37
+67        <activity
+67-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:40:9-42:40
+68            android:name="com.example.motorcycletheory.activities.RegisterActivity"
+68-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:41:13-56
+69            android:exported="false" />
+69-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:42:13-37
+70        <activity
+70-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:43:9-45:40
+71            android:name="com.example.motorcycletheory.activities.MainActivity"
+71-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:44:13-52
+72            android:exported="false" />
+72-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:45:13-37
+73        <activity
+73-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:46:9-53:20
+74            android:name="com.example.motorcycletheory.activities.LoginActivity"
+74-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:47:13-53
+75            android:exported="true" >
+75-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:48:13-36
+76            <intent-filter>
+76-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:49:13-52:29
+77                <action android:name="android.intent.action.MAIN" />
+77-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:50:17-69
+77-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:50:25-66
+78
+79                <category android:name="android.intent.category.LAUNCHER" />
+79-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:51:17-77
+79-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:51:27-74
 80            </intent-filter>
-81            <intent-filter>
-81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-82                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-83            </intent-filter>
-84            <intent-filter>
-84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-85                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-86            </intent-filter>
-87        </receiver>
-88    </application>
-89
-90</manifest>
+81        </activity>
+82
+83        <!-- Study Reminder BroadcastReceiver -->
+84        <receiver
+84-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:56:9-58:40
+85            android:name="com.example.motorcycletheory.utils.StudyReminderReceiver"
+85-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:57:13-56
+86            android:exported="false" />
+86-->D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:58:13-37
+87        <!-- Needs to be explicitly declared on P+ -->
+88        <uses-library
+88-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:39:9-41:40
+89            android:name="org.apache.http.legacy"
+89-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:40:13-50
+90            android:required="false" />
+90-->[com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:41:13-37
+91
+92        <activity
+92-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+93            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+93-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+94            android:exported="false"
+94-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+95-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+96
+97        <meta-data
+97-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+98            android:name="com.google.android.gms.version"
+98-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+99            android:value="@integer/google_play_services_version" />
+99-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+100
+101        <provider
+101-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+102            android:name="androidx.startup.InitializationProvider"
+102-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+103            android:authorities="com.example.motorcycletheory.androidx-startup"
+103-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+104            android:exported="false" >
+104-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+105            <meta-data
+105-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+106                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+106-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+107                android:value="androidx.startup" />
+107-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+108            <meta-data
+108-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\9a524b795948ad9da70f2e641b698490\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+109                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+109-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\9a524b795948ad9da70f2e641b698490\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+110                android:value="androidx.startup" />
+110-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\9a524b795948ad9da70f2e641b698490\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+111            <meta-data
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+112                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+113                android:value="androidx.startup" />
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+114        </provider>
+115
+116        <receiver
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+117            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+118            android:directBootAware="false"
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+119            android:enabled="true"
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+120            android:exported="true"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+121            android:permission="android.permission.DUMP" >
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+122            <intent-filter>
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+123                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+123-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+124            </intent-filter>
+125            <intent-filter>
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+126                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+127            </intent-filter>
+128            <intent-filter>
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+129                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+130            </intent-filter>
+131            <intent-filter>
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+132                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\ACER\.gradle\caches\8.13\transforms\60dc38fd0e6b28ac5306b571baf6fec3\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+133            </intent-filter>
+134        </receiver>
+135    </application>
+136
+137</manifest>

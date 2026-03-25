@@ -11,10 +11,15 @@ import com.example.motorcycletheory.fragments.AdminFragment;
 import com.example.motorcycletheory.fragments.HistoryFragment;
 import com.example.motorcycletheory.fragments.HomeFragment;
 import com.example.motorcycletheory.fragments.ProfileFragment;
+import com.example.motorcycletheory.fragments.QuestionBankFragment;
+import com.example.motorcycletheory.fragments.StudyCartFragment;
 import com.example.motorcycletheory.utils.SessionManager;
+import com.example.motorcycletheory.utils.StudyCartManager;
+import com.google.android.material.badge.BadgeDrawable;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
+    private BadgeDrawable cartBadge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,40 +29,50 @@ public class MainActivity extends AppCompatActivity {
 
         SessionManager sessionManager = new SessionManager(this);
         boolean isAdmin = "Admin".equalsIgnoreCase(sessionManager.getRole());
-        
+
         if (isAdmin) {
-            // Admin: Ẩn tab "Thi thử" và "Lịch sử", chỉ giữ "Admin" và "Tài khoản"
-            binding.bottomNav.getMenu().removeItem(R.id.nav_home);
-            binding.bottomNav.getMenu().removeItem(R.id.nav_history);
-            
-            // Mặc định hiển thị AdminFragment cho Admin
+            binding.bottomNav.getMenu().clear();
+            binding.bottomNav.getMenu()
+                    .add(0, R.id.nav_admin, 0, R.string.admin)
+                    .setIcon(android.R.drawable.ic_menu_manage);
+            binding.bottomNav.getMenu()
+                    .add(0, R.id.nav_profile, 1, R.string.profile)
+                    .setIcon(android.R.drawable.ic_menu_myplaces);
+
             if (savedInstanceState == null) {
                 switchFragment(new AdminFragment());
             }
         } else {
-            // User thường: Ẩn tab "Admin"
-            binding.bottomNav.getMenu().removeItem(R.id.nav_admin);
-            
-            // Mặc định hiển thị HomeFragment cho User
+            setupCartBadge();
+
             if (savedInstanceState == null) {
                 switchFragment(new HomeFragment());
             }
         }
 
         binding.bottomNav.setOnItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.nav_home) {
+            int id = item.getItemId();
+            if (id == R.id.nav_home) {
                 switchFragment(new HomeFragment());
                 return true;
             }
-            if (item.getItemId() == R.id.nav_history) {
+            if (id == R.id.nav_question_bank) {
+                switchFragment(new QuestionBankFragment());
+                return true;
+            }
+            if (id == R.id.nav_cart) {
+                switchFragment(new StudyCartFragment());
+                return true;
+            }
+            if (id == R.id.nav_history) {
                 switchFragment(new HistoryFragment());
                 return true;
             }
-            if (item.getItemId() == R.id.nav_admin) {
+            if (id == R.id.nav_admin) {
                 switchFragment(new AdminFragment());
                 return true;
             }
-            if (item.getItemId() == R.id.nav_profile) {
+            if (id == R.id.nav_profile) {
                 switchFragment(new ProfileFragment());
                 return true;
             }
@@ -70,5 +85,31 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.fragmentContainer, fragment)
                 .commit();
+    }
+
+    private void setupCartBadge() {
+        cartBadge = binding.bottomNav.getOrCreateBadge(R.id.nav_cart);
+        cartBadge.setBackgroundColor(getColor(R.color.danger_red));
+        cartBadge.setBadgeTextColor(getColor(R.color.white));
+        refreshCartBadge();
+    }
+
+    public void refreshCartBadge() {
+        if (cartBadge == null) return;
+        StudyCartManager cartManager = new StudyCartManager(this);
+        int count = cartManager.getCartCount();
+        if (count > 0) {
+            cartBadge.setNumber(count);
+            cartBadge.setVisible(true);
+        } else {
+            cartBadge.clearNumber();
+            cartBadge.setVisible(false);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshCartBadge();
     }
 }

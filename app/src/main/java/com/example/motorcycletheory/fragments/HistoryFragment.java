@@ -94,7 +94,7 @@ public class HistoryFragment extends Fragment {
         binding.tvHistoryEmpty.setText(message);
         binding.tvHistoryEmpty.setVisibility(View.VISIBLE);
         binding.rvHistory.setVisibility(View.GONE);
-    }
+        }
 
     private void showHistoryList(JSONArray data) {
         binding.tvHistoryEmpty.setVisibility(View.GONE);

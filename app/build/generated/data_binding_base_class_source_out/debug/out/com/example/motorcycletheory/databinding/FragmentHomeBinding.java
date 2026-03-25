@@ -4,32 +4,63 @@ package com.example.motorcycletheory.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.motorcycletheory.R;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final NestedScrollView rootView;
 
   @NonNull
-  public final Button btnGenerateExam;
+  public final MaterialButton btnGenerateExam;
 
-  private FragmentHomeBinding(@NonNull LinearLayout rootView, @NonNull Button btnGenerateExam) {
+  @NonNull
+  public final MaterialButton btnSetTime;
+
+  @NonNull
+  public final MaterialCardView cardExam;
+
+  @NonNull
+  public final MaterialCardView cardMap;
+
+  @NonNull
+  public final MaterialCardView cardReminder;
+
+  @NonNull
+  public final SwitchMaterial switchReminder;
+
+  @NonNull
+  public final TextView tvReminderStatus;
+
+  private FragmentHomeBinding(@NonNull NestedScrollView rootView,
+      @NonNull MaterialButton btnGenerateExam, @NonNull MaterialButton btnSetTime,
+      @NonNull MaterialCardView cardExam, @NonNull MaterialCardView cardMap,
+      @NonNull MaterialCardView cardReminder, @NonNull SwitchMaterial switchReminder,
+      @NonNull TextView tvReminderStatus) {
     this.rootView = rootView;
     this.btnGenerateExam = btnGenerateExam;
+    this.btnSetTime = btnSetTime;
+    this.cardExam = cardExam;
+    this.cardMap = cardMap;
+    this.cardReminder = cardReminder;
+    this.switchReminder = switchReminder;
+    this.tvReminderStatus = tvReminderStatus;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public NestedScrollView getRoot() {
     return rootView;
   }
 
@@ -55,12 +86,49 @@ public final class FragmentHomeBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnGenerateExam;
-      Button btnGenerateExam = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnGenerateExam = ViewBindings.findChildViewById(rootView, id);
       if (btnGenerateExam == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((LinearLayout) rootView, btnGenerateExam);
+      id = R.id.btnSetTime;
+      MaterialButton btnSetTime = ViewBindings.findChildViewById(rootView, id);
+      if (btnSetTime == null) {
+        break missingId;
+      }
+
+      id = R.id.cardExam;
+      MaterialCardView cardExam = ViewBindings.findChildViewById(rootView, id);
+      if (cardExam == null) {
+        break missingId;
+      }
+
+      id = R.id.cardMap;
+      MaterialCardView cardMap = ViewBindings.findChildViewById(rootView, id);
+      if (cardMap == null) {
+        break missingId;
+      }
+
+      id = R.id.cardReminder;
+      MaterialCardView cardReminder = ViewBindings.findChildViewById(rootView, id);
+      if (cardReminder == null) {
+        break missingId;
+      }
+
+      id = R.id.switchReminder;
+      SwitchMaterial switchReminder = ViewBindings.findChildViewById(rootView, id);
+      if (switchReminder == null) {
+        break missingId;
+      }
+
+      id = R.id.tvReminderStatus;
+      TextView tvReminderStatus = ViewBindings.findChildViewById(rootView, id);
+      if (tvReminderStatus == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((NestedScrollView) rootView, btnGenerateExam, btnSetTime,
+          cardExam, cardMap, cardReminder, switchReminder, tvReminderStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,30 +1,43 @@
 package com.example.motorcycletheory.fragments;
 
+import android.Manifest;
+import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.Request;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.motorcycletheory.R;
-import com.example.motorcycletheory.activities.ExamTakingActivity;
+import com.example.motorcycletheory.activities.DrivingSchoolMapActivity;
+import com.example.motorcycletheory.activities.ExamConfirmActivity;
 import com.example.motorcycletheory.databinding.FragmentHomeBinding;
-import com.example.motorcycletheory.network.ApiClient;
+import com.example.motorcycletheory.utils.NotificationHelper;
 import com.example.motorcycletheory.utils.SessionManager;
-
-import org.json.JSONArray;
-
-import java.util.Map;
 
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
+    private NotificationHelper notificationHelper;
+
+    private final ActivityResultLauncher<String> notificationPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    enableReminder();
+                } else {
+                    if (binding != null) binding.switchReminder.setChecked(false);
+                    Toast.makeText(requireContext(), "Cần cấp quyền thông báo để nhắc nhở", Toast.LENGTH_SHORT).show();
+                }
+            });
 
     @Nullable
     @Override
@@ -37,76 +50,88 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.btnGenerateExam.setOnClickListener(v -> callGenerateExam());
+
+        notificationHelper = new NotificationHelper(requireContext());
+
+        binding.btnGenerateExam.setOnClickListener(v -> {
+            SessionManager sessionManager = new SessionManager(requireContext());
+            if (!sessionManager.isLoggedIn()) {
+                Toast.makeText(requireContext(), getString(R.string.home_not_logged_in), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            startActivity(new Intent(requireContext(), ExamConfirmActivity.class));
+        });
+
+        binding.cardMap.setOnClickListener(v ->
+                startActivity(new Intent(requireContext(), DrivingSchoolMapActivity.class)));
+
+        setupReminderCard();
     }
 
-    private void callGenerateExam() {
-        SessionManager sessionManager = new SessionManager(requireContext());
-        if (!sessionManager.isLoggedIn()) {
-            Toast.makeText(requireContext(), getString(R.string.home_not_logged_in), Toast.LENGTH_SHORT).show();
-            return;
+    private void setupReminderCard() {
+        boolean enabled = notificationHelper.isReminderEnabled();
+        binding.switchReminder.setChecked(enabled);
+        updateReminderStatus();
+
+        binding.switchReminder.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (!buttonView.isPressed()) return;
+            if (isChecked) {
+                requestNotificationPermissionAndEnable();
+            } else {
+                notificationHelper.cancelReminder();
+                updateReminderStatus();
+                Toast.makeText(requireContext(), getString(R.string.notification_disabled), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.btnSetTime.setOnClickListener(v -> showTimePicker());
+        binding.btnSetTime.setVisibility(enabled ? View.VISIBLE : View.GONE);
+    }
+
+    private void requestNotificationPermissionAndEnable() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED) {
+                notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+                return;
+            }
         }
+        enableReminder();
+    }
 
-        binding.btnGenerateExam.setEnabled(false);
-        ApiClient apiClient = ApiClient.getInstance(requireContext());
-        String url = apiClient.endpoint("/api/exam/generate");
+    private void enableReminder() {
+        int hour = notificationHelper.getReminderHour();
+        int minute = notificationHelper.getReminderMinute();
+        notificationHelper.scheduleReminder(hour, minute);
+        updateReminderStatus();
+        binding.btnSetTime.setVisibility(View.VISIBLE);
+        Toast.makeText(requireContext(),
+                getString(R.string.notification_enabled, hour, minute), Toast.LENGTH_SHORT).show();
+    }
 
+    private void showTimePicker() {
+        int currentHour = notificationHelper.getReminderHour();
+        int currentMinute = notificationHelper.getReminderMinute();
 
-        JsonObjectRequest request = new JsonObjectRequest(
-                Request.Method.POST,
-                url,
-                null,
-                response -> {
-                    binding.btnGenerateExam.setEnabled(true);
-                    int examId = response.optInt("examId", -1);
-                    JSONArray questions = response.optJSONArray("questions");
-                    if (examId <= 0 || questions == null || questions.length() == 0) {
-                        Toast.makeText(requireContext(), getString(R.string.home_exam_invalid), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+        new TimePickerDialog(requireContext(), (view, hourOfDay, minute) -> {
+            notificationHelper.scheduleReminder(hourOfDay, minute);
+            updateReminderStatus();
+            Toast.makeText(requireContext(),
+                    getString(R.string.notification_enabled, hourOfDay, minute), Toast.LENGTH_SHORT).show();
+        }, currentHour, currentMinute, true).show();
+    }
 
-                    Intent intent = new Intent(requireContext(), ExamTakingActivity.class);
-                    intent.putExtra(ExamTakingActivity.EXTRA_EXAM_ID, examId);
-                    intent.putExtra(ExamTakingActivity.EXTRA_QUESTIONS_JSON, questions.toString());
-                    startActivity(intent);
-                },
-                error -> {
-                    binding.btnGenerateExam.setEnabled(true);
-                    String msg = getString(R.string.home_generate_error);
-                    if (error.networkResponse != null) {
-                        int code = error.networkResponse.statusCode;
-                        String body = new String(error.networkResponse.data != null ? error.networkResponse.data : new byte[0]);
-                        if (code == 401) {
-                            msg = getString(R.string.home_session_expired);
-                        } else if (!body.isEmpty()) {
-                            String trimmed = body.trim();
-                            if (trimmed.toLowerCase().contains("nullreferenceexception")) {
-                                msg = getString(R.string.home_server_error, "NullReferenceException");
-                            } else {
-                                msg = trimmed;
-                            }
-                        }
-                    }
-                    Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show();
-                }
-        ) {
-            @Override
-            protected com.android.volley.Response<org.json.JSONObject> parseNetworkResponse(com.android.volley.NetworkResponse response) {
-                try {
-                    String jsonString = new String(response.data, java.nio.charset.StandardCharsets.UTF_8);
-                    return com.android.volley.Response.success(new org.json.JSONObject(jsonString), com.android.volley.toolbox.HttpHeaderParser.parseCacheHeaders(response));
-                } catch (Exception e) {
-                    return com.android.volley.Response.error(new com.android.volley.VolleyError(e));
-                }
-            }
-
-            @Override
-            public Map<String, String> getHeaders() {
-                return ApiClient.authHeaders(sessionManager);
-            }
-        };
-
-        apiClient.getRequestQueue().add(request);
+    private void updateReminderStatus() {
+        if (binding == null) return;
+        if (notificationHelper.isReminderEnabled()) {
+            int h = notificationHelper.getReminderHour();
+            int m = notificationHelper.getReminderMinute();
+            binding.tvReminderStatus.setText(getString(R.string.notification_enabled, h, m));
+            binding.btnSetTime.setVisibility(View.VISIBLE);
+        } else {
+            binding.tvReminderStatus.setText("Chưa bật nhắc nhở");
+            binding.btnSetTime.setVisibility(View.GONE);
+        }
     }
 
     @Override

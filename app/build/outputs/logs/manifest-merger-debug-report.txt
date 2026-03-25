@@ -1,16 +1,21 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-37:12
-INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:1-61:12
 MERGED from [androidx.databinding:viewbinding:8.10.1] C:\Users\ACER\.gradle\caches\8.13\transforms\44f945071a67c56f6590462b245e724d\transformed\viewbinding-8.10.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\8.13\transforms\375fb2db779fe8abd4da9c945100a737\transformed\material-1.10.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\ACER\.gradle\caches\8.13\transforms\3ff4ebacd01b456cb454dc27cb5e3d7c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\538243622a8be9387e90274d5b1cb0ac\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\97aebe09bc663c2061e990c57dd286e6\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:17:1-44:12
 MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\ACER\.gradle\caches\8.13\transforms\315ff727a96f7703c866de67ed1dcea3\transformed\recyclerview-1.3.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\ACER\.gradle\caches\8.13\transforms\1f2aeacb34c11cfa92db18acec5cf60c\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\ACER\.gradle\caches\8.13\transforms\4fa4c995f3486291f933d3b72e24fdf3\transformed\play-services-location-21.3.0\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\c53135ae4090a3d99dd0bfe279d2fd86\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\ACER\.gradle\caches\8.13\transforms\d97336b67f0e21e155fd758b15a4d1d5\transformed\fragment-1.7.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.activity:activity:1.8.1] C:\Users\ACER\.gradle\caches\8.13\transforms\8e546d7de4d9370e0515b7bcc27e5cef\transformed\activity-1.8.1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.volley:volley:1.2.1] C:\Users\ACER\.gradle\caches\8.13\transforms\bfeb36fa67457a665a105c8a06dcd854\transformed\volley-1.2.1\AndroidManifest.xml:2:1-7:12
@@ -58,19 +63,49 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\ACER\.g
 		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:4:5-67
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:5:5-79
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:23:5-79
 	android:name
 		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-81
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:22-78
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:8:22-74
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:9:22-76
 application
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-35:19
-INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:7:5-35:19
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:11:5-59:19
+INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:11:5-59:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\8.13\transforms\375fb2db779fe8abd4da9c945100a737\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\ACER\.gradle\caches\8.13\transforms\375fb2db779fe8abd4da9c945100a737\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\ACER\.gradle\caches\8.13\transforms\3ff4ebacd01b456cb454dc27cb5e3d7c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\ACER\.gradle\caches\8.13\transforms\3ff4ebacd01b456cb454dc27cb5e3d7c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:36:5-42:19
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\ACER\.gradle\caches\8.13\transforms\4fa4c995f3486291f933d3b72e24fdf3\transformed\play-services-location-21.3.0\AndroidManifest.xml:6:5-20
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\ACER\.gradle\caches\8.13\transforms\4fa4c995f3486291f933d3b72e24fdf3\transformed\play-services-location-21.3.0\AndroidManifest.xml:6:5-20
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:4:5-6:19
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\c53135ae4090a3d99dd0bfe279d2fd86\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\c53135ae4090a3d99dd0bfe279d2fd86\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\9a524b795948ad9da70f2e641b698490\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
@@ -88,59 +123,89 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\ACER\.gradle\cache
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\ACER\.gradle\caches\8.13\transforms\3fb32c386f94af2b1869e3b0972e5e90\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:14:9-41
 	android:roundIcon
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:11:9-63
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:15:9-63
 	android:icon
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:9:9-58
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:13:9-58
 	android:allowBackup
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:18:9-54
 	android:usesCleartextTraffic
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:13:9-44
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:17:9-44
+meta-data#com.google.android.geo.API_KEY
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:21:9-23:61
+	android:value
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:23:13-58
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:22:13-58
+activity#com.example.motorcycletheory.activities.DrivingSchoolMapActivity
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:26:13-64
+activity#com.example.motorcycletheory.activities.ExamConfirmActivity
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:28:9-30:40
+	android:exported
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:29:13-59
+activity#com.example.motorcycletheory.activities.QuestionDetailActivity
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:31:9-33:40
+	android:exported
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:33:13-37
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:32:13-62
 activity#com.example.motorcycletheory.activities.ExamResultActivity
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:15:9-17:40
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:34:9-36:40
 	android:exported
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:17:13-37
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:36:13-37
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:16:13-58
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:35:13-58
 activity#com.example.motorcycletheory.activities.ExamTakingActivity
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:18:9-20:40
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:37:9-39:40
 	android:exported
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:20:13-37
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:39:13-37
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:19:13-58
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:38:13-58
 activity#com.example.motorcycletheory.activities.RegisterActivity
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:21:9-23:40
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:40:9-42:40
 	android:exported
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:23:13-37
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:42:13-37
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:22:13-56
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:41:13-56
 activity#com.example.motorcycletheory.activities.MainActivity
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:24:9-26:40
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:43:9-45:40
 	android:exported
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:26:13-37
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:45:13-37
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:25:13-52
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:44:13-52
 activity#com.example.motorcycletheory.activities.LoginActivity
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:27:9-34:20
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:46:9-53:20
 	android:exported
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:29:13-36
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:48:13-36
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:28:13-53
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:47:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:30:13-33:29
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:49:13-52:29
 action#android.intent.action.MAIN
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:31:17-69
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:31:25-66
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:32:17-77
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:51:17-77
 	android:name
-		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:32:27-74
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:51:27-74
+receiver#com.example.motorcycletheory.utils.StudyReminderReceiver
+ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:56:9-58:40
+	android:exported
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:58:13-37
+	android:name
+		ADDED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml:57:13-56
 uses-sdk
 INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml
@@ -155,10 +220,20 @@ MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ACER\.gradle
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\538243622a8be9387e90274d5b1cb0ac\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\97aebe09bc663c2061e990c57dd286e6\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\97aebe09bc663c2061e990c57dd286e6\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\ACER\.gradle\caches\8.13\transforms\315ff727a96f7703c866de67ed1dcea3\transformed\recyclerview-1.3.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\ACER\.gradle\caches\8.13\transforms\315ff727a96f7703c866de67ed1dcea3\transformed\recyclerview-1.3.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\ACER\.gradle\caches\8.13\transforms\1f2aeacb34c11cfa92db18acec5cf60c\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\ACER\.gradle\caches\8.13\transforms\1f2aeacb34c11cfa92db18acec5cf60c\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\ACER\.gradle\caches\8.13\transforms\4fa4c995f3486291f933d3b72e24fdf3\transformed\play-services-location-21.3.0\AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-location:21.3.0] C:\Users\ACER\.gradle\caches\8.13\transforms\4fa4c995f3486291f933d3b72e24fdf3\transformed\play-services-location-21.3.0\AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\c53135ae4090a3d99dd0bfe279d2fd86\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\c53135ae4090a3d99dd0bfe279d2fd86\transformed\play-services-tasks-18.2.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:3:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:3:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\ACER\.gradle\caches\8.13\transforms\d97336b67f0e21e155fd758b15a4d1d5\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\ACER\.gradle\caches\8.13\transforms\d97336b67f0e21e155fd758b15a4d1d5\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity:1.8.1] C:\Users\ACER\.gradle\caches\8.13\transforms\8e546d7de4d9370e0515b7bcc27e5cef\transformed\activity-1.8.1\AndroidManifest.xml:20:5-44
@@ -237,6 +312,38 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\ACER\.g
 		INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from D:\WorkSpace\FPTedu\PRM192\Motorcycle-Driving-Theory-Test-Practice-System-FE\app\src\main\AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:28:9-32
+queries
+ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:30:5-34:15
+package#com.google.android.apps.maps
+ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:33:9-64
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:33:18-61
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:39:9-41:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:41:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:19.0.0] C:\Users\ACER\.gradle\caches\8.13\transforms\e6f6e1269659e9ff1e59b4fea07907c0\transformed\play-services-maps-19.0.0\AndroidManifest.xml:40:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.5.0] C:\Users\ACER\.gradle\caches\8.13\transforms\757c5905d74be28e458de50e60d189ea\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\ACER\.gradle\caches\8.13\transforms\8f9814cc40488c4b73cb140a41bb2ce1\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\ACER\.gradle\caches\8.13\transforms\69ef0fc488a8a77f7722176d4f69e10a\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ACER\.gradle\caches\8.13\transforms\9a524b795948ad9da70f2e641b698490\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.motorcycletheory.app-mergeDebugResources-30:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.example.motorcycletheory.app-mergeDebugResources-33:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ACER\\.gradle\\caches\\8.13\\transforms\\375fb2db779fe8abd4da9c945100a737\\transformed\\material-1.10.0\\res\\values-large-v4\\values-large-v4.xml",

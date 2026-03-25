@@ -3,6 +3,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +16,21 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MotorcycleTheory">
+
+        <!-- Google Maps API Key - Replace with your own key from https://console.cloud.google.com -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_GOOGLE_MAPS_API_KEY_HERE" />
+
+        <activity
+            android:name=".activities.DrivingSchoolMapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ExamConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.QuestionDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.ExamResultActivity"
             android:exported="false" />
@@ -32,6 +51,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Study Reminder BroadcastReceiver -->
+        <receiver
+            android:name=".utils.StudyReminderReceiver"
+            android:exported="false" />
     </application>
 
 </manifest>

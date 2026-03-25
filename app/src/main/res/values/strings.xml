@@ -187,4 +187,95 @@
     <string name="history_score_format">Điểm: %1$d/%2$d</string>
     <string name="history_status_passed">Đậu</string>
     <string name="history_status_failed">Trượt</string>
+
+    <!-- Bottom Nav new tabs -->
+    <string name="nav_question_bank">Ngân hàng</string>
+    <string name="nav_cart">Giỏ ôn</string>
+
+    <!-- Question Bank -->
+    <string name="question_bank_title">Ngân hàng câu hỏi</string>
+    <string name="question_bank_empty">Không có câu hỏi nào</string>
+    <string name="question_bank_count">Hiển thị %1$d câu hỏi</string>
+    <string name="question_bank_fetch_error">Không tải được ngân hàng câu hỏi</string>
+    <string name="filter_all">Tất cả</string>
+    <string name="filter_important">Điểm liệt</string>
+    <string name="filter_bookmarked">Đã lưu</string>
+    <string name="btn_bookmark">Đánh dấu</string>
+    <string name="btn_view_detail">Xem chi tiết ›</string>
+    <string name="category_format">Danh mục %1$d</string>
+
+    <!-- Question Detail -->
+    <string name="question_detail_title">Chi tiết câu hỏi</string>
+    <string name="detail_question_id">Câu hỏi #%1$d</string>
+    <string name="detail_answers_label">Các đáp án</string>
+    <string name="detail_correct_label">Đáp án đúng:</string>
+    <string name="btn_add_to_cart">Thêm vào giỏ ôn tập</string>
+    <string name="btn_remove_from_cart">Xóa khỏi giỏ ôn tập</string>
+    <string name="toast_added_to_cart">Đã thêm vào giỏ ôn tập</string>
+    <string name="toast_removed_from_cart">Đã xóa khỏi giỏ ôn tập</string>
+    <string name="toast_already_in_cart">Câu hỏi đã có trong giỏ</string>
+
+    <!-- Study Cart -->
+    <string name="cart_title">Giỏ ôn tập</string>
+    <string name="cart_empty">Chưa có câu hỏi nào trong giỏ.\nHãy duyệt ngân hàng câu hỏi và thêm vào!</string>
+    <string name="cart_empty_icon">📚</string>
+    <string name="cart_questions_label">câu hỏi trong giỏ</string>
+    <string name="cart_important_format">Trong đó %1$d câu điểm liệt</string>
+    <string name="cart_clear_all">Xóa tất cả</string>
+    <string name="cart_remove">Xóa</string>
+    <string name="cart_practice">Bắt đầu luyện tập</string>
+    <string name="cart_clear_confirm">Bạn có chắc muốn xóa tất cả câu hỏi khỏi giỏ ôn tập?</string>
+    <string name="cart_cleared">Đã xóa toàn bộ giỏ ôn tập</string>
+    <string name="cart_empty_cannot_practice">Giỏ ôn tập trống, không thể luyện tập</string>
+
+    <!-- Billing / Exam Confirmation -->
+    <string name="billing_title">Xác nhận &amp; Thanh toán</string>
+    <string name="billing_order_summary">Tóm tắt đơn hàng</string>
+    <string name="billing_product_name">Sản phẩm</string>
+    <string name="billing_product_value">Đề thi ngẫu nhiên (25 câu)</string>
+    <string name="billing_quantity">Số lượng</string>
+    <string name="billing_quantity_value">1 đề thi</string>
+    <string name="billing_time_label">Thời gian làm bài</string>
+    <string name="billing_time_value">19 phút</string>
+    <string name="billing_total">Tổng thanh toán</string>
+    <string name="billing_free">MIỄN PHÍ</string>
+    <string name="billing_payment_method">Phương thức thanh toán</string>
+    <string name="billing_vnpay">VNPay (Ví điện tử / QR Code)</string>
+    <string name="billing_zalopay">ZaloPay</string>
+    <string name="billing_momo">MoMo</string>
+    <string name="billing_info">Thông tin người dùng</string>
+    <string name="billing_name_hint">Họ và tên</string>
+    <string name="billing_phone_hint">Số điện thoại</string>
+    <string name="billing_pay_button">Xác nhận &amp; Thanh toán</string>
+    <string name="billing_processing">Đang xử lý thanh toán…</string>
+    <string name="billing_success_icon">✅</string>
+    <string name="billing_success_title">Thanh toán thành công!</string>
+    <string name="billing_success_detail">Mã đơn hàng: #%1$d\nPhương thức: %2$s\nTrạng thái: Đã thanh toán\nThời gian: %3$s</string>
+    <string name="billing_start_exam">Bắt đầu làm bài thi</string>
+    <string name="billing_validate_name">Vui lòng nhập họ và tên</string>
+    <string name="billing_validate_email">Vui lòng nhập email hợp lệ</string>
+    <string name="billing_validate_phone">Vui lòng nhập số điện thoại</string>
+
+    <!-- Map / Driving Schools -->
+    <string name="map_title">Trung tâm sát hạch</string>
+    <string name="map_nearby_schools">Trung tâm gần bạn</string>
+    <string name="map_call">Gọi điện</string>
+    <string name="map_direction">Chỉ đường</string>
+    <string name="map_rating_format">⭐ %1$.1f</string>
+    <string name="map_phone_format">📞 %1$s</string>
+    <string name="map_no_maps_app">Không tìm thấy ứng dụng bản đồ</string>
+    <string name="map_no_phone_app">Không tìm thấy ứng dụng gọi điện</string>
+
+    <!-- Home - redesigned -->
+    <string name="home_card_exam_title">Thi thử sát hạch</string>
+    <string name="home_card_exam_desc">Tạo đề thi ngẫu nhiên 25 câu, 19 phút làm bài</string>
+    <string name="home_card_map_title">Trung tâm sát hạch</string>
+    <string name="home_card_map_desc">Xem vị trí các trung tâm thi gần bạn</string>
+
+    <!-- Notification & Reminders -->
+    <string name="notification_reminder_title">Nhắc nhở học tập</string>
+    <string name="notification_settings">Cài đặt nhắc nhở</string>
+    <string name="notification_enabled">Đã bật nhắc nhở lúc %1$02d:%2$02d mỗi ngày</string>
+    <string name="notification_disabled">Đã tắt nhắc nhở</string>
+    <string name="notification_set_time">Đặt giờ nhắc nhở</string>
 </resources>

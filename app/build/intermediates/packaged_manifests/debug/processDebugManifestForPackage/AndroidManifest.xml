@@ -10,6 +10,20 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <queries>
+
+        <!-- Needs to be explicitly declared on Android R+ -->
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
 
     <permission
         android:name="com.example.motorcycletheory.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -29,6 +43,21 @@
         android:testOnly="true"
         android:theme="@style/Theme.MotorcycleTheory"
         android:usesCleartextTraffic="true" >
+
+        <!-- Google Maps API Key - Replace with your own key from https://console.cloud.google.com -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_GOOGLE_MAPS_API_KEY_HERE" />
+
+        <activity
+            android:name="com.example.motorcycletheory.activities.DrivingSchoolMapActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.motorcycletheory.activities.ExamConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.motorcycletheory.activities.QuestionDetailActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.motorcycletheory.activities.ExamResultActivity"
             android:exported="false" />
@@ -50,6 +79,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Study Reminder BroadcastReceiver -->
+        <receiver
+            android:name="com.example.motorcycletheory.utils.StudyReminderReceiver"
+            android:exported="false" />
+        <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

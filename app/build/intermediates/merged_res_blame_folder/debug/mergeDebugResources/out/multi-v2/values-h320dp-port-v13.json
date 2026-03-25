@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.motorcycletheory.app-mergeDebugResources-30:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+            "outputFile": "com.example.motorcycletheory.app-mergeDebugResources-33:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ACER\\.gradle\\caches\\8.13\\transforms\\375fb2db779fe8abd4da9c945100a737\\transformed\\material-1.10.0\\res\\values-h320dp-port-v13\\values-h320dp-port-v13.xml",

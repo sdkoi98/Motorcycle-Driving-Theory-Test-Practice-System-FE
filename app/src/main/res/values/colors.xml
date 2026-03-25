@@ -15,4 +15,9 @@
     <color name="stat_card_green">#4CAF50</color>
     <color name="stat_card_orange">#FF9800</color>
     <color name="stat_card_purple">#9C27B0</color>
+
+    <!-- Bookmark -->
+    <color name="bookmark_active">#FFC107</color>
+    <color name="card_highlight">#E8F5E9</color>
+    <color name="correct_answer_bg">#C8E6C9</color>
 </resources>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.motorcycletheory.app-mergeDebugResources-30:/values-v16/values-v16.xml",
+            "outputFile": "com.example.motorcycletheory.app-mergeDebugResources-33:/values-v16/values-v16.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ACER\\.gradle\\caches\\8.13\\transforms\\3fb32c386f94af2b1869e3b0972e5e90\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",

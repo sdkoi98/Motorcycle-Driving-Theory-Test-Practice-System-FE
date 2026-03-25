@@ -22,8 +22,8 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -49,35 +49,35 @@
                 android:rowCount="2">
 
                 <!-- Total Users Card -->
-                <com.google.android.material.card.MaterialCardView
+            <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="6dp"
-                    app:cardCornerRadius="12dp"
+                app:cardCornerRadius="12dp"
                     app:cardElevation="4dp"
                     app:cardBackgroundColor="@color/stat_card_blue">
 
-                    <LinearLayout
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:padding="16dp">
 
-                        <TextView
+                    <TextView
                             android:id="@+id/tvTotalUsers"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                             android:text="0"
                             android:textColor="@android:color/white"
                             android:textSize="32sp"
-                            android:textStyle="bold" />
+                        android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:text="@string/admin_stat_users"
                             android:textColor="@android:color/white"
@@ -103,18 +103,18 @@
                         android:orientation="vertical"
                         android:padding="16dp">
 
-                        <TextView
+                    <TextView
                             android:id="@+id/tvTotalQuestions"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                             android:text="0"
                             android:textColor="@android:color/white"
                             android:textSize="32sp"
-                            android:textStyle="bold" />
+                        android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:text="@string/admin_stat_questions"
                             android:textColor="@android:color/white"
@@ -143,7 +143,7 @@
                         <TextView
                             android:id="@+id/tvTotalImportant"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                             android:text="0"
                             android:textColor="@android:color/white"
                             android:textSize="32sp"
@@ -151,7 +151,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:text="@string/admin_stat_important"
                             android:textColor="@android:color/white"
@@ -177,24 +177,24 @@
                         android:orientation="vertical"
                         android:padding="16dp">
 
-                        <TextView
+                    <TextView
                             android:id="@+id/tvTotalExams"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                             android:text="0"
                             android:textColor="@android:color/white"
                             android:textSize="32sp"
-                            android:textStyle="bold" />
+                        android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:text="@string/admin_stat_exams"
                             android:textColor="@android:color/white"
                             android:textSize="14sp" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             </GridLayout>
 
