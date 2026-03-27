@@ -28,6 +28,18 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\activity_register.xml"
     },
     {
+        "merged": "com.example.motorcycletheory.app-mergeDebugResources-34:/layout/dialog_question.xml",
+        "source": "com.example.motorcycletheory.app-main-37:/layout/dialog_question.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-mergeDebugResources-34:/layout/dialog_user.xml",
+        "source": "com.example.motorcycletheory.app-main-37:/layout/dialog_user.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-mergeDebugResources-34:/layout/dialog_confirm_delete.xml",
+        "source": "com.example.motorcycletheory.app-main-37:/layout/dialog_confirm_delete.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-34:\\layout\\item_admin_user.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\item_admin_user.xml"
     },
@@ -74,10 +86,6 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-34:\\layout\\item_study_cart.xml",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\item_study_cart.xml"
-    },
-    {
-        "merged": "com.example.motorcycletheory.app-mergeDebugResources-34:/layout/activity_exam_confirm.xml",
-        "source": "com.example.motorcycletheory.app-main-37:/layout/activity_exam_confirm.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-mergeDebugResources-34:\\layout\\activity_exam_confirm.xml",

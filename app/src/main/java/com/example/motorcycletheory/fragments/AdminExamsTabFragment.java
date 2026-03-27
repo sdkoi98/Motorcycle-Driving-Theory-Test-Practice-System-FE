@@ -96,6 +96,7 @@ public class AdminExamsTabFragment extends Fragment implements AdminExamAdapter.
                 exams.add(new AdminExam(
                         obj.optInt("examId", -1),
                         obj.optInt("userId", -1),
+                        obj.optString("username", "User #" + obj.optInt("userId", -1)),
                         obj.optInt("score", 0),
                         obj.optInt("totalQuestions", 0),
                         obj.optBoolean("isPassed", false),
@@ -109,7 +110,11 @@ public class AdminExamsTabFragment extends Fragment implements AdminExamAdapter.
     @Override
     public void onViewExam(AdminExam exam) {
         Intent intent = new Intent(requireContext(), ExamResultActivity.class);
-        intent.putExtra("examId", exam.getExamId());
+        intent.putExtra(ExamResultActivity.EXTRA_EXAM_ID, exam.getExamId());
+        intent.putExtra(ExamResultActivity.EXTRA_SCORE, exam.getScore());
+        intent.putExtra(ExamResultActivity.EXTRA_TOTAL_QUESTIONS, exam.getTotalQuestions());
+        intent.putExtra(ExamResultActivity.EXTRA_PASSED, exam.isPassed());
+        intent.putExtra(ExamResultActivity.EXTRA_FAILED_IMPORTANT, false);
         startActivity(intent);
     }
 

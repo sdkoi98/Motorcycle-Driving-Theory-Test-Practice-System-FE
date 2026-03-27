@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-debug-35:\\layout_admin_tab_exams.xml.flat",
-        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\admin_tab_exams.xml"
-    },
-    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-debug-35:\\layout_admin_tab_questions.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\admin_tab_questions.xml"
+    },
+    {
+        "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-debug-35:\\layout_admin_tab_exams.xml.flat",
+        "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\admin_tab_exams.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-debug-35:\\layout_activity_login.xml.flat",
@@ -18,6 +18,10 @@
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-debug-35:\\layout_fragment_history.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\fragment_history.xml"
+    },
+    {
+        "merged": "com.example.motorcycletheory.app-debug-35:/layout_dialog_confirm_delete.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-37:/layout/dialog_confirm_delete.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-debug-35:\\layout_item_history.xml.flat",
@@ -48,6 +52,10 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\item_admin_exam.xml"
     },
     {
+        "merged": "com.example.motorcycletheory.app-debug-35:/layout_dialog_user.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-37:/layout/dialog_user.xml"
+    },
+    {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-debug-35:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\layout\\activity_main.xml"
     },
@@ -76,8 +84,8 @@
         "source": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-main-37:\\drawable\\circle_avatar.xml"
     },
     {
-        "merged": "com.example.motorcycletheory.app-debug-35:/layout_activity_exam_confirm.xml.flat",
-        "source": "com.example.motorcycletheory.app-main-37:/layout/activity_exam_confirm.xml"
+        "merged": "com.example.motorcycletheory.app-debug-35:/layout_dialog_question.xml.flat",
+        "source": "com.example.motorcycletheory.app-main-37:/layout/dialog_question.xml"
     },
     {
         "merged": "C:\\Users\\ACER\\.gradle\\daemon\\8.13\\com.example.motorcycletheory.app-debug-35:\\layout_item_question_bank.xml.flat",

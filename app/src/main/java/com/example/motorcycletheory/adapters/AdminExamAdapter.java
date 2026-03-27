@@ -75,7 +75,7 @@ public class AdminExamAdapter extends RecyclerView.Adapter<AdminExamAdapter.View
 
         public void bind(AdminExam exam, OnExamActionListener listener) {
             tvExamIdAdmin.setText("Bài thi #" + exam.getExamId());
-            tvExamUserId.setText("User #" + exam.getUserId());
+            tvExamUserId.setText(exam.getUsername());
             tvExamScoreAdmin.setText(exam.getScore() + "/" + exam.getTotalQuestions());
             tvExamDateAdmin.setText("Ngày: " + exam.getExamDate());
 

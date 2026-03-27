@@ -1,659 +1,439 @@
-# 📖 TÓM TẮT CÁC HÀM CHÍNH TRONG DỰ ÁN
+# ÔN THI NHANH — TÓM TẮT TOÀN BỘ ỨNG DỤNG
 
-> **Lưu ý:** Đây là phiên bản tóm tắt. Xem `README_FUNCTIONS.md` để hiểu chi tiết từng hàm.
+Tài liệu này dành để ôn tập nhanh trước kiểm tra. Mỗi phần giải thích ngắn gọn mục đích, luồng hoạt động, và các điểm cần chú ý của từng thành phần.
 
----
-
-## 🎬 ACTIVITIES - CÁC MÀN HÌNH CHÍNH
-
-### 1. **LoginActivity** - Đăng nhập
-
-| Hàm | Chức năng | Input/Output |
-|-----|-----------|--------------|
-| `onCreate()` | Khởi tạo màn hình, check đã login chưa | - |
-| `validateLoginInput(email, password)` | Validate email/password | `boolean` (valid/invalid) |
-| `doLogin(email, password)` | Gọi API `/api/auth/login`, lưu token | - |
-| `setLoading(loading)` | Hiển thị/ẩn loading, disable buttons | - |
-| `mapAuthError(statusCode, data)` | Convert error thành message dễ hiểu | `String` message |
-| `stripQuotes(text)` | Xóa dấu ngoặc kép trong string | `String` |
-| `openMain()` | Chuyển đến MainActivity | - |
-
-**Flow:** `onCreate() → validateLoginInput() → doLogin() → openMain()`
+Để đọc chi tiết từng hàm, xem `README_FUNCTIONS.md`.
+Để hiểu cấu trúc folder và tổng quan, xem `README_CAU_TRUC.md`.
 
 ---
 
-### 2. **RegisterActivity** - Đăng ký
+# TỔNG QUAN NHANH
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `onCreate()` | Khởi tạo màn hình đăng ký |
-| `validateRegisterInput()` | Validate username, email, password, confirmPassword |
-| `doSignup()` | Gọi API `/api/auth/signup` |
-| `setLoading()` | Hiển thị loading state |
-| `mapRegisterError()` | Convert error thành message |
+App có **8 Activity**, **9 Fragment**, **7 Adapter**, **5 Model**, **6 Utils**.
 
-**Điểm khác:** Dùng `StringRequest` thay vì `JsonObjectRequest`
+Người dùng có 2 loại: **User** (5 tab: Home, Ngân hàng câu hỏi, Giỏ ôn tập, Lịch sử, Tài khoản) và **Admin** (2 tab: Bảng điều khiển, Tài khoản).
+
+Toàn bộ dữ liệu từ server được lấy qua **Volley**. Dữ liệu local (session, giỏ câu hỏi, cài đặt nhắc nhở) được lưu bằng **SharedPreferences**.
 
 ---
 
-### 3. **MainActivity** - Màn hình chính
+# LUỒNG KHỞI ĐỘNG APP
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `onCreate()` | Check role (User/Admin), ẩn/hiện tab, setup BottomNavigation |
-| `switchFragment(fragment)` | Thay đổi Fragment hiển thị |
+Khi mở app, Android khởi động `LoginActivity` (khai báo LAUNCHER trong AndroidManifest).
 
-**Logic quan trọng:**
-```java
-if (isAdmin) {
-    // Ẩn Home, History → Hiển thị Admin, Profile
-} else {
-    // Ẩn Admin → Hiển thị Home, History, Profile
-}
-```
+Ngay trong `onCreate()`, LoginActivity kiểm tra `sessionManager.isLoggedIn()`. Nếu đã có token từ lần trước → gọi `openMain()` ngay, không hiển thị form. Nếu chưa → hiển thị form để đăng nhập.
+
+Sau khi đăng nhập thành công, token/email/role được lưu vào SharedPreferences qua `sessionManager.saveSession()`. Rồi gọi `openMain()` để chuyển sang `MainActivity` và gọi `finish()` để đóng LoginActivity (không cho Back lại).
 
 ---
 
-### 4. **ExamTakingActivity** - Làm bài thi
+# LOGINACTIVITY — 7 HÀM
 
-| Hàm | Chức năng | Chi tiết |
-|-----|-----------|----------|
-| `onCreate()` | Nhận examId + questions từ Intent | Parse JSON, setup listeners |
-| `renderQuestion()` | Hiển thị câu hỏi tại `currentIndex` | Hiển thị nội dung, 4 đáp án, restore đáp án đã chọn |
-| `onNextClicked()` | Xử lý click "Tiếp theo"/"Nộp bài" | Validate → Lưu đáp án → Next/Submit |
-| `getSelectedOption()` | Lấy đáp án đã chọn | Return "A", "B", "C", "D" hoặc "" |
-| `submitExam()` | Gửi đáp án lên server | POST `/api/exam/submit` → ExamResultActivity |
-| `showError(message)` | Hiển thị error với shake animation | UX improvement |
-| `hideError()` | Ẩn error message | - |
+`onCreate()` khởi tạo form, kiểm tra session, setup listener cho 2 nút.
 
-**Data structure:**
-```java
-selectedAnswers = {
-    "1": "A",    // questionId: selectedAnswer
-    "2": "B",
-    "3": "C",
-    ...
-}
-```
+`validateLoginInput(email, password)` kiểm tra email (rỗng? đúng format?) và password (rỗng? đủ 6 ký tự?). Trả về boolean. Đặc điểm quan trọng: dùng flag `valid = false` thay vì `return false` ngay, để hiển thị tất cả lỗi cùng lúc.
+
+`doLogin(email, password)` gọi `setLoading(true)`, tạo JSONObject payload, tạo JsonObjectRequest POST đến `/api/auth/login`, trong callback success thì gọi `sessionManager.saveSession()` rồi `openMain()`, trong callback error thì gọi `mapAuthError()` để lấy message hiển thị Toast.
+
+`setLoading(boolean loading)` disable/enable button và show/hide ProgressBar.
+
+`mapAuthError(statusCode, data)` chuyển status code thành message. Status `-1` là lỗi mạng (không có networkResponse). Status `401` là sai email/password. Còn lại đọc message từ response body.
+
+`stripQuotes(text)` xóa dấu nháy kép nếu server trả về `"Error message"` dạng có quotes.
+
+`openMain()` gọi `startActivity(MainActivity)` rồi `finish()`.
 
 ---
 
-### 5. **ExamResultActivity** - Kết quả bài thi
+# REGISTERACTIVITY — 4 HÀM
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `onCreate()` | Khởi tạo, hiển thị summary |
-| `setupToolbar()` | Setup toolbar với nút back |
-| `displaySummary()` | Hiển thị điểm, Đậu/Trượt, câu điểm liệt |
-| `setupListeners()` | Setup button listeners (View Detail, Back to Home) |
-| `loadExamDetail()` | Gọi API `/api/exam/detail/:id` để xem chi tiết |
-| `formatDetail(response)` | Format JSON response thành text dễ đọc |
-
-**Flow:** `onCreate() → displaySummary() → (User click "Xem chi tiết") → loadExamDetail() → formatDetail()`
+Tương tự LoginActivity nhưng khác ở chỗ: dùng `StringRequest` thay vì `JsonObjectRequest` (vì API đăng ký trả về text, không phải JSON). Validate thêm `username` và `confirmPassword`. Sau thành công chỉ gọi `finish()` để quay về LoginActivity, không gọi `openMain()`.
 
 ---
 
-## 🧩 FRAGMENTS - CÁC PHẦN MÀN HÌNH
+# MAINACTIVITY — 4 HÀM
 
-### 1. **HomeFragment** - Tab "Thi thử"
+`onCreate()` đọc role từ SessionManager. Nếu Admin thì xóa menu XML và build menu mới bằng code (`getMenu().clear()` rồi `getMenu().add()`), sau đó switch sang AdminFragment. Nếu User thì giữ menu XML 5 tab, gọi `setupCartBadge()`, switch sang HomeFragment. Setup `setOnItemSelectedListener` cho bottom nav.
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `onCreateView()` | Inflate layout |
-| `onViewCreated()` | Setup button listener |
-| `callGenerateExam()` | Gọi API `/api/exam/generate` → ExamTakingActivity |
-| `onDestroyView()` | Clean up (set binding = null) |
+`switchFragment(fragment)` thay Fragment trong `fragmentContainer` bằng `getSupportFragmentManager().beginTransaction().replace().commit()`.
 
-**API Response:**
-```json
-{
-    "examId": 123,
-    "questions": [ {...}, {...}, ... ]
-}
-```
+`setupCartBadge()` tạo `BadgeDrawable` màu đỏ gắn vào tab Cart. Gọi `refreshCartBadge()` để set số ngay từ đầu.
+
+`refreshCartBadge()` là hàm `public`. Đọc `StudyCartManager.getCartCount()`, nếu > 0 thì hiện số, nếu bằng 0 thì ẩn badge. Được gọi bởi: `onResume()` của MainActivity, và các Fragment khi thay đổi giỏ.
 
 ---
 
-### 2. **HistoryFragment** - Tab "Lịch sử"
+# EXAMCONFIRMACTIVITY — 6 HÀM
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `onCreateView()` | Inflate layout |
-| `onViewCreated()` | Setup RecyclerView + Adapter, load data |
-| `loadHistory()` | Gọi API `/api/exam/history` |
-| `showEmptyState(message)` | Hiển thị message khi không có dữ liệu |
-| `showHistoryList(data)` | Parse JSON → List<ExamHistory> → Adapter |
-| `onDestroyView()` | Clean up |
+Màn hình giả lập xác nhận thanh toán trước khi thi. Không thực sự xử lý tiền, chỉ delay 2 giây rồi gọi API tạo đề.
 
-**Adapter:** `HistoryAdapter` hiển thị danh sách bài thi với badges (Đậu/Trượt)
+`prefillUserInfo()` điền sẵn email từ SessionManager và tên tự động tạo bằng `deriveNameFromEmail()`.
 
----
+`deriveNameFromEmail(email)` tách phần trước `@`, split bằng `.` hoặc `_`, capitalize từng phần. Ví dụ: `"nguyen.van.a@gmail.com"` → `"Nguyen Van A"`. Logic này xuất hiện giống nhau ở cả ExamConfirmActivity và ProfileFragment.
 
-### 3. **ProfileFragment** - Tab "Tài khoản"
+`validateInput()` kiểm tra họ tên, email, SĐT.
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `onViewCreated()` | Hiển thị email, role, avatar initial |
-| `deriveNameFromEmail(email)` | Tạo tên hiển thị từ email |
-| `extractInitial(name)` | Lấy chữ cái đầu cho avatar |
-| `callLogout(sessionManager)` | Gọi API `/api/auth/logout` → LoginActivity |
-| `openLogin()` | Clear session, mở LoginActivity |
+`processPayment()` disable nút, show ProgressBar, rồi dùng `Handler(Looper.getMainLooper()).postDelayed(() -> { generateExam(); }, 2000)` để delay 2 giây.
 
-**Logic:**
-- `test.user@gmail.com` → `Test User` → Avatar "T"
+`generateExam()` POST `/api/exam/generate`, lưu `generatedExamId` và `generatedQuestionsJson = questions.toString()`, rồi gọi `showConfirmation()`.
+
+`showConfirmation()` ẩn form, hiện card xác nhận với chi tiết. Setup nút "Bắt đầu thi" → Intent sang ExamTakingActivity với extras `EXTRA_EXAM_ID` và `EXTRA_QUESTIONS_JSON`, rồi `finish()`.
+
+`getSelectedPaymentMethod()` đọc RadioGroup và trả về chuỗi `"VNPay"`, `"ZaloPay"`, hoặc `"MoMo"`.
 
 ---
 
-### 4. **AdminFragment** - Tab "Bảng điều khiển" (Admin)
+# EXAMTAKINGACTIVITY — 5 HÀM
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `onViewCreated()` | Check role, setup ViewPager2 + TabLayout |
-| `setupViewPager()` | Add 3 tab: Users, Questions, Exams |
-| `loadDashboardStats()` | Gọi API `/api/admin/stats` → Hiển thị thống kê |
-| `updateDashboardUI(stats)` | Cập nhật số liệu lên UI |
-| `onFabClicked()` | Xử lý click FAB (Floating Action Button) |
-| `refreshDashboard()` | Reload stats sau khi CRUD |
+Lưu ý: Activity này KHÔNG dùng ViewBinding. Dùng `setContentView(R.layout.activity_exam_taking)` và `findViewById()`.
 
-**ViewPager2:** Cho phép swipe giữa 3 tab con
+Dữ liệu đầu vào qua Intent: `EXTRA_EXAM_ID` (int) và `EXTRA_QUESTIONS_JSON` (String — JSONArray các câu hỏi).
 
----
+Lưu đáp án trong `JSONObject selectedAnswers` với key là questionId dạng String, value là `"A"/"B"/"C"/"D"`.
 
-### 5. **AdminUsersTabFragment** - Tab "Người dùng"
+`onCreate()` parse `EXTRA_QUESTIONS_JSON` thành `JSONArray questions`. Khởi tạo tất cả View bằng `findViewById()`. Setup listener cho button và RadioGroup (khi chọn đáp án thì `hideError()`). Gọi `renderQuestion()` để hiển thị câu đầu.
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `loadUsers()` | GET `/api/admin/users` |
-| `parseUsers(response)` | Parse JSON → List<AdminUser> |
-| `showCreateUserDialog()` | Hiển thị dialog tạo user |
-| `showUserDialog(existingUser)` | Dialog tạo/sửa user (reusable) |
-| `createUser(payload)` | POST `/api/admin/users` |
-| `updateUser(userId, payload)` | PUT `/api/admin/users/:id` |
-| `deleteUser(userId)` | DELETE `/api/admin/users/:id` |
-| `sendWriteRequest()` | Helper method gửi request CRUD |
-| `onEditUser(user)` | Callback khi click Edit trong RecyclerView |
-| `onDeleteUser(user)` | Callback khi click Delete |
+`renderQuestion()` hiển thị câu tại `currentIndex`: set text câu hỏi và 4 đáp án, `rgAnswers.clearCheck()` rồi restore đáp án đã chọn nếu có trong `selectedAnswers`, set text nút là "Tiếp theo" hoặc "Nộp bài" tùy vị trí.
 
-**Dialog:** Dùng `DialogUserBinding` (ViewBinding cho dialog_user.xml)
+`onNextClicked()` lấy đáp án qua `getSelectedOption()`, nếu rỗng thì `showError()` và return. Nếu có thì `selectedAnswers.put(String.valueOf(questionId), selected)`. Nếu là câu cuối thì `submitExam()`, còn lại thì `currentIndex++` rồi `renderQuestion()`.
+
+`getSelectedOption()` đọc `rgAnswers.getCheckedRadioButtonId()` và trả về `"A"/"B"/"C"/"D"` hoặc `""`.
+
+`submitExam()` tạo payload `{ examId, answers }`, POST `/api/exam/submit`. Callback success: truyền kết quả qua Intent sang ExamResultActivity rồi `finish()`.
+
+`showError(message)` hiển thị text lỗi và chạy animation `R.anim.shake` lên cả `tvErrorMessage` và `rgAnswers`.
 
 ---
 
-### 6. **AdminQuestionsTabFragment** - Tab "Câu hỏi"
+# EXAMRESULTACTIVITY — 3 HÀM
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `loadQuestions()` | GET `/api/question?page=1&pageSize=50` |
-| `parseQuestions(items)` | Parse JSON → List<AdminQuestion> |
-| `showCreateQuestionDialog()` | Dialog tạo câu hỏi |
-| `showQuestionDialog(existingQuestion)` | Dialog tạo/sửa câu hỏi |
-| `createQuestion(payload)` | POST `/api/question` |
-| `updateQuestion(questionId, payload)` | PUT `/api/question/:id` |
-| `deleteQuestion(questionId)` | DELETE `/api/question/:id` |
-| `sendWriteRequest()` | Helper method CRUD |
-| `onViewQuestion(question)` | Hiển thị dialog xem chi tiết |
-| `onEditQuestion(question)` | Callback Edit |
-| `onDeleteQuestion(question)` | Callback Delete |
+Nhận qua Intent: `EXTRA_EXAM_ID`, `EXTRA_SCORE`, `EXTRA_TOTAL_QUESTIONS`, `EXTRA_PASSED`, `EXTRA_FAILED_IMPORTANT`.
 
-**Dialog:** 3 loại
-- Create/Edit: `DialogQuestionBinding`
-- View: `DialogViewQuestionBinding`
-- Confirm Delete: `DialogConfirmDeleteBinding`
+`displaySummary()` hiển thị điểm số (`score/totalQuestions`), badge Đậu hoặc Trượt, và cảnh báo nếu `failedByImportantQuestion == true` (trượt vì sai câu điểm liệt dù điểm đủ).
+
+`loadExamDetail()` GET `/api/exam/detail/:examId` để xem chi tiết từng câu đúng/sai.
+
+`formatDetail(response)` parse mảng câu hỏi trong response và build thành String dễ đọc để hiển thị.
 
 ---
 
-### 7. **AdminExamsTabFragment** - Tab "Bài thi"
+# QUESTIONDETAILACTIVITY — 4 HÀM
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `loadExams()` | GET `/api/exam/admin/all-exams` |
-| `parseExams(response)` | Parse JSON → List<AdminExam> |
-| `onViewExam(exam)` | Mở ExamResultActivity |
-| `onDeleteExam(exam)` | Hiển thị dialog xác nhận xóa |
-| `deleteExam(examId)` | DELETE `/api/exam/:id` |
+Nhận toàn bộ dữ liệu qua Intent Extras, không gọi API.
 
-**Lưu ý:** Admin không thể tạo bài thi (FAB bị disable ở tab này)
+`loadQuestion()` đọc tất cả Extras, tạo đối tượng `AdminQuestion`, hiển thị nội dung và 4 đáp án, hiện badge "Câu điểm liệt" nếu `isImportant`, gọi `highlightCorrectAnswer()`.
 
----
+`highlightCorrectAnswer(correct)` xác định TextView nào chứa đáp án đúng, tạo `GradientDrawable` màu xanh với viền xanh đậm và apply làm background của TextView đó.
 
-## 🔄 ADAPTERS - RECYCLERVIEW ADAPTERS
+`setupCartButton()` gọi `updateCartButtonState()` để set trạng thái ban đầu. Click listener toggle: nếu `isInCart` thì `removeQuestion()`, nếu không thì `addQuestion()`, rồi gọi `updateCartButtonState()` lại.
 
-### 1. **HistoryAdapter**
-
-**Bind:** `ExamHistory` → `item_history.xml`
-
-| Hàm | Chức năng |
-|-----|-----------|
-| `submitList(newList)` | Cập nhật danh sách hiển thị |
-| `onCreateViewHolder()` | Inflate item layout |
-| `onBindViewHolder()` | Bind dữ liệu vào ViewHolder |
-| `getItemCount()` | Trả về số lượng items |
-
-**ViewHolder.bind():**
-- Set exam number
-- Set score
-- Set status badge (Đậu/Trượt)
-- Set date, duration
+`updateCartButtonState()` đọc `cartManager.isInCart(questionId)`: nếu trong giỏ thì text đỏ "Xóa khỏi giỏ", nếu chưa thì text xanh "Thêm vào giỏ".
 
 ---
 
-### 2. **AdminUserAdapter**
+# DRIVINGSCHOOLMAPACTIVITY — 5 HÀM
 
-**Bind:** `AdminUser` → `item_admin_user.xml`
+Implement `OnMapReadyCallback` và `DrivingSchoolAdapter.OnSchoolActionListener`.
 
-**Interface:** `OnUserActionListener`
-```java
-void onEditUser(AdminUser user);
-void onDeleteUser(AdminUser user);
-```
+`onCreate()` gọi `getDrivingSchools()` lấy 8 trường hard-coded, setup RecyclerView, gọi `mapFragment.getMapAsync(this)` — bất đồng bộ.
 
-**Xử lý sự kiện:** Click Edit/Delete → Callback đến Fragment
+`onMapReady(GoogleMap map)` thêm marker cho 8 trường, dùng `LatLngBounds.Builder` để fit tất cả marker vào khung camera.
 
----
+`onSchoolClick(school)` zoom camera đến trường được chọn với `animateCamera(newLatLngZoom(position, 15))`.
 
-### 3. **AdminQuestionAdapter**
+`onCallClick(school)` mở app gọi điện với `Intent(ACTION_DIAL, Uri.parse("tel:..."))`.
 
-**Bind:** `AdminQuestion` → `item_admin_question.xml`
+`onDirectionClick(school)` mở Google Maps navigation. Nếu không cài Google Maps thì mở web browser với URL Google Maps.
 
-**Interface:** `OnQuestionActionListener`
-```java
-void onViewQuestion(AdminQuestion question);
-void onEditQuestion(AdminQuestion question);
-void onDeleteQuestion(AdminQuestion question);
-```
+`getDrivingSchools()` trả về List 8 DrivingSchool với tọa độ GPS thực tế (Hà Nội, HCM, Đà Nẵng, Cần Thơ, Hải Phòng, Bình Dương, Đồng Nai, Huế).
 
 ---
 
-### 4. **AdminExamAdapter**
+# HOMEFRAGMENT — 6 HÀM
 
-**Bind:** `AdminExam` → `item_admin_exam.xml`
+`onViewCreated()` setup 3 thứ: nút tạo đề thi → ExamConfirmActivity, card bản đồ → DrivingSchoolMapActivity, gọi `setupReminderCard()`.
 
-**Interface:** `OnExamActionListener`
-```java
-void onViewExam(AdminExam exam);
-void onDeleteExam(AdminExam exam);
-```
+`setupReminderCard()` đọc trạng thái nhắc nhở hiện tại, set Switch, setup listener. Chú ý: listener dùng `if (!buttonView.isPressed()) return` để tránh bị trigger khi code set `setChecked()`.
 
----
+`requestNotificationPermissionAndEnable()` kiểm tra Android version: nếu >= 13 (TIRAMISU) và chưa có quyền `POST_NOTIFICATIONS` thì launch permission launcher; nếu Android < 13 hoặc đã có quyền thì gọi thẳng `enableReminder()`.
 
-## 📦 MODELS - DATA OBJECTS
+`enableReminder()` gọi `notificationHelper.scheduleReminder(hour, minute)` và cập nhật UI.
 
-### 1. **ExamHistory**
+`showTimePicker()` hiện `TimePickerDialog`, khi chọn xong gọi `notificationHelper.scheduleReminder(hourOfDay, minute)`.
 
-```java
-int examId;
-int score;
-int totalQuestions;
-boolean passed;
-String date;
-int duration;
-```
+`updateReminderStatus()` cập nhật text `tvReminderStatus` và ẩn/hiện `btnSetTime`.
 
 ---
 
-### 2. **AdminUser**
+# QUESTIONBANKFRAGMENT — 7 HÀM
 
-```java
-int userId;
-String username;
-String email;
-String role;  // "User" hoặc "Admin"
-```
+Implement `QuestionBankAdapter.OnQuestionBankListener`.
 
----
+`onViewCreated()` khởi tạo `StudyCartManager`, tạo adapter với `new QuestionBankAdapter(this, getBookmarkedIds())`, setup RecyclerView, gọi `setupFilters()` và `loadQuestions()`.
 
-### 3. **AdminQuestion**
+`onResume()` gọi `adapter.updateBookmarks(getBookmarkedIds())` để cập nhật lại icon bookmark nếu user vừa bookmark từ màn hình khác.
 
-```java
-int questionId;
-String content;
-String answerA, answerB, answerC, answerD;
-String correctAnswer;  // "A", "B", "C", "D"
-int categoryId;
-boolean isImportant;  // Câu điểm liệt
-```
+`setupFilters()` lắng nghe ChipGroup, cập nhật `currentFilter` và gọi `applyFilter()`.
 
----
+`loadQuestions()` GET `/api/question?page=1&pageSize=200`. Override `parseNetworkResponse` để đọc UTF-8. Gọi `parseQuestions(response)` khi thành công.
 
-### 4. **AdminExam**
+`parseQuestions(response)` đọc array từ key `"items"` hoặc `"questions"` (fallback). Parse từng object thành `AdminQuestion`. Gọi `applyFilter()`.
 
-```java
-int examId;
-int userId;
-int score;
-int totalQuestions;
-boolean isPassed;
-String examDate;
-```
+`applyFilter()` lọc `allQuestions` theo `currentFilter` (all/important/bookmarked), cập nhật counter và `adapter.submitList(filtered)`.
+
+`getBookmarkedIds()` lấy danh sách câu hỏi từ `cartManager.getCartItems()` và extract `questionId` thành `Set<Integer>`.
+
+`onQuestionClick(question)` tạo Intent sang QuestionDetailActivity với tất cả Extras.
+
+`onBookmarkToggle(question, addToCart)` add hoặc remove qua `StudyCartManager`, gọi `adapter.updateBookmarks()`, gọi `updateCartBadge()`, nếu đang filter "bookmarked" thì gọi `applyFilter()` để re-filter.
+
+`updateCartBadge()` cast `getActivity()` thành `MainActivity` rồi gọi `refreshCartBadge()`.
 
 ---
 
-## 🌐 NETWORK & UTILS
+# STUDYCARTFRAGMENT — 6 HÀM
 
-### **ApiClient** (Singleton)
+Implement `StudyCartAdapter.OnCartItemListener`.
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `getInstance(context)` | Lấy/tạo singleton instance |
-| `getRequestQueue()` | Trả về Volley RequestQueue |
-| `getBaseUrl()` | Trả về base URL từ strings.xml |
-| `endpoint(path)` | Tạo full URL (baseUrl + path) |
-| `authHeaders(sessionManager)` | Tạo headers với Authorization token |
+`onResume()` gọi `loadCart()` để refresh khi user quay lại từ QuestionDetailActivity.
 
-**Example:**
-```java
-ApiClient apiClient = ApiClient.getInstance(context);
-String url = apiClient.endpoint("/api/exam/generate");
-// → "http://10.0.2.2:5000/api/exam/generate"
+`loadCart()` đọc từ `cartManager.getCartItems()`, gọi `updateSummary()`, nếu rỗng hiện empty state và disable nút Luyện tập (alpha 0.5), nếu có thì `adapter.submitList(items)`.
 
-Map<String, String> headers = ApiClient.authHeaders(sessionManager);
-// → { "Content-Type": "application/json", "Authorization": "Bearer <token>" }
-```
+`updateSummary(items)` set `tvCartCount` và đếm câu điểm liệt để set `tvImportantCount`.
+
+`confirmClearAll()` hiện AlertDialog. Nếu xác nhận: `cartManager.clearCart()`, `loadCart()`, `updateCartBadge()`.
+
+`startPractice()` kiểm tra `cartManager.getCartCount() == 0` rồi chuyển sang `ExamConfirmActivity`.
+
+`onRemoveItem(question)` xóa câu hỏi khỏi giỏ rồi `loadCart()` và `updateCartBadge()`.
+
+`onItemClick(question)` mở `QuestionDetailActivity`.
 
 ---
 
-### **SessionManager**
+# PROFILEFRAGMENT — 4 HÀM
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `saveSession(email, token, role)` | Lưu session vào SharedPreferences |
-| `getToken()` | Lấy JWT token |
-| `getEmail()` | Lấy email |
-| `getRole()` | Lấy role ("User"/"Admin") |
-| `isLoggedIn()` | Check token có tồn tại không |
-| `clear()` | Xóa session (logout) |
+`onViewCreated()` lấy email và role từ SessionManager, gọi `deriveNameFromEmail()` để tạo tên, gọi `extractInitial()` để lấy ký tự đầu cho avatar. Set `tvDisplayName`, `tvRole`, `tvEmailValue`, `tvAvatarInitial`. Setup click cho `btnLogout`.
 
-**Storage:** SharedPreferences với name `"motorcycle_session"`
+`deriveNameFromEmail(email)` tách email, split bằng `[._]`, capitalize từng phần. Cùng logic với ExamConfirmActivity.
 
-**Keys:**
-- `jwt_token`: JWT token
-- `email`: Email người dùng
-- `role`: User role
+`extractInitial(name)` lấy `charAt(0)` và `toUpperCase()`.
+
+`callLogout(sessionManager)` POST `/api/auth/logout` dùng `StringRequest`. Dù thành công hay lỗi đều gọi `sessionManager.clear()` rồi `openLogin()`. Lý do handle cả lỗi: phải đảm bảo user thoát được khỏi app dù server có vấn đề.
+
+`openLogin()` tạo Intent sang LoginActivity với flags `FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK` để xóa toàn bộ back stack.
 
 ---
 
-### **AdminViewPagerAdapter**
+# ADMINFRAGMENT — 5 HÀM
 
-**Mục đích:** Adapter cho ViewPager2 trong AdminFragment
+`onViewCreated()` kiểm tra role, nếu không phải Admin thì return. Gọi `setupViewPager()` và `loadDashboardStats()`. Setup FAB click.
 
-| Hàm | Chức năng |
-|-----|-----------|
-| `addFragment(fragment, title)` | Thêm Fragment vào danh sách |
-| `createFragment(position)` | Trả về Fragment tại vị trí position |
-| `getItemCount()` | Số lượng Fragments |
-| `getPageTitle(position)` | Trả về title của tab |
+`setupViewPager()` tạo 3 sub-fragment, tạo `AdminViewPagerAdapter`, add 3 fragment vào adapter, set adapter cho ViewPager2, đăng ký `OnPageChangeCallback` để lưu `currentTabPosition`, dùng `TabLayoutMediator` để sync tab title.
 
----
+`loadDashboardStats()` GET `/api/admin/stats`. Response gồm `totalUsers`, `totalQuestions`, `totalImportantQuestions`, `totalExams`. Gọi `updateDashboardUI()`.
 
-## 🔑 CÁC KHÁI NIỆM QUAN TRỌNG
+`updateDashboardUI(stats)` set 4 TextView số liệu.
 
-### 1. **ViewBinding**
+`onFabClicked()` switch theo `currentTabPosition`: 0 → `usersTabFragment.showCreateUserDialog()`, 1 → `questionsTabFragment.showCreateQuestionDialog()`, 2 → Toast "Không thể tạo".
 
-**Lợi ích:**
-- Type-safe: Không bị lỗi cast type
-- Null-safe: Không bị NullPointerException
-- Tự động generate: Không cần viết findViewById()
-
-**Cách dùng:**
-```java
-// Activity
-binding = ActivityLoginBinding.inflate(getLayoutInflater());
-setContentView(binding.getRoot());
-
-// Fragment
-binding = FragmentHomeBinding.inflate(inflater, container, false);
-return binding.getRoot();
-```
-
-**Clean up:**
-```java
-@Override
-public void onDestroyView() {
-    super.onDestroyView();
-    binding = null;  // Tránh memory leak
-}
-```
+`getSessionManager()`, `getApiClient()`, `refreshDashboard()` là 3 hàm `public` để sub-fragment truy cập. Sub-fragment gọi: `((AdminFragment) getParentFragment()).getSessionManager()`.
 
 ---
 
-### 2. **Volley Request Flow**
+# ADMINEXAMSTABFRAGMENT — 4 HÀM
+
+`onViewCreated()` lấy sessionManager và apiClient từ `(AdminFragment) getParentFragment()`. Tạo adapter, set listener `this` (implement `OnExamActionListener`). Gọi `loadExams()`.
+
+`loadExams()` dùng `JsonArrayRequest` (khác các nơi khác dùng `JsonObjectRequest`) vì API trả về array thẳng, không bọc trong object. Parse response bằng `parseExams()`.
+
+`parseExams(JSONArray response)` loop qua array, tạo từng `AdminExam` với `obj.optInt("examId")`, `obj.optInt("userId")`, `obj.optString("username", "User #" + userId)`, v.v.
+
+`onViewExam(AdminExam exam)` tạo Intent sang `ExamResultActivity` với các Extras từ model.
+
+`onDeleteExam(AdminExam exam)` inflate `DialogConfirmDeleteBinding`, tạo `AlertDialog` với view đó, setup 2 nút. Khi xác nhận → `deleteExam(exam.getExamId())`.
+
+`deleteExam(examId)` DELETE `/api/exam/:id`. Callback success: Toast, `loadExams()`, và `((AdminFragment) getParentFragment()).refreshDashboard()`.
+
+---
+
+# SESSIONMANAGER
+
+SharedPreferences tên `"motorcycle_session"`. Keys: `jwt_token`, `email`, `role`.
+
+`saveSession(email, token, role)` lưu cả 3 giá trị bằng `preferences.edit().putString().apply()`.
+
+`isLoggedIn()` đọc token và trả về `token != null && !token.isEmpty()`.
+
+`clear()` gọi `preferences.edit().clear().apply()` để xóa toàn bộ.
+
+---
+
+# STUDYCARTMANAGER
+
+SharedPreferences tên `"study_cart"`. Key `cart_items` lưu JSONArray dạng String.
+
+`addQuestion(question)` gọi `getCartItems()`, kiểm tra trùng (loop qua list, so sánh `questionId`), nếu chưa có thì add và `saveCart()`.
+
+`removeQuestion(questionId)` gọi `getCartItems()`, `list.removeIf(q -> q.getQuestionId() == questionId)`, `saveCart()`.
+
+`clearCart()` gọi `preferences.edit().remove(KEY_CART_ITEMS).apply()`.
+
+`isInCart(questionId)` đọc list, loop và so sánh questionId.
+
+`getCartCount()` trả về `getCartItems().size()`.
+
+`getCartItems()` đọc String từ SharedPreferences, parse thành JSONArray, loop và tạo `AdminQuestion` cho từng object.
+
+`saveCart(items)` serialize List thành JSONArray rồi lưu bằng `preferences.edit().putString()`.
+
+---
+
+# NOTIFICATIONHELPER
+
+`createNotificationChannels()` được gọi trong constructor. Tạo channel với ID `"study_reminder"`, importance HIGH (có âm thanh, pop-up). Chỉ cần tạo 1 lần, Android tự nhớ.
+
+`scheduleReminder(hour, minute)` lưu settings vào SharedPreferences. Tạo `PendingIntent` trỏ đến `StudyReminderReceiver`. Tính `Calendar` cho thời điểm tiếp theo (nếu đã qua trong ngày thì ngày mai). Gọi `AlarmManager.setRepeating(RTC_WAKEUP, time, INTERVAL_DAY, pendingIntent)`.
+
+`cancelReminder()` set `reminder_enabled = false`, gọi `alarmManager.cancel(pendingIntent)`.
+
+`showStudyReminder()` đọc `StudyCartManager.getCartCount()` để tạo nội dung động. Build `NotificationCompat` và gọi `NotificationManagerCompat.from(context).notify()`.
+
+---
+
+# STUDYREMINDERRECEIVER
+
+BroadcastReceiver. Khi AlarmManager đến giờ, hệ thống gọi `onReceive()`. Receiver chỉ làm một việc: `new NotificationHelper(context).showStudyReminder()`.
+
+Phải khai báo trong AndroidManifest để hệ thống biết Receiver này tồn tại.
+
+---
+
+# APICLIENT
+
+Singleton. `getInstance(context)` trả về instance duy nhất, tạo mới nếu chưa có.
+
+`getRequestQueue()` trả về `RequestQueue` để add request.
+
+`endpoint(path)` ghép base URL (từ `strings.xml`) với path.
+
+`authHeaders(sessionManager)` trả về Map `{ "Content-Type": "application/json", "Authorization": "Bearer <token>" }`.
+
+---
+
+# CÁC ĐIỂM DỄ BỊ HỎI
+
+**Tại sao ExamTakingActivity không dùng ViewBinding?**
+Nó dùng `setContentView(R.layout.activity_exam_taking)` và `findViewById()`. Đây là cách cũ hơn nhưng vẫn hoạt động.
+
+**Admin menu ở đâu?**
+Admin không dùng file `bottom_nav_menu.xml`. Khi role là Admin, MainActivity gọi `getMenu().clear()` rồi build menu bằng code `getMenu().add()`.
+
+**Làm thế nào Fragment con lấy sessionManager?**
+Sub-fragment của Admin (AdminUsersTabFragment, AdminQuestionsTabFragment, AdminExamsTabFragment) gọi `(AdminFragment) getParentFragment()` để lấy reference Fragment cha, rồi gọi `parent.getSessionManager()` và `parent.getApiClient()`.
+
+**Tại sao logout xử lý cả khi API lỗi?**
+Để đảm bảo user luôn thoát được. Dù server có lỗi, `sessionManager.clear()` vẫn được gọi.
+
+**Validation tại sao không return sớm khi gặp lỗi đầu tiên?**
+Để hiển thị tất cả lỗi cùng lúc thay vì từng lỗi một. Dùng flag `boolean valid` và chỉ `return valid` ở cuối.
+
+**Tại sao override `parseNetworkResponse` trong Volley?**
+Để đọc response dạng UTF-8 thay vì encoding mặc định, đảm bảo tiếng Việt hiển thị đúng.
+
+**StudyCartManager lưu dữ liệu ở đâu?**
+SharedPreferences tên `"study_cart"`, key `"cart_items"`, lưu JSONArray serialize thành String. Không cần internet, không cần server.
+
+**Badge số lượng trên tab Cart hoạt động thế nào?**
+`MainActivity` tạo `BadgeDrawable` và giữ reference. Các Fragment gọi `((MainActivity) getActivity()).refreshCartBadge()` mỗi khi giỏ thay đổi.
+
+**Nhắc nhở hoạt động kể cả khi app đóng không?**
+Có. AlarmManager là system service, hoạt động độc lập với app. Khi đến giờ, hệ thống gọi `StudyReminderReceiver.onReceive()` dù app có đang chạy hay không.
+
+**PageSize khác nhau ở đâu?**
+QuestionBankFragment dùng `pageSize=200` để lấy đủ câu cho ngân hàng câu hỏi. AdminQuestionsTabFragment dùng `pageSize=50` vì chỉ cần hiển thị một trang để quản lý.
+
+---
+
+# LUỒNG DỮ LIỆU ĐẦY ĐỦ
+
+Luồng thi thử từ User:
 
 ```
-1. Tạo Request object (JsonObjectRequest, StringRequest, ...)
-2. Định nghĩa success callback
-3. Định nghĩa error callback
-4. (Optional) Override headers, parseNetworkResponse, getBody
-5. Add request vào RequestQueue
-6. Volley tự động:
-   - Chạy request trên background thread
-   - Parse response
-   - Gọi callback trên main thread
+HomeFragment
+    → Click "Tạo đề thi"
+    → ExamConfirmActivity
+        → Điền thông tin, chọn phương thức thanh toán
+        → Click "Thanh toán"
+        → delay 2 giây
+        → POST /api/exam/generate
+        → Nhận {examId, questions[]}
+        → lưu generatedQuestionsJson = questions.toString()
+        → Click "Bắt đầu thi"
+        → Intent sang ExamTakingActivity với EXTRA_EXAM_ID và EXTRA_QUESTIONS_JSON
+    → ExamTakingActivity
+        → Parse EXTRA_QUESTIONS_JSON thành JSONArray
+        → renderQuestion() câu 1
+        → User chọn đáp án → onNextClicked() → lưu vào selectedAnswers
+        → ... lặp đến câu cuối ...
+        → onNextClicked() câu cuối → submitExam()
+        → POST /api/exam/submit với {examId, answers:{...}}
+        → Nhận {score, totalQuestions, passed, failedByImportantQuestion}
+        → Intent sang ExamResultActivity với các extra
+        → finish()
+    → ExamResultActivity
+        → Hiển thị điểm, badge Đậu/Trượt
+        → Nếu click "Xem chi tiết" → GET /api/exam/detail/:id
 ```
 
----
-
-### 3. **RecyclerView Pattern**
+Luồng bookmark câu hỏi:
 
 ```
-Data (List<Model>)
-    ↓
-Adapter.submitList(data)
-    ↓
-Adapter.onBindViewHolder(holder, position)
-    ↓
-ViewHolder.bind(model)
-    ↓
-Set data vào Views (TextView, ImageView, ...)
-    ↓
-RecyclerView hiển thị
+QuestionBankFragment
+    → GET /api/question?page=1&pageSize=200
+    → Hiển thị danh sách với icon bookmark
+    → User click icon bookmark
+    → onBookmarkToggle(question, addToCart=true)
+    → cartManager.addQuestion(question)
+    → adapter.updateBookmarks(getBookmarkedIds())  ← icon đổi thành "đã bookmark"
+    → updateCartBadge()  ← số badge tăng lên
+    
+    HOẶC
+    
+    → User click vào câu hỏi
+    → onQuestionClick(question)
+    → QuestionDetailActivity
+        → Hiển thị chi tiết
+        → User click nút "Thêm vào giỏ"
+        → cartManager.addQuestion(question)
+        → updateCartButtonState()  ← nút đổi thành "Xóa khỏi giỏ"
+        → [Khi quay về QuestionBankFragment]
+        → onResume() → adapter.updateBookmarks(getBookmarkedIds())  ← icon đồng bộ lại
 ```
 
----
-
-### 4. **Fragment Lifecycle (Simplified)**
+Luồng Admin CRUD bài thi:
 
 ```
-onCreateView()           → Inflate layout
-    ↓
-onViewCreated()          → Setup listeners, load data
-    ↓
-... (User tương tác)
-    ↓
-onDestroyView()          → Clean up (set binding = null)
+AdminFragment
+    → GET /api/admin/stats  ← hiện 4 con số thống kê
+    → setupViewPager()  ← tạo 3 sub-fragment
+    → [Tab Bài thi được chọn]
+    
+AdminExamsTabFragment
+    → onViewCreated()
+    → (AdminFragment) getParentFragment() → lấy sessionManager và apiClient
+    → loadExams()
+    → GET /api/exam/admin/all-exams  (JsonArrayRequest)
+    → parseExams(JSONArray) → List<AdminExam>
+    → adapter.submitList(exams)
+    
+    → User click "Xóa"
+    → onDeleteExam(exam)  ← callback từ adapter
+    → inflate DialogConfirmDeleteBinding
+    → AlertDialog.Builder.setView(dialogBinding.getRoot()).create().show()
+    → User click "Xác nhận"
+    → deleteExam(examId)
+    → DELETE /api/exam/:id
+    → Thành công: loadExams() + getParentFragment().refreshDashboard()
+    → refreshDashboard() gọi loadDashboardStats() → cập nhật con số tổng bài thi
 ```
-
----
-
-### 5. **Intent & Extras**
-
-**Truyền data giữa Activities:**
-
-```java
-// Activity A (Sender)
-Intent intent = new Intent(this, ActivityB.class);
-intent.putExtra("key", value);
-startActivity(intent);
-
-// Activity B (Receiver)
-int value = getIntent().getIntExtra("key", defaultValue);
-```
-
----
-
-### 6. **Dialog Pattern**
-
-```java
-// 1. Inflate dialog binding
-DialogUserBinding dialogBinding = DialogUserBinding.inflate(getLayoutInflater());
-
-// 2. Setup dialog content
-dialogBinding.tvDialogTitle.setText("Title");
-
-// 3. Tạo AlertDialog
-AlertDialog dialog = new AlertDialog.Builder(requireContext())
-    .setView(dialogBinding.getRoot())
-    .create();
-
-// 4. Setup button listeners
-dialogBinding.btnSave.setOnClickListener(v -> {
-    // Xử lý
-    dialog.dismiss();
-});
-
-// 5. Show dialog
-dialog.show();
-```
-
----
-
-## 📊 API ENDPOINTS SUMMARY
-
-| Endpoint | Method | Mục đích | Auth |
-|----------|--------|----------|------|
-| `/api/auth/login` | POST | Đăng nhập | ❌ |
-| `/api/auth/signup` | POST | Đăng ký | ❌ |
-| `/api/auth/logout` | POST | Đăng xuất | ✅ |
-| `/api/exam/generate` | POST | Tạo đề thi | ✅ |
-| `/api/exam/submit` | POST | Nộp bài | ✅ |
-| `/api/exam/history` | GET | Lịch sử thi | ✅ |
-| `/api/exam/detail/:id` | GET | Chi tiết bài thi | ✅ |
-| `/api/exam/:id` | DELETE | Xóa bài thi | ✅ (Admin) |
-| `/api/exam/admin/all-exams` | GET | Tất cả bài thi | ✅ (Admin) |
-| `/api/question` | GET | Danh sách câu hỏi | ❌ |
-| `/api/question` | POST | Tạo câu hỏi | ✅ (Admin) |
-| `/api/question/:id` | PUT | Sửa câu hỏi | ✅ (Admin) |
-| `/api/question/:id` | DELETE | Xóa câu hỏi | ✅ (Admin) |
-| `/api/admin/stats` | GET | Thống kê | ✅ (Admin) |
-| `/api/admin/users` | GET | Danh sách users | ✅ (Admin) |
-| `/api/admin/users` | POST | Tạo user | ✅ (Admin) |
-| `/api/admin/users/:id` | PUT | Sửa user | ✅ (Admin) |
-| `/api/admin/users/:id` | DELETE | Xóa user | ✅ (Admin) |
-
-**Auth:** ✅ = Cần Authorization header
-
----
-
-## 🎯 LUỒNG DỮ LIỆU CHÍNH
-
-### **User Flow:**
-
-```
-Login → MainActivity
-    → HomeFragment: Generate Exam
-        → ExamTakingActivity: Làm bài
-            → ExamResultActivity: Xem kết quả
-                → Back to Home
-    → HistoryFragment: Xem lịch sử
-    → ProfileFragment: Logout
-```
-
----
-
-### **Admin Flow:**
-
-```
-Login → MainActivity
-    → AdminFragment
-        → AdminUsersTabFragment: CRUD Users
-        → AdminQuestionsTabFragment: CRUD Questions
-        → AdminExamsTabFragment: View/Delete Exams
-    → ProfileFragment: Logout
-```
-
----
-
-## 💡 MẸO & BEST PRACTICES
-
-### **1. Error Handling**
-
-```java
-// ✅ Good
-if (error.networkResponse != null) {
-    int status = error.networkResponse.statusCode;
-    // Xử lý theo status code
-} else {
-    // Network error
-}
-
-// ❌ Bad: Không check null
-int status = error.networkResponse.statusCode;  // NullPointerException
-```
-
----
-
-### **2. JSON Parsing**
-
-```java
-// ✅ Good: Dùng optXxx() với default value
-String email = response.optString("email", "");
-int score = response.optInt("score", 0);
-
-// ❌ Bad: Dùng getXxx() có thể throw exception
-String email = response.getString("email");  // JSONException nếu không có key
-```
-
----
-
-### **3. ViewBinding Cleanup**
-
-```java
-// ✅ Good: Set null trong onDestroyView() (Fragment) hoặc onDestroy() (Activity)
-@Override
-public void onDestroyView() {
-    super.onDestroyView();
-    binding = null;
-}
-
-// ❌ Bad: Không set null → Memory leak
-```
-
----
-
-### **4. Loading State**
-
-```java
-// ✅ Good: Disable button khi đang load
-button.setEnabled(false);
-progressBar.setVisibility(View.VISIBLE);
-// ... call API ...
-button.setEnabled(true);  // Re-enable sau khi xong
-
-// ❌ Bad: Không disable → User spam click
-```
-
----
-
-### **5. Input Validation**
-
-```java
-// ✅ Good: Validate tất cả fields cùng lúc
-boolean valid = true;
-if (email.isEmpty()) {
-    tilEmail.setError("...");
-    valid = false;
-}
-if (password.isEmpty()) {
-    tilPassword.setError("...");
-    valid = false;
-}
-return valid;
-
-// ❌ Bad: Return ngay khi gặp lỗi đầu tiên
-if (email.isEmpty()) {
-    return false;  // User không biết password cũng lỗi
-}
-```
-
----
-
-## 📚 TÀI LIỆU THAM KHẢO
-
-- **Android Docs:** https://developer.android.com/docs
-- **Volley:** https://developer.android.com/training/volley
-- **Material Design:** https://material.io/develop/android
-- **ViewBinding:** https://developer.android.com/topic/libraries/view-binding
-
----
-
-**🎉 Chúc bạn học tốt và hiểu rõ ứng dụng của mình!**
-
-> **Ghi chú:** File này tóm tắt các khái niệm chính. Nếu cần hiểu sâu hơn về logic của từng hàm, vui lòng đọc code trực tiếp và debug để xem flow thực tế.
